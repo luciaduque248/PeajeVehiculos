@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/IdentificacionVehiculo/IdentificacionVehiculo.vhd
+source_file = 1, C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/IdentificacionVehiculo/db/IdentificacionVehiculo.cbx.xml
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = IdentificacionVehiculo
+instance = comp, \category_out[0]~output\, category_out[0]~output, IdentificacionVehiculo, 1
+instance = comp, \category_out[1]~output\, category_out[1]~output, IdentificacionVehiculo, 1
+instance = comp, \identification_in[3]~input\, identification_in[3]~input, IdentificacionVehiculo, 1
+instance = comp, \identification_in[4]~input\, identification_in[4]~input, IdentificacionVehiculo, 1
+instance = comp, \Mux0~0\, Mux0~0, IdentificacionVehiculo, 1
+instance = comp, \identification_in[0]~input\, identification_in[0]~input, IdentificacionVehiculo, 1
+instance = comp, \identification_in[1]~input\, identification_in[1]~input, IdentificacionVehiculo, 1
+instance = comp, \identification_in[2]~input\, identification_in[2]~input, IdentificacionVehiculo, 1
