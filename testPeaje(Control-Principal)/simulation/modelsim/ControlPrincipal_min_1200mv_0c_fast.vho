@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "03/12/2024 17:38:42"
+-- DATE "03/12/2024 17:52:21"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -28,51 +28,52 @@
 
 LIBRARY CYCLONEIII;
 LIBRARY IEEE;
+LIBRARY STD;
 USE CYCLONEIII.CYCLONEIII_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE STD.STANDARD.ALL;
 
 ENTITY 	ControlPrincipal IS
     PORT (
-	clk : IN std_logic;
-	reset : IN std_logic;
-	vehicle_detected_front : IN std_logic;
-	vehicle_detected_back : IN std_logic;
-	identification_valid : IN std_logic;
-	barrier_closed : OUT std_logic;
-	semaforo_entrada : OUT std_logic_vector(1 DOWNTO 0);
-	semaforo_salida : OUT std_logic_vector(1 DOWNTO 0);
-	talanquera_inicial : OUT std_logic;
-	talanquera_final : OUT std_logic;
-	display_data : OUT std_logic_vector(6 DOWNTO 0);
-	green_led : OUT std_logic;
-	red_led : OUT std_logic;
-	alarm : OUT std_logic
+	vehicle_detected : IN std_logic;
+	identification_in : IN std_logic_vector(4 DOWNTO 0);
+	cerrar_barrera : IN std_logic;
+	vehicle1_position : IN STD.STANDARD.integer range 0 TO 100;
+	vehicle2_position : IN STD.STANDARD.integer range 0 TO 100;
+	back_sensor_active : OUT std_logic;
+	tagValido : OUT std_logic;
+	barrera_abierta : OUT std_logic;
+	alert : OUT std_logic
 	);
 END ControlPrincipal;
 
 -- Design Ports Information
--- clk	=>  Location: PIN_T10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- reset	=>  Location: PIN_L22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- vehicle_detected_front	=>  Location: PIN_AA16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- vehicle_detected_back	=>  Location: PIN_R22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- identification_valid	=>  Location: PIN_D15,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- barrier_closed	=>  Location: PIN_Y2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- semaforo_entrada[0]	=>  Location: PIN_AB7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- semaforo_entrada[1]	=>  Location: PIN_F9,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- semaforo_salida[0]	=>  Location: PIN_V6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- semaforo_salida[1]	=>  Location: PIN_C7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- talanquera_inicial	=>  Location: PIN_T5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- talanquera_final	=>  Location: PIN_T12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- display_data[0]	=>  Location: PIN_M1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- display_data[1]	=>  Location: PIN_P8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- display_data[2]	=>  Location: PIN_K19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- display_data[3]	=>  Location: PIN_H7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- display_data[4]	=>  Location: PIN_E15,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- display_data[5]	=>  Location: PIN_C10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- display_data[6]	=>  Location: PIN_H1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- green_led	=>  Location: PIN_C1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- red_led	=>  Location: PIN_H2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- alarm	=>  Location: PIN_W19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- identification_in[0]	=>  Location: PIN_A6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- identification_in[1]	=>  Location: PIN_AA20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- identification_in[2]	=>  Location: PIN_U13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- back_sensor_active	=>  Location: PIN_R8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- tagValido	=>  Location: PIN_F7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- barrera_abierta	=>  Location: PIN_G5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- alert	=>  Location: PIN_T5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle_detected	=>  Location: PIN_P8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- identification_in[3]	=>  Location: PIN_B3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- identification_in[4]	=>  Location: PIN_C3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- cerrar_barrera	=>  Location: PIN_B7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle2_position[3]	=>  Location: PIN_AA1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle1_position[3]	=>  Location: PIN_K7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle2_position[2]	=>  Location: PIN_R9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle1_position[2]	=>  Location: PIN_T7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle2_position[1]	=>  Location: PIN_Y6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle1_position[1]	=>  Location: PIN_Y1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle2_position[0]	=>  Location: PIN_R5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle1_position[0]	=>  Location: PIN_P6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle2_position[6]	=>  Location: PIN_R10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle1_position[6]	=>  Location: PIN_T9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle2_position[5]	=>  Location: PIN_R6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle1_position[5]	=>  Location: PIN_R7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle2_position[4]	=>  Location: PIN_V3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle1_position[4]	=>  Location: PIN_T8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF ControlPrincipal IS
@@ -85,355 +86,583 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_clk : std_logic;
-SIGNAL ww_reset : std_logic;
-SIGNAL ww_vehicle_detected_front : std_logic;
-SIGNAL ww_vehicle_detected_back : std_logic;
-SIGNAL ww_identification_valid : std_logic;
-SIGNAL ww_barrier_closed : std_logic;
-SIGNAL ww_semaforo_entrada : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_semaforo_salida : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_talanquera_inicial : std_logic;
-SIGNAL ww_talanquera_final : std_logic;
-SIGNAL ww_display_data : std_logic_vector(6 DOWNTO 0);
-SIGNAL ww_green_led : std_logic;
-SIGNAL ww_red_led : std_logic;
-SIGNAL ww_alarm : std_logic;
-SIGNAL \clk~input_o\ : std_logic;
-SIGNAL \reset~input_o\ : std_logic;
-SIGNAL \vehicle_detected_front~input_o\ : std_logic;
-SIGNAL \vehicle_detected_back~input_o\ : std_logic;
-SIGNAL \identification_valid~input_o\ : std_logic;
-SIGNAL \barrier_closed~output_o\ : std_logic;
-SIGNAL \semaforo_entrada[0]~output_o\ : std_logic;
-SIGNAL \semaforo_entrada[1]~output_o\ : std_logic;
-SIGNAL \semaforo_salida[0]~output_o\ : std_logic;
-SIGNAL \semaforo_salida[1]~output_o\ : std_logic;
-SIGNAL \talanquera_inicial~output_o\ : std_logic;
-SIGNAL \talanquera_final~output_o\ : std_logic;
-SIGNAL \display_data[0]~output_o\ : std_logic;
-SIGNAL \display_data[1]~output_o\ : std_logic;
-SIGNAL \display_data[2]~output_o\ : std_logic;
-SIGNAL \display_data[3]~output_o\ : std_logic;
-SIGNAL \display_data[4]~output_o\ : std_logic;
-SIGNAL \display_data[5]~output_o\ : std_logic;
-SIGNAL \display_data[6]~output_o\ : std_logic;
-SIGNAL \green_led~output_o\ : std_logic;
-SIGNAL \red_led~output_o\ : std_logic;
-SIGNAL \alarm~output_o\ : std_logic;
+SIGNAL ww_vehicle_detected : std_logic;
+SIGNAL ww_identification_in : std_logic_vector(4 DOWNTO 0);
+SIGNAL ww_cerrar_barrera : std_logic;
+SIGNAL ww_vehicle1_position : std_logic_vector(6 DOWNTO 0);
+SIGNAL ww_vehicle2_position : std_logic_vector(6 DOWNTO 0);
+SIGNAL ww_back_sensor_active : std_logic;
+SIGNAL ww_tagValido : std_logic;
+SIGNAL ww_barrera_abierta : std_logic;
+SIGNAL ww_alert : std_logic;
+SIGNAL \identification_in[0]~input_o\ : std_logic;
+SIGNAL \identification_in[1]~input_o\ : std_logic;
+SIGNAL \identification_in[2]~input_o\ : std_logic;
+SIGNAL \back_sensor_active~output_o\ : std_logic;
+SIGNAL \tagValido~output_o\ : std_logic;
+SIGNAL \barrera_abierta~output_o\ : std_logic;
+SIGNAL \alert~output_o\ : std_logic;
+SIGNAL \vehicle_detected~input_o\ : std_logic;
+SIGNAL \identification_in[3]~input_o\ : std_logic;
+SIGNAL \identification_in[4]~input_o\ : std_logic;
+SIGNAL \IdentificacionVehiculo_inst|Mux0~0_combout\ : std_logic;
+SIGNAL \cerrar_barrera~input_o\ : std_logic;
+SIGNAL \vehicle2_position[3]~input_o\ : std_logic;
+SIGNAL \vehicle1_position[3]~input_o\ : std_logic;
+SIGNAL \vehicle1_position[2]~input_o\ : std_logic;
+SIGNAL \vehicle2_position[2]~input_o\ : std_logic;
+SIGNAL \vehicle2_position[1]~input_o\ : std_logic;
+SIGNAL \vehicle1_position[1]~input_o\ : std_logic;
+SIGNAL \vehicle1_position[0]~input_o\ : std_logic;
+SIGNAL \vehicle2_position[0]~input_o\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~1\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~3\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~5\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~6_combout\ : std_logic;
+SIGNAL \vehicle2_position[5]~input_o\ : std_logic;
+SIGNAL \vehicle1_position[5]~input_o\ : std_logic;
+SIGNAL \vehicle2_position[4]~input_o\ : std_logic;
+SIGNAL \vehicle1_position[4]~input_o\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~7\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~9\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~10_combout\ : std_logic;
+SIGNAL \vehicle1_position[6]~input_o\ : std_logic;
+SIGNAL \vehicle2_position[6]~input_o\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~11\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~13\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~14_combout\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~8_combout\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~12_combout\ : std_logic;
+SIGNAL \VehicleSeparation_inst|LessThan0~0_combout\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~0_combout\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~4_combout\ : std_logic;
+SIGNAL \VehicleSeparation_inst|Add0~2_combout\ : std_logic;
+SIGNAL \VehicleSeparation_inst|LessThan0~1_combout\ : std_logic;
+SIGNAL \VehicleSeparation_inst|LessThan0~2_combout\ : std_logic;
+SIGNAL \ALT_INV_cerrar_barrera~input_o\ : std_logic;
 
 BEGIN
 
-ww_clk <= clk;
-ww_reset <= reset;
-ww_vehicle_detected_front <= vehicle_detected_front;
-ww_vehicle_detected_back <= vehicle_detected_back;
-ww_identification_valid <= identification_valid;
-barrier_closed <= ww_barrier_closed;
-semaforo_entrada <= ww_semaforo_entrada;
-semaforo_salida <= ww_semaforo_salida;
-talanquera_inicial <= ww_talanquera_inicial;
-talanquera_final <= ww_talanquera_final;
-display_data <= ww_display_data;
-green_led <= ww_green_led;
-red_led <= ww_red_led;
-alarm <= ww_alarm;
+ww_vehicle_detected <= vehicle_detected;
+ww_identification_in <= identification_in;
+ww_cerrar_barrera <= cerrar_barrera;
+ww_vehicle1_position <= IEEE.STD_LOGIC_ARITH.CONV_STD_LOGIC_VECTOR(vehicle1_position, 7);
+ww_vehicle2_position <= IEEE.STD_LOGIC_ARITH.CONV_STD_LOGIC_VECTOR(vehicle2_position, 7);
+back_sensor_active <= ww_back_sensor_active;
+tagValido <= ww_tagValido;
+barrera_abierta <= ww_barrera_abierta;
+alert <= ww_alert;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
+\ALT_INV_cerrar_barrera~input_o\ <= NOT \cerrar_barrera~input_o\;
 
--- Location: IOOBUF_X0_Y6_N2
-\barrier_closed~output\ : cycloneiii_io_obuf
+-- Location: IOOBUF_X0_Y2_N23
+\back_sensor_active~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \vehicle_detected~input_o\,
 	devoe => ww_devoe,
-	o => \barrier_closed~output_o\);
+	o => \back_sensor_active~output_o\);
 
--- Location: IOOBUF_X11_Y0_N9
-\semaforo_entrada[0]~output\ : cycloneiii_io_obuf
+-- Location: IOOBUF_X1_Y29_N9
+\tagValido~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \IdentificacionVehiculo_inst|Mux0~0_combout\,
 	devoe => ww_devoe,
-	o => \semaforo_entrada[0]~output_o\);
+	o => \tagValido~output_o\);
 
--- Location: IOOBUF_X7_Y29_N23
-\semaforo_entrada[1]~output\ : cycloneiii_io_obuf
+-- Location: IOOBUF_X0_Y27_N23
+\barrera_abierta~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \ALT_INV_cerrar_barrera~input_o\,
 	devoe => ww_devoe,
-	o => \semaforo_entrada[1]~output_o\);
-
--- Location: IOOBUF_X1_Y0_N2
-\semaforo_salida[0]~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \semaforo_salida[0]~output_o\);
-
--- Location: IOOBUF_X9_Y29_N9
-\semaforo_salida[1]~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \semaforo_salida[1]~output_o\);
+	o => \barrera_abierta~output_o\);
 
 -- Location: IOOBUF_X0_Y3_N2
-\talanquera_inicial~output\ : cycloneiii_io_obuf
+\alert~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => GND,
+	i => \VehicleSeparation_inst|LessThan0~2_combout\,
 	devoe => ww_devoe,
-	o => \talanquera_inicial~output_o\);
+	o => \alert~output_o\);
 
--- Location: IOOBUF_X28_Y0_N30
-\talanquera_final~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \talanquera_final~output_o\);
-
--- Location: IOOBUF_X0_Y13_N23
-\display_data[0]~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \display_data[0]~output_o\);
-
--- Location: IOOBUF_X0_Y2_N16
-\display_data[1]~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \display_data[1]~output_o\);
-
--- Location: IOOBUF_X41_Y18_N2
-\display_data[2]~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \display_data[2]~output_o\);
-
--- Location: IOOBUF_X0_Y25_N16
-\display_data[3]~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \display_data[3]~output_o\);
-
--- Location: IOOBUF_X30_Y29_N2
-\display_data[4]~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \display_data[4]~output_o\);
-
--- Location: IOOBUF_X14_Y29_N9
-\display_data[5]~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \display_data[5]~output_o\);
-
--- Location: IOOBUF_X0_Y21_N16
-\display_data[6]~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \display_data[6]~output_o\);
-
--- Location: IOOBUF_X0_Y26_N23
-\green_led~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \green_led~output_o\);
-
--- Location: IOOBUF_X0_Y21_N9
-\red_led~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \red_led~output_o\);
-
--- Location: IOOBUF_X41_Y3_N9
-\alarm~output\ : cycloneiii_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => GND,
-	devoe => ww_devoe,
-	o => \alarm~output_o\);
-
--- Location: IOIBUF_X14_Y0_N8
-\clk~input\ : cycloneiii_io_ibuf
+-- Location: IOIBUF_X0_Y2_N15
+\vehicle_detected~input\ : cycloneiii_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_clk,
-	o => \clk~input_o\);
+	i => ww_vehicle_detected,
+	o => \vehicle_detected~input_o\);
 
--- Location: IOIBUF_X41_Y18_N22
-\reset~input\ : cycloneiii_io_ibuf
+-- Location: IOIBUF_X3_Y29_N8
+\identification_in[3]~input\ : cycloneiii_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_reset,
-	o => \reset~input_o\);
+	i => ww_identification_in(3),
+	o => \identification_in[3]~input_o\);
 
--- Location: IOIBUF_X28_Y0_N22
-\vehicle_detected_front~input\ : cycloneiii_io_ibuf
+-- Location: IOIBUF_X3_Y29_N29
+\identification_in[4]~input\ : cycloneiii_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_vehicle_detected_front,
-	o => \vehicle_detected_front~input_o\);
+	i => ww_identification_in(4),
+	o => \identification_in[4]~input_o\);
 
--- Location: IOIBUF_X41_Y10_N15
-\vehicle_detected_back~input\ : cycloneiii_io_ibuf
+-- Location: LCCOMB_X3_Y28_N0
+\IdentificacionVehiculo_inst|Mux0~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \IdentificacionVehiculo_inst|Mux0~0_combout\ = (\identification_in[3]~input_o\ & !\identification_in[4]~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \identification_in[3]~input_o\,
+	datad => \identification_in[4]~input_o\,
+	combout => \IdentificacionVehiculo_inst|Mux0~0_combout\);
+
+-- Location: IOIBUF_X11_Y29_N8
+\cerrar_barrera~input\ : cycloneiii_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_vehicle_detected_back,
-	o => \vehicle_detected_back~input_o\);
+	i => ww_cerrar_barrera,
+	o => \cerrar_barrera~input_o\);
 
--- Location: IOIBUF_X32_Y29_N29
-\identification_valid~input\ : cycloneiii_io_ibuf
+-- Location: IOIBUF_X0_Y5_N15
+\vehicle2_position[3]~input\ : cycloneiii_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_identification_valid,
-	o => \identification_valid~input_o\);
+	i => ww_vehicle2_position(3),
+	o => \vehicle2_position[3]~input_o\);
 
-ww_barrier_closed <= \barrier_closed~output_o\;
+-- Location: IOIBUF_X0_Y22_N22
+\vehicle1_position[3]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle1_position(3),
+	o => \vehicle1_position[3]~input_o\);
 
-ww_semaforo_entrada(0) <= \semaforo_entrada[0]~output_o\;
+-- Location: IOIBUF_X0_Y2_N8
+\vehicle1_position[2]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle1_position(2),
+	o => \vehicle1_position[2]~input_o\);
 
-ww_semaforo_entrada(1) <= \semaforo_entrada[1]~output_o\;
+-- Location: IOIBUF_X1_Y0_N29
+\vehicle2_position[2]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle2_position(2),
+	o => \vehicle2_position[2]~input_o\);
 
-ww_semaforo_salida(0) <= \semaforo_salida[0]~output_o\;
+-- Location: IOIBUF_X5_Y0_N8
+\vehicle2_position[1]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle2_position(1),
+	o => \vehicle2_position[1]~input_o\);
 
-ww_semaforo_salida(1) <= \semaforo_salida[1]~output_o\;
+-- Location: IOIBUF_X0_Y6_N8
+\vehicle1_position[1]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle1_position(1),
+	o => \vehicle1_position[1]~input_o\);
 
-ww_talanquera_inicial <= \talanquera_inicial~output_o\;
+-- Location: IOIBUF_X0_Y4_N8
+\vehicle1_position[0]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle1_position(0),
+	o => \vehicle1_position[0]~input_o\);
 
-ww_talanquera_final <= \talanquera_final~output_o\;
+-- Location: IOIBUF_X0_Y4_N15
+\vehicle2_position[0]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle2_position(0),
+	o => \vehicle2_position[0]~input_o\);
 
-ww_display_data(0) <= \display_data[0]~output_o\;
+-- Location: LCCOMB_X1_Y3_N0
+\VehicleSeparation_inst|Add0~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|Add0~0_combout\ = (\vehicle1_position[0]~input_o\ & ((GND) # (!\vehicle2_position[0]~input_o\))) # (!\vehicle1_position[0]~input_o\ & (\vehicle2_position[0]~input_o\ $ (GND)))
+-- \VehicleSeparation_inst|Add0~1\ = CARRY((\vehicle1_position[0]~input_o\) # (!\vehicle2_position[0]~input_o\))
 
-ww_display_data(1) <= \display_data[1]~output_o\;
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110011010111011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vehicle1_position[0]~input_o\,
+	datab => \vehicle2_position[0]~input_o\,
+	datad => VCC,
+	combout => \VehicleSeparation_inst|Add0~0_combout\,
+	cout => \VehicleSeparation_inst|Add0~1\);
 
-ww_display_data(2) <= \display_data[2]~output_o\;
+-- Location: LCCOMB_X1_Y3_N2
+\VehicleSeparation_inst|Add0~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|Add0~2_combout\ = (\vehicle2_position[1]~input_o\ & ((\vehicle1_position[1]~input_o\ & (!\VehicleSeparation_inst|Add0~1\)) # (!\vehicle1_position[1]~input_o\ & ((\VehicleSeparation_inst|Add0~1\) # (GND))))) # 
+-- (!\vehicle2_position[1]~input_o\ & ((\vehicle1_position[1]~input_o\ & (\VehicleSeparation_inst|Add0~1\ & VCC)) # (!\vehicle1_position[1]~input_o\ & (!\VehicleSeparation_inst|Add0~1\))))
+-- \VehicleSeparation_inst|Add0~3\ = CARRY((\vehicle2_position[1]~input_o\ & ((!\VehicleSeparation_inst|Add0~1\) # (!\vehicle1_position[1]~input_o\))) # (!\vehicle2_position[1]~input_o\ & (!\vehicle1_position[1]~input_o\ & !\VehicleSeparation_inst|Add0~1\)))
 
-ww_display_data(3) <= \display_data[3]~output_o\;
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100101011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vehicle2_position[1]~input_o\,
+	datab => \vehicle1_position[1]~input_o\,
+	datad => VCC,
+	cin => \VehicleSeparation_inst|Add0~1\,
+	combout => \VehicleSeparation_inst|Add0~2_combout\,
+	cout => \VehicleSeparation_inst|Add0~3\);
 
-ww_display_data(4) <= \display_data[4]~output_o\;
+-- Location: LCCOMB_X1_Y3_N4
+\VehicleSeparation_inst|Add0~4\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|Add0~4_combout\ = ((\vehicle1_position[2]~input_o\ $ (\vehicle2_position[2]~input_o\ $ (\VehicleSeparation_inst|Add0~3\)))) # (GND)
+-- \VehicleSeparation_inst|Add0~5\ = CARRY((\vehicle1_position[2]~input_o\ & ((!\VehicleSeparation_inst|Add0~3\) # (!\vehicle2_position[2]~input_o\))) # (!\vehicle1_position[2]~input_o\ & (!\vehicle2_position[2]~input_o\ & !\VehicleSeparation_inst|Add0~3\)))
 
-ww_display_data(5) <= \display_data[5]~output_o\;
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011000101011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vehicle1_position[2]~input_o\,
+	datab => \vehicle2_position[2]~input_o\,
+	datad => VCC,
+	cin => \VehicleSeparation_inst|Add0~3\,
+	combout => \VehicleSeparation_inst|Add0~4_combout\,
+	cout => \VehicleSeparation_inst|Add0~5\);
 
-ww_display_data(6) <= \display_data[6]~output_o\;
+-- Location: LCCOMB_X1_Y3_N6
+\VehicleSeparation_inst|Add0~6\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|Add0~6_combout\ = (\vehicle2_position[3]~input_o\ & ((\vehicle1_position[3]~input_o\ & (!\VehicleSeparation_inst|Add0~5\)) # (!\vehicle1_position[3]~input_o\ & ((\VehicleSeparation_inst|Add0~5\) # (GND))))) # 
+-- (!\vehicle2_position[3]~input_o\ & ((\vehicle1_position[3]~input_o\ & (\VehicleSeparation_inst|Add0~5\ & VCC)) # (!\vehicle1_position[3]~input_o\ & (!\VehicleSeparation_inst|Add0~5\))))
+-- \VehicleSeparation_inst|Add0~7\ = CARRY((\vehicle2_position[3]~input_o\ & ((!\VehicleSeparation_inst|Add0~5\) # (!\vehicle1_position[3]~input_o\))) # (!\vehicle2_position[3]~input_o\ & (!\vehicle1_position[3]~input_o\ & !\VehicleSeparation_inst|Add0~5\)))
 
-ww_green_led <= \green_led~output_o\;
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100101011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vehicle2_position[3]~input_o\,
+	datab => \vehicle1_position[3]~input_o\,
+	datad => VCC,
+	cin => \VehicleSeparation_inst|Add0~5\,
+	combout => \VehicleSeparation_inst|Add0~6_combout\,
+	cout => \VehicleSeparation_inst|Add0~7\);
 
-ww_red_led <= \red_led~output_o\;
+-- Location: IOIBUF_X0_Y3_N8
+\vehicle2_position[5]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle2_position(5),
+	o => \vehicle2_position[5]~input_o\);
 
-ww_alarm <= \alarm~output_o\;
+-- Location: IOIBUF_X0_Y2_N1
+\vehicle1_position[5]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle1_position(5),
+	o => \vehicle1_position[5]~input_o\);
+
+-- Location: IOIBUF_X0_Y4_N1
+\vehicle2_position[4]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle2_position(4),
+	o => \vehicle2_position[4]~input_o\);
+
+-- Location: IOIBUF_X1_Y0_N22
+\vehicle1_position[4]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle1_position(4),
+	o => \vehicle1_position[4]~input_o\);
+
+-- Location: LCCOMB_X1_Y3_N8
+\VehicleSeparation_inst|Add0~8\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|Add0~8_combout\ = ((\vehicle2_position[4]~input_o\ $ (\vehicle1_position[4]~input_o\ $ (\VehicleSeparation_inst|Add0~7\)))) # (GND)
+-- \VehicleSeparation_inst|Add0~9\ = CARRY((\vehicle2_position[4]~input_o\ & (\vehicle1_position[4]~input_o\ & !\VehicleSeparation_inst|Add0~7\)) # (!\vehicle2_position[4]~input_o\ & ((\vehicle1_position[4]~input_o\) # (!\VehicleSeparation_inst|Add0~7\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011001001101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vehicle2_position[4]~input_o\,
+	datab => \vehicle1_position[4]~input_o\,
+	datad => VCC,
+	cin => \VehicleSeparation_inst|Add0~7\,
+	combout => \VehicleSeparation_inst|Add0~8_combout\,
+	cout => \VehicleSeparation_inst|Add0~9\);
+
+-- Location: LCCOMB_X1_Y3_N10
+\VehicleSeparation_inst|Add0~10\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|Add0~10_combout\ = (\vehicle2_position[5]~input_o\ & ((\vehicle1_position[5]~input_o\ & (!\VehicleSeparation_inst|Add0~9\)) # (!\vehicle1_position[5]~input_o\ & ((\VehicleSeparation_inst|Add0~9\) # (GND))))) # 
+-- (!\vehicle2_position[5]~input_o\ & ((\vehicle1_position[5]~input_o\ & (\VehicleSeparation_inst|Add0~9\ & VCC)) # (!\vehicle1_position[5]~input_o\ & (!\VehicleSeparation_inst|Add0~9\))))
+-- \VehicleSeparation_inst|Add0~11\ = CARRY((\vehicle2_position[5]~input_o\ & ((!\VehicleSeparation_inst|Add0~9\) # (!\vehicle1_position[5]~input_o\))) # (!\vehicle2_position[5]~input_o\ & (!\vehicle1_position[5]~input_o\ & 
+-- !\VehicleSeparation_inst|Add0~9\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100100101011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vehicle2_position[5]~input_o\,
+	datab => \vehicle1_position[5]~input_o\,
+	datad => VCC,
+	cin => \VehicleSeparation_inst|Add0~9\,
+	combout => \VehicleSeparation_inst|Add0~10_combout\,
+	cout => \VehicleSeparation_inst|Add0~11\);
+
+-- Location: IOIBUF_X1_Y0_N8
+\vehicle1_position[6]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle1_position(6),
+	o => \vehicle1_position[6]~input_o\);
+
+-- Location: IOIBUF_X1_Y0_N15
+\vehicle2_position[6]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_vehicle2_position(6),
+	o => \vehicle2_position[6]~input_o\);
+
+-- Location: LCCOMB_X1_Y3_N12
+\VehicleSeparation_inst|Add0~12\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|Add0~12_combout\ = ((\vehicle1_position[6]~input_o\ $ (\vehicle2_position[6]~input_o\ $ (\VehicleSeparation_inst|Add0~11\)))) # (GND)
+-- \VehicleSeparation_inst|Add0~13\ = CARRY((\vehicle1_position[6]~input_o\ & ((!\VehicleSeparation_inst|Add0~11\) # (!\vehicle2_position[6]~input_o\))) # (!\vehicle1_position[6]~input_o\ & (!\vehicle2_position[6]~input_o\ & 
+-- !\VehicleSeparation_inst|Add0~11\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011000101011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vehicle1_position[6]~input_o\,
+	datab => \vehicle2_position[6]~input_o\,
+	datad => VCC,
+	cin => \VehicleSeparation_inst|Add0~11\,
+	combout => \VehicleSeparation_inst|Add0~12_combout\,
+	cout => \VehicleSeparation_inst|Add0~13\);
+
+-- Location: LCCOMB_X1_Y3_N14
+\VehicleSeparation_inst|Add0~14\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|Add0~14_combout\ = \VehicleSeparation_inst|Add0~13\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \VehicleSeparation_inst|Add0~13\,
+	combout => \VehicleSeparation_inst|Add0~14_combout\);
+
+-- Location: LCCOMB_X1_Y3_N24
+\VehicleSeparation_inst|LessThan0~0\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|LessThan0~0_combout\ = (\VehicleSeparation_inst|Add0~10_combout\ & (!\VehicleSeparation_inst|Add0~14_combout\ & (\VehicleSeparation_inst|Add0~8_combout\ & \VehicleSeparation_inst|Add0~12_combout\))) # 
+-- (!\VehicleSeparation_inst|Add0~10_combout\ & (\VehicleSeparation_inst|Add0~14_combout\ & (!\VehicleSeparation_inst|Add0~8_combout\ & !\VehicleSeparation_inst|Add0~12_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010000000000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VehicleSeparation_inst|Add0~10_combout\,
+	datab => \VehicleSeparation_inst|Add0~14_combout\,
+	datac => \VehicleSeparation_inst|Add0~8_combout\,
+	datad => \VehicleSeparation_inst|Add0~12_combout\,
+	combout => \VehicleSeparation_inst|LessThan0~0_combout\);
+
+-- Location: LCCOMB_X1_Y3_N26
+\VehicleSeparation_inst|LessThan0~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|LessThan0~1_combout\ = (\VehicleSeparation_inst|Add0~12_combout\ & (\VehicleSeparation_inst|Add0~0_combout\ & (\VehicleSeparation_inst|Add0~4_combout\ & \VehicleSeparation_inst|Add0~2_combout\))) # 
+-- (!\VehicleSeparation_inst|Add0~12_combout\ & (((\VehicleSeparation_inst|Add0~4_combout\) # (\VehicleSeparation_inst|Add0~2_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101010101010000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VehicleSeparation_inst|Add0~12_combout\,
+	datab => \VehicleSeparation_inst|Add0~0_combout\,
+	datac => \VehicleSeparation_inst|Add0~4_combout\,
+	datad => \VehicleSeparation_inst|Add0~2_combout\,
+	combout => \VehicleSeparation_inst|LessThan0~1_combout\);
+
+-- Location: LCCOMB_X1_Y3_N20
+\VehicleSeparation_inst|LessThan0~2\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \VehicleSeparation_inst|LessThan0~2_combout\ = (\VehicleSeparation_inst|LessThan0~0_combout\ & ((\VehicleSeparation_inst|Add0~6_combout\ & ((\VehicleSeparation_inst|Add0~12_combout\) # (!\VehicleSeparation_inst|LessThan0~1_combout\))) # 
+-- (!\VehicleSeparation_inst|Add0~6_combout\ & ((\VehicleSeparation_inst|LessThan0~1_combout\) # (!\VehicleSeparation_inst|Add0~12_combout\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100100001001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \VehicleSeparation_inst|Add0~6_combout\,
+	datab => \VehicleSeparation_inst|LessThan0~0_combout\,
+	datac => \VehicleSeparation_inst|LessThan0~1_combout\,
+	datad => \VehicleSeparation_inst|Add0~12_combout\,
+	combout => \VehicleSeparation_inst|LessThan0~2_combout\);
+
+-- Location: IOIBUF_X11_Y29_N15
+\identification_in[0]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_identification_in(0),
+	o => \identification_in[0]~input_o\);
+
+-- Location: IOIBUF_X37_Y0_N22
+\identification_in[1]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_identification_in(1),
+	o => \identification_in[1]~input_o\);
+
+-- Location: IOIBUF_X30_Y0_N8
+\identification_in[2]~input\ : cycloneiii_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_identification_in(2),
+	o => \identification_in[2]~input_o\);
+
+ww_back_sensor_active <= \back_sensor_active~output_o\;
+
+ww_tagValido <= \tagValido~output_o\;
+
+ww_barrera_abierta <= \barrera_abierta~output_o\;
+
+ww_alert <= \alert~output_o\;
 END structure;
 
 
