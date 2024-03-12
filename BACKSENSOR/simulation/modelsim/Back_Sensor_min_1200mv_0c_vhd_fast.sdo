@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "Back_Sensor")
-  (DATE "03/12/2024 17:08:24")
+  (DATE "03/12/2024 17:15:09")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition")
@@ -38,7 +38,7 @@
 
   (CELL
     (CELLTYPE "cycloneiii_io_obuf")
-    (INSTANCE \\safe_distance\~output\\)
+    (INSTANCE \\back_sensor_active\~output\\)
     (DELAY
       (ABSOLUTE
         (PORT i (1828:1828:1828) (2025:2025:2025))
@@ -48,7 +48,7 @@
   )
   (CELL
     (CELLTYPE "cycloneiii_io_ibuf")
-    (INSTANCE \\vehicle_left\~input\\)
+    (INSTANCE \\vehicle_detected\~input\\)
     (DELAY
       (ABSOLUTE
         (IOPATH i o (382:382:382) (764:764:764))

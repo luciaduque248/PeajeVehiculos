@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "03/12/2024 17:08:24"
+-- DATE "03/12/2024 17:15:09"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -33,14 +33,14 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	Back_Sensor IS
     PORT (
-	vehicle_left : IN std_logic;
-	safe_distance : OUT std_logic
+	vehicle_detected : IN std_logic;
+	back_sensor_active : OUT std_logic
 	);
 END Back_Sensor;
 
 -- Design Ports Information
--- safe_distance	=>  Location: PIN_A7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- vehicle_left	=>  Location: PIN_A8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- back_sensor_active	=>  Location: PIN_A7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- vehicle_detected	=>  Location: PIN_A8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF Back_Sensor IS
@@ -53,43 +53,43 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_vehicle_left : std_logic;
-SIGNAL ww_safe_distance : std_logic;
-SIGNAL \safe_distance~output_o\ : std_logic;
-SIGNAL \vehicle_left~input_o\ : std_logic;
+SIGNAL ww_vehicle_detected : std_logic;
+SIGNAL ww_back_sensor_active : std_logic;
+SIGNAL \back_sensor_active~output_o\ : std_logic;
+SIGNAL \vehicle_detected~input_o\ : std_logic;
 
 BEGIN
 
-ww_vehicle_left <= vehicle_left;
-safe_distance <= ww_safe_distance;
+ww_vehicle_detected <= vehicle_detected;
+back_sensor_active <= ww_back_sensor_active;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
 -- Location: IOOBUF_X11_Y29_N2
-\safe_distance~output\ : cycloneiii_io_obuf
+\back_sensor_active~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \vehicle_left~input_o\,
+	i => \vehicle_detected~input_o\,
 	devoe => ww_devoe,
-	o => \safe_distance~output_o\);
+	o => \back_sensor_active~output_o\);
 
 -- Location: IOIBUF_X14_Y29_N22
-\vehicle_left~input\ : cycloneiii_io_ibuf
+\vehicle_detected~input\ : cycloneiii_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_vehicle_left,
-	o => \vehicle_left~input_o\);
+	i => ww_vehicle_detected,
+	o => \vehicle_detected~input_o\);
 
-ww_safe_distance <= \safe_distance~output_o\;
+ww_back_sensor_active <= \back_sensor_active~output_o\;
 END structure;
 
 

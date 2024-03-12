@@ -6,5 +6,5 @@ source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/timing_b.vhd
 source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/timing_p.vhd
 design_name = Back_Sensor
-instance = comp, \safe_distance~output\, safe_distance~output, Back_Sensor, 1
-instance = comp, \vehicle_left~input\, vehicle_left~input, Back_Sensor, 1
+instance = comp, \back_sensor_active~output\, back_sensor_active~output, Back_Sensor, 1
+instance = comp, \vehicle_detected~input\, vehicle_detected~input, Back_Sensor, 1
