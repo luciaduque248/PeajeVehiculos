@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Back_Sensor
-Tue Mar 12 16:59:08 2024
+Tue Mar 12 17:08:15 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -41,7 +41,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 12 16:59:08 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 12 17:08:15 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Back_Sensor                                ;
 ; Top-level Entity Name              ; Back_Sensor                                ;
@@ -240,21 +240,58 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Mar 12 16:59:07 2024
+    Info: Processing started: Tue Mar 12 17:08:14 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Back_Sensor -c Back_Sensor
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file back_sensor.vhd
     Info (12022): Found design unit 1: Back_Sensor-arch_Back_Sensor
     Info (12023): Found entity 1: Back_Sensor
 Info (12127): Elaborating entity "Back_Sensor" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at Back_Sensor.vhd(20): signal "last_vehicle_left" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Back_Sensor.vhd(26): signal "vehicle_distance" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Back_Sensor.vhd(33): signal "last_vehicle_left" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Back_Sensor.vhd(35): signal "vehicle_distance" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Back_Sensor.vhd(18): inferring latch(es) for signal or variable "vehicle_distance", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "vehicle_distance[0]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[1]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[2]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[3]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[4]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[5]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[6]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[7]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[8]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[9]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[10]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[11]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[12]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[13]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[14]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[15]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[16]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[17]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[18]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[19]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[20]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[21]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[22]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[23]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[24]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[25]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[26]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[27]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[28]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[29]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[30]" at Back_Sensor.vhd(18)
+Info (10041): Inferred latch for "vehicle_distance[31]" at Back_Sensor.vhd(18)
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 1 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4664 megabytes
-    Info: Processing ended: Tue Mar 12 16:59:08 2024
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4655 megabytes
+    Info: Processing ended: Tue Mar 12 17:08:15 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

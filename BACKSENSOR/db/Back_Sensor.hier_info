@@ -1,0 +1,5 @@
+|Back_Sensor
+vehicle_left => safe_distance.DATAIN
+safe_distance <= vehicle_left.DB_MAX_OUTPUT_PORT_TYPE
+
+
