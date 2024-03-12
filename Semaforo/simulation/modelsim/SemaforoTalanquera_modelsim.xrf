@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, C:/altera/13.1/parcialpeaje electronico/semaforo/SemaforoTalanquera.vhd
+source_file = 1, C:/altera/13.1/parcialpeaje electronico/semaforo/db/SemaforoTalanquera.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = SemaforoTalanquera
+instance = comp, \SemaforoRojo~output\, SemaforoRojo~output, SemaforoTalanquera, 1
+instance = comp, \Semaforoverde~output\, Semaforoverde~output, SemaforoTalanquera, 1
+instance = comp, \talanquera~output\, talanquera~output, SemaforoTalanquera, 1
+instance = comp, \EstadoTalanquera~input\, EstadoTalanquera~input, SemaforoTalanquera, 1
+instance = comp, \Sistema_habilitador~input\, Sistema_habilitador~input, SemaforoTalanquera, 1
+instance = comp, \Estado~0\, Estado~0, SemaforoTalanquera, 1
+instance = comp, \Sistema_habilitador~inputclkctrl\, Sistema_habilitador~inputclkctrl, SemaforoTalanquera, 1
+instance = comp, \SemaforoRojo$latch\, SemaforoRojo$latch, SemaforoTalanquera, 1
+instance = comp, \Semaforoverde$latch\, Semaforoverde$latch, SemaforoTalanquera, 1
