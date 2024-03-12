@@ -1,0 +1,19 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Barrera_Entrada is
+    Port ( barrera : out STD_LOGIC);
+end Barrera_Entrada;
+
+architecture Behavioral of Barrera_Entrada is
+begin
+    process
+    begin
+        -- Lógica para cerrar la barrera cuando la vía esté fuera de servicio
+        -- Puedes adaptar esta lógica según tus necesidades específicas
+        barrera <= '1'; -- Cerrado
+        wait for 20 ns; -- Simulación de tiempo
+        barrera <= '0'; -- Abierto
+        wait for 20 ns; -- Simulación de tiempo
+    end process;
+end Behavioral;

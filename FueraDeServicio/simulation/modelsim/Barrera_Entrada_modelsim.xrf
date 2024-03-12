@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/FueraDeServicio/Barrera_Entrada.vhd
+source_file = 1, C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/FueraDeServicio/db/Barrera_Entrada.cbx.xml
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = Barrera_Entrada
+instance = comp, \barrera_abierta~output\, barrera_abierta~output, Barrera_Entrada, 1
+instance = comp, \cerrar_barrera~input\, cerrar_barrera~input, Barrera_Entrada, 1
