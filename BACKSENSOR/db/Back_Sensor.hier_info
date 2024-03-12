@@ -1,5 +1,0 @@
-|Back_Sensor
-vehicle_detected => back_sensor_active.DATAIN
-back_sensor_active <= vehicle_detected.DB_MAX_OUTPUT_PORT_TYPE
-
-
