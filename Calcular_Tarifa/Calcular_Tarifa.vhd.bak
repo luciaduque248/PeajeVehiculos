@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity Calcular_Tarifa is
+    generic (
+        TARIFA_POR_SEGUNDO : integer := 1;  -- Tarifa por segundo de permanencia
+        TARIFA_POR_MINUTO : integer := 60;  -- Tarifa por minuto de permanencia
+        TARIFA_POR_HORA : integer := 3600    -- Tarifa por hora de permanencia
+    );
+    port (
+        CLK : in std_logic;                      -- Señal de reloj
+        REINICIO : in std_logic;                 -- Señal de reinicio
+        VEHICULO_ENTRADA : in std_logic;         -- Señal que indica la entrada de un vehículo
+        VEHICULO_SALIDA : in std_logic;          -- Señal que indica la salida de un vehículo
+        TARIFA_CALCULADA : out unsigned(15 downto 0)  -- Tarifa calculada para el vehículo
+    );
+end entity Calcular_Tarifa;
+
+architecture Calcular_Tarifa_arch of Calcular_Tarifa is
+    signal TIEMPO_ENTRADA : time;
+    signal TIEMPO_SALIDA : time;
+    signal TARIFA : unsigned(15 downto 0);
+
+begin
+    proceso_calculo: process (CLK, REINICIO, VEHICULO_ENTRADA, VEHICULO_SALIDA)
+    begin
+        if REINICIO = '1' then
+            TARIFA <= (others => '0');
+        elsif rising_edge(CLK) then
+            if VEHICULO_ENTRADA = '1' then
+                TIEMPO_ENTRADA <= now;
+            elsif VEHICULO_SALIDA = '1' then
+                TIEMPO_SALIDA <= now;
+                -- Calcular la duración del tiempo de permanencia
+                TARIFA <= unsigned(to_integer((TIEMPO_SALIDA - TIEMPO_ENTRADA) * 1 s)) * TARIFA_POR_SEGUNDO +
+                          unsigned(to_integer((TIEMPO_SALIDA - TIEMPO_ENTRADA) * 1 min)) * TARIFA_POR_MINUTO +
+                          unsigned(to_integer((TIEMPO_SALIDA - TIEMPO_ENTRADA) * 1 h)) * TARIFA_POR_HORA;
+            end if;
+        end if;
+    end process proceso_calculo;
+
+    TARIFA_CALCULADA <= TARIFA;
+
+end architecture Calcular_Tarifa_arch;

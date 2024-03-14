@@ -1,0 +1,78 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ControlVehicular is
+    port (
+        clk : in std_logic;                   -- Señal de reloj
+        reset : in std_logic;                 -- Señal de reinicio
+        vehicleDetected : in std_logic;       -- Señal que indica la detección de un vehículo
+        barrierOpen : in std_logic;           -- Señal que indica si la barrera está abierta
+        exitSemaphoreGreen : in std_logic;    -- Señal que indica el estado verde del semáforo de salida
+        vehicleCount : out unsigned(7 downto 0);  -- Contador de vehículos
+        vehicleTime : out unsigned(15 downto 0); -- Tiempo de paso del vehículo
+        barrierClosedTime : out unsigned(15 downto 0) -- Tiempo en que se cerró la barrera
+    );
+end entity ControlVehicular;
+
+architecture ControlVehicular_arch of ControlVehicular is
+
+    -- Definir constantes para el período del reloj y el tiempo de paso del vehículo
+    constant CLOCK_PERIOD : time := 10 ns;  -- Ejemplo de período del reloj de 10 ns
+    constant VEHICLE_PASS_TIME : time := 5 sec;  -- Tiempo de paso del vehículo de 5 segundos
+
+    -- Definir tipos de enumeración para los estados del controlador de tiempo
+    type State_Type is (IDLE, VEHICLE_PASSING, BARRIER_CLOSING);
+    signal state : State_Type := IDLE;
+
+    -- Contadores de tiempo
+    signal vehiclePassTimer : unsigned(15 downto 0) := (others => '0');
+    signal barrierCloseTimer : unsigned(15 downto 0) := (others => '0');
+
+    -- Variables de registro
+    signal vehicleCountReg : unsigned(7 downto 0) := (others => '0');
+    signal vehicleTimeReg : unsigned(15 downto 0) := (others => '0');
+
+begin
+
+    process (clk, reset)
+    begin
+        if reset = '1' then
+            state <= IDLE;  -- Reiniciar el estado del controlador de tiempo
+            vehiclePassTimer <= (others => '0');  -- Reiniciar el temporizador de paso del vehículo
+            barrierCloseTimer <= (others => '0');  -- Reiniciar el temporizador de cierre de la barrera
+            vehicleCountReg <= (others => '0');   -- Reiniciar el registro de conteo de vehículos
+            vehicleTimeReg <= (others => '0');    -- Reiniciar el registro de tiempo de paso del vehículo
+        elsif rising_edge(clk) then
+            -- Controlador de estado
+            case state is
+                when IDLE =>
+                    if vehicleDetected = '1' and exitSemaphoreGreen = '1' then
+                        state <= VEHICLE_PASSING;  -- Cambiar al estado de paso del vehículo
+                        vehiclePassTimer <= to_unsigned(0, vehiclePassTimer'length);  -- Iniciar el temporizador de paso del vehículo
+                    end if;
+                when VEHICLE_PASSING =>
+                    if vehiclePassTimer < to_unsigned(VEHICLE_PASS_TIME / CLOCK_PERIOD, vehiclePassTimer'length) then
+                        vehiclePassTimer <= vehiclePassTimer + 1;  -- Incrementar el temporizador de paso del vehículo
+                    else
+                        state <= BARRIER_CLOSING;  -- Cambiar al estado de cierre de la barrera
+                        barrierCloseTimer <= to_unsigned(0, barrierCloseTimer'length);  -- Iniciar el temporizador de cierre de la barrera
+                        vehicleCountReg <= vehicleCountReg + 1;  -- Incrementar el registro de conteo de vehículos
+                        vehicleTimeReg <= vehiclePassTimer;  -- Registrar el tiempo de paso del vehículo
+                    end if;
+                when BARRIER_CLOSING =>
+                    if barrierOpen = '0' then
+                        barrierCloseTimer <= barrierCloseTimer + 1;  -- Incrementar el temporizador de cierre de la barrera
+                    else
+                        state <= IDLE;  -- Volver al estado IDLE
+                        barrierClosedTime <= barrierCloseTimer;  -- Registrar el tiempo en que se cerró la barrera
+                    end if;
+            end case;
+        end if;
+    end process;
+
+    -- Asignar salidas
+    vehicleCount <= vehicleCountReg;
+    vehicleTime <= vehicleTimeReg;
+
+end architecture ControlVehicular_arch;

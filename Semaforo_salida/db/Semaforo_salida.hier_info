@@ -1,0 +1,7 @@
+|Semaforo_salida
+Sistema_habilitador => Estado.LATCH_ENABLE
+PasoVehicular => Estado.DATAIN
+Semaforoverde <= Estado.DB_MAX_OUTPUT_PORT_TYPE
+SemaforoRojo <= Estado.DB_MAX_OUTPUT_PORT_TYPE
+
+

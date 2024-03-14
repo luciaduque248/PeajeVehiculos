@@ -1,0 +1,37 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Semaforo_salida is
+    port (
+        enable : in std_logic;            -- Habilitador del sistema
+        vehiclePassed : in std_logic;     -- Señal que indica que un vehículo ha pasado
+        semaphoreGreen : out std_logic;  -- Semáforo de salida verde
+        semaphoreRed : out std_logic      -- Semáforo de salida rojo
+    );
+end entity Semaforo_salida;
+
+architecture Behavioral of Semaforo_salida is
+
+    -- Definir estados del semáforo
+    type State_Type is (RED, GREEN);
+    signal state : State_Type := RED;
+
+begin
+
+    -- Proceso para controlar el estado del semáforo de salida
+    process (enable, vehiclePassed)
+    begin
+        if enable = '1' then
+            if vehiclePassed = '1' then
+                state <= GREEN;  -- Cambiar a verde cuando un vehículo pasa
+            else
+                state <= RED;    -- Cambiar a rojo si no hay vehículo
+            end if;
+        end if;
+    end process;
+
+    -- Asignación de salidas del semáforo
+    semaphoreGreen <= '1' when state = GREEN else '0';
+    semaphoreRed <= '1' when state = RED else '0';
+
+end architecture Behavioral;

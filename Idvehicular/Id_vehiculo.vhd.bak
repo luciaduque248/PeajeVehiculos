@@ -1,0 +1,62 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Id_vehiculo is
+    port (
+        CLK : in std_logic;                     -- Señal de reloj
+        REINICIO : in std_logic;                   -- Señal de reinicio
+        ID : in std_logic_vector(4 downto 0);  -- Identificación del vehículo (categoría y ID)
+        validID : in std_logic;                 -- Señal de identificación válida
+        ABRIR_TALANQUERA : out std_logic;            -- Señal para abrir la barrera
+        LEDGreen : out std_logic;               -- LED verde para indicar identificación válida
+        LEDRed : out std_logic                  -- LED rojo para indicar identificación inválida
+    );
+end entity Id_vehiculo;
+
+architecture Id_vehiculo_arch of Id_vehiculo is
+
+    -- Definición de constantes para categorías
+    constant CATI : std_logic_vector(1 downto 0) := "01";
+    constant CATII : std_logic_vector(1 downto 0) := "10";
+    constant CATIII : std_logic_vector(1 downto 0) := "11";
+
+    -- Estados del módulo
+    type State_Type is (IDLE, VALIDATION_CHECK);
+    signal state : State_Type := IDLE;
+
+begin
+
+    process (CLK, REINICIO)
+    begin
+        if REINICIO = '1' then
+            state <= IDLE;  -- Reiniciar el estado del módulo
+            ABRIR_TALANQUERA <= '0';  -- Asegurar que la barrera esté cerrada al inicio
+            LEDGreen <= '0';  -- Apagar el LED verde al inicio
+            LEDRed <= '0';    -- Apagar el LED rojo al inicio
+        elsif rising_edge(CLK) then
+            case state is
+                when IDLE =>
+                    if validID = '1' then
+                        state <= VALIDATION_CHECK;  -- Pasar al estado de validación si hay una identificación válida
+                    end if;
+                when VALIDATION_CHECK =>
+                    case ID(4 downto 3) is
+                        when CATI =>
+                            ABRIR_TALANQUERA <= '1';  -- Abrir la barrera para categoría I
+                            LEDGreen <= '1';     -- Encender el LED verde para indicar identificación válida
+                        when CATII =>
+                            ABRIR_TALANQUERA <= '1';  -- Abrir la barrera para categoría II
+                            LEDGreen <= '1';     -- Encender el LED verde para indicar identificación válida
+                        when CATIII =>
+                            ABRIR_TALANQUERA <= '1';  -- Abrir la barrera para categoría III
+                            LEDGreen <= '1';     -- Encender el LED verde para indicar identificación válida
+                        when others =>
+                            ABRIR_TALANQUERA <= '0';  -- Mantener la barrera cerrada para identificación inválida
+                            LEDRed <= '1';       -- Encender el LED rojo para indicar identificación inválida
+                    end case;
+                    state <= IDLE;  -- Volver al estado IDLE después de la validación
+            end case;
+        end if;
+    end process;
+
+end architecture Id_vehiculo_arch;

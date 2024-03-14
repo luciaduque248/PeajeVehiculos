@@ -1,0 +1,5 @@
+|Divisor_Frecuencia
+CLK_IN => ~NO_FANOUT~
+CLK_OUT << <GND>
+
+

@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Sistema_habilitador'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Sistema_habilitador'
+Slack : 0.042
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Sistema_habilitador'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'Sistema_habilitador'
+Slack : 0.133
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Sistema_habilitador'
+Slack : 0.071
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Sistema_habilitador'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'Sistema_habilitador'
+Slack : 0.512
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Sistema_habilitador'
+Slack : -0.069
+TNS   : -0.135
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Sistema_habilitador'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------

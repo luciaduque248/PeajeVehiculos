@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Divisor_Frecuencia is
+    generic (
+        DIVIDER_VALUE : integer := 10000  -- Valor para dividir la frecuencia
+    );
+    port (
+        CLK_IN : in std_logic;         -- Señal de entrada de reloj
+        CLK_OUT : out std_logic        -- Señal de salida de reloj dividida
+    );
+end entity Divisor_Frecuencia;
+
+architecture Behavioral of Divisor_Frecuencia is
+    signal counter : integer range 0 to DIVIDER_VALUE - 1 := 0;  -- Contador para dividir la frecuencia
+    signal clk_prev : std_logic := '0';  -- Almacena el valor del reloj en el ciclo anterior
+begin
+    process(CLK_IN)
+    begin
+        clk_prev <= CLK_IN;  -- Almacena el valor del reloj en el ciclo anterior
+
+        -- Comprueba si el reloj ha cambiado desde el ciclo anterior
+        if CLK_IN /= clk_prev then
+            counter <= counter + 1;  -- Incrementa el contador
+            if counter = DIVIDER_VALUE - 1 then  -- Comprueba si el contador ha alcanzado el valor deseado
+                CLK_OUT <= not CLK_OUT;  -- Invierte la señal de salida para generar un pulso
+                counter <= 0;  -- Reinicia el contador
+            end if;
+        end if;
+    end process;
+end architecture Behavioral;

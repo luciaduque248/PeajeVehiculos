@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity SemaforoTalanquera is
+    port (
+        enable : in std_logic;           -- Habilitador del sistema
+        manualBarrier : in std_logic;    -- Estado de la barrera manual (1 cerrado, 0 abierto)
+        semaphorRed : out std_logic;     -- Semáforo de entrada rojo
+        semaphorGreen : out std_logic;   -- Semáforo de entrada verde
+        barrier : out std_logic          -- Barrera de entrada
+    );
+end entity SemaforoTalanquera;
+
+architecture SemaforoTalanquera_arch of SemaforoTalanquera is
+
+    -- Definir tipos de enumeración para los estados del semáforo y la barrera
+    type State_Type is (RED, GREEN);
+    signal state : State_Type := RED;
+
+begin
+
+    -- Proceso para controlar el estado del semáforo y la barrera
+    process (enable, manualBarrier)
+    begin
+        if enable = '1' then
+            case state is
+                when RED =>
+                    semaphorRed <= '1';
+                    semaphorGreen <= '0';
+                    barrier <= '1';
+                    if manualBarrier = '0' then -- Si la barrera manual está abierta
+                        state <= GREEN; -- Cambiar al estado verde
+                    end if;
+                when GREEN =>
+                    semaphorRed <= '0';
+                    semaphorGreen <= '1';
+                    barrier <= '0';
+                    if manualBarrier = '1' then -- Si la barrera manual está cerrada
+                        state <= RED; -- Cambiar al estado rojo
+                    end if;
+            end case;
+        end if;
+    end process;
+
+end architecture SemaforoTalanquera_arch;

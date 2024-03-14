@@ -1,0 +1,124 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity TollBoothSystem is
+    port (
+        clk : in std_logic;                   -- Señal de reloj
+        reset : in std_logic;                 -- Señal de reinicio
+        vehicleDetected : in std_logic;       -- Señal que indica la detección de un vehículo
+        manualBarrier : in std_logic;         -- Señal que indica el estado de la barrera manual (1 cerrado, 0 abierto)
+        validID : in std_logic;               -- Señal de identificación válida
+        exitSemaphoreGreen : in std_logic;    -- Señal que indica el estado verde del semáforo de salida
+        vehicleCount : out unsigned(7 downto 0);  -- Contador de vehículos
+        vehicleTime : out unsigned(15 downto 0); -- Tiempo de paso del vehículo
+        barrierClosedTime : out unsigned(15 downto 0), -- Tiempo en que se cerró la barrera
+        semaphoreRed : out std_logic,         -- Semáforo de entrada rojo
+        semaphoreGreen : out std_logic,       -- Semáforo de entrada verde
+        barrier : out std_logic,              -- Barrera de entrada
+        LEDGreen : out std_logic,             -- LED verde para indicar identificación válida
+        LEDRed : out std_logic                -- LED rojo para indicar identificación inválida
+    );
+end entity TollBoothSystem;
+
+architecture Behavioral of TollBoothSystem is
+    -- Declaración de señales internas
+    signal vehiclePassed : std_logic;
+    signal barrierOpen : std_logic;
+
+    -- Componentes
+    component FrontSensor
+        port (
+            clk : in std_logic;
+            vehicleDetected : out std_logic
+        );
+    end component;
+
+    component IdentificationValidation
+        port (
+            clk : in std_logic;
+            reset : in std_logic;
+            identificationIn : in std_logic_vector(4 downto 0);
+            validID : in std_logic;
+            barrierOpen : out std_logic;
+            LEDGreen : out std_logic;
+            LEDRed : out std_logic
+        );
+    end component;
+
+    component SemaphorBarrier
+        port (
+            enable : in std_logic;
+            manualBarrier : in std_logic;
+            semaphorRed : out std_logic;
+            semaphorGreen : out std_logic;
+            barrier : out std_logic
+        );
+    end component;
+
+    component ExitSemaphore
+        port (
+            enable : in std_logic;
+            vehiclePassed : in std_logic;
+            semaphoreGreen : out std_logic;
+            semaphoreRed : out std_logic
+        );
+    end component;
+
+    component VehicleControl
+        port (
+            clk : in std_logic;
+            reset : in std_logic;
+            vehicleDetected : in std_logic;
+            barrierOpen : in std_logic;
+            exitSemaphoreGreen : in std_logic;
+            vehicleCount : out unsigned(7 downto 0);
+            vehicleTime : out unsigned(15 downto 0);
+            barrierClosedTime : out unsigned(15 downto 0)
+        );
+    end component;
+
+begin
+    -- Instanciación de los componentes
+    FrontSensor_inst : FrontSensor port map (
+        clk => clk,
+        vehicleDetected => vehicleDetected
+    );
+
+    IdentificationValidation_inst : IdentificationValidation port map (
+        clk => clk,
+        reset => reset,
+        identificationIn => "00000", -- Debes proporcionar la identificación adecuada aquí
+        validID => validID,
+        barrierOpen => barrierOpen,
+        LEDGreen => LEDGreen,
+        LEDRed => LEDRed
+    );
+
+    SemaphorBarrier_inst : SemaphorBarrier port map (
+        enable => '1',
+        manualBarrier => manualBarrier,
+        semaphorRed => semaphoreRed,
+        semaphorGreen => semaphoreGreen,
+        barrier => barrier
+    );
+
+    ExitSemaphore_inst : ExitSemaphore port map (
+        enable => '1',
+        vehiclePassed => vehiclePassed,
+        semaphoreGreen => exitSemaphoreGreen,
+        semaphoreRed => semaphoreRed
+    );
+
+    VehicleControl_inst : VehicleControl port map (
+        clk => clk,
+        reset => reset,
+        vehicleDetected => vehicleDetected,
+        barrierOpen => barrierOpen,
+        exitSemaphoreGreen => exitSemaphoreGreen,
+        vehicleCount => vehicleCount,
+        vehicleTime => vehicleTime,
+        barrierClosedTime => barrierClosedTime
+    );
+
+end architecture Behavioral;

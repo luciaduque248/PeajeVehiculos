@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Front_sensor is
+    port (
+        clk : in std_logic;              -- Señal de reloj
+        vehicleDetected : out std_logic -- Señal de detección de vehículo
+    );
+end entity Front_sensor;
+
+architecture Front_sensor_Arch of Front_sensor is
+
+    -- Contador de tiempo para simular la detección de un vehículo
+    signal counter : integer range 0 to 10 := 0;
+
+begin
+
+    -- Proceso para simular la detección de un vehículo
+    process (clk)
+    begin
+        if rising_edge(clk) then
+            if counter > 0 then
+                counter <= counter - 1; -- Decrementar el contador si hay un vehículo detectado
+            end if;
+
+            if counter = 0 then
+                vehicleDetected <= '1'; -- Emitir señal cuando se detecta un vehículo
+            else
+                vehicleDetected <= '0'; -- No emitir señal cuando no se detecta un vehículo
+            end if;
+        end if;
+    end process;
+
+end architecture Front_sensor_Arch;
