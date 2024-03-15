@@ -1,0 +1,39 @@
+|track_sensor
+clk => contadorTrack[0].CLK
+clk => contadorTrack[1].CLK
+clk => contadorTrack[2].CLK
+clk => contadorTrack[3].CLK
+clk => contadorTrack[4].CLK
+clk => contadorTrack[5].CLK
+clk => contadorTrack[6].CLK
+clk => contadorTrack[7].CLK
+clk => contadorTrack[8].CLK
+clk => contadorTrack[9].CLK
+clk => contadorTrack[10].CLK
+clk => contadorTrack[11].CLK
+clk => contadorTrack[12].CLK
+clk => contadorTrack[13].CLK
+clk => contadorTrack[14].CLK
+clk => contadorTrack[15].CLK
+clk => contadorTrack[16].CLK
+clk => contadorTrack[17].CLK
+clk => contadorTrack[18].CLK
+clk => contadorTrack[19].CLK
+clk => contadorTrack[20].CLK
+clk => contadorTrack[21].CLK
+clk => contadorTrack[22].CLK
+clk => contadorTrack[23].CLK
+clk => contadorTrack[24].CLK
+clk => contadorTrack[25].CLK
+clk => contadorTrack[26].CLK
+clk => contadorTrack[27].CLK
+clk => contadorTrack[28].CLK
+clk => contadorTrack[29].CLK
+clk => contadorTrack[30].CLK
+clk => contadorTrack[31].CLK
+clk => vehiculo_detectado~reg0.CLK
+clk => estado_sensor.CLK
+sensor_in => estado_sensor.DATAIN
+vehiculo_detectado <= vehiculo_detectado~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/track_sensor/track_sensor.vhd
+source_file = 1, C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/track_sensor/db/track_sensor.cbx.xml
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/users/dell/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = track_sensor
+instance = comp, \vehiculo_detectado~output\, vehiculo_detectado~output, track_sensor, 1
+instance = comp, \clk~input\, clk~input, track_sensor, 1
+instance = comp, \sensor_in~input\, sensor_in~input, track_sensor, 1

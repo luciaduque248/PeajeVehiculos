@@ -1,5 +1,5 @@
 Analysis & Synthesis report for track_sensor
-Tue Mar 12 16:24:24 2024
+Fri Mar 15 15:11:05 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,7 +10,14 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +43,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Mar 12 16:24:24 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 15 15:11:05 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; track_sensor                               ;
 ; Top-level Entity Name              ; track_sensor                               ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Total logic elements               ; 0                                          ;
+;     Total combinational functions  ; 0                                          ;
+;     Dedicated logic registers      ; 0                                          ;
+; Total registers                    ; 0                                          ;
+; Total pins                         ; 3                                          ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -145,16 +152,110 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; track_sensor.vhd                 ; yes             ; User VHDL File  ; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/track_sensor/track_sensor.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 3     ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 3     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |track_sensor              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |track_sensor       ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; vehiculo_detectado~reg0                ; Stuck at VCC due to stuck port data_in ;
+; contadorTrack[0..31]                   ; Lost fanout                            ;
+; estado_sensor                          ; Lost fanout                            ;
+; Total Number of Removed Registers = 34 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                       ;
++-------------------------+---------------------------+-----------------------------------------------------------------------------+
+; Register name           ; Reason for Removal        ; Registers Removed due to This Register                                      ;
++-------------------------+---------------------------+-----------------------------------------------------------------------------+
+; vehiculo_detectado~reg0 ; Stuck at VCC              ; contadorTrack[25], contadorTrack[26], contadorTrack[27], contadorTrack[28], ;
+;                         ; due to stuck port data_in ; contadorTrack[29], contadorTrack[30], contadorTrack[31], estado_sensor      ;
++-------------------------+---------------------------+-----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -163,23 +264,28 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Mar 12 16:24:22 2024
+    Info: Processing started: Fri Mar 15 15:11:04 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off track_sensor -c track_sensor
-Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
-Error (10500): VHDL syntax error at track_sensor.vhd(18) near text "begin";  expecting "(", or "'", or "." File: C:/altera/13.1/parcialpeaje electronico/track_sensor/track_sensor.vhd Line: 18
-Error (10500): VHDL syntax error at track_sensor.vhd(19) near text "then";  expecting "(", or "'", or "." File: C:/altera/13.1/parcialpeaje electronico/track_sensor/track_sensor.vhd Line: 19
-Error (10500): VHDL syntax error at track_sensor.vhd(23) near text "else";  expecting "end", or "(", or an identifier ("else" is a reserved keyword), or a concurrent statement File: C:/altera/13.1/parcialpeaje electronico/track_sensor/track_sensor.vhd Line: 23
-Error (10500): VHDL syntax error at track_sensor.vhd(25) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: C:/altera/13.1/parcialpeaje electronico/track_sensor/track_sensor.vhd Line: 25
-Error (10500): VHDL syntax error at track_sensor.vhd(31) near text "else";  expecting "end", or "(", or an identifier ("else" is a reserved keyword), or a concurrent statement File: C:/altera/13.1/parcialpeaje electronico/track_sensor/track_sensor.vhd Line: 31
-Error (10500): VHDL syntax error at track_sensor.vhd(33) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: C:/altera/13.1/parcialpeaje electronico/track_sensor/track_sensor.vhd Line: 33
-Error (10500): VHDL syntax error at track_sensor.vhd(36) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: C:/altera/13.1/parcialpeaje electronico/track_sensor/track_sensor.vhd Line: 36
-Error (10396): VHDL syntax error at track_sensor.vhd(38): name used in construct must match previously specified name "track_sensor_arch" File: C:/altera/13.1/parcialpeaje electronico/track_sensor/track_sensor.vhd Line: 38
-Error (10500): VHDL syntax error at track_sensor.vhd(40) near text "end";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration" File: C:/altera/13.1/parcialpeaje electronico/track_sensor/track_sensor.vhd Line: 40
-Info (12021): Found 0 design units, including 0 entities, in source file track_sensor.vhd
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 9 errors, 0 warnings
-    Error: Peak virtual memory: 4651 megabytes
-    Error: Processing ended: Tue Mar 12 16:24:24 2024
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:01
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file track_sensor.vhd
+    Info (12022): Found design unit 1: track_sensor-track_sensor_arch
+    Info (12023): Found entity 1: track_sensor
+Info (12127): Elaborating entity "track_sensor" for the top level hierarchy
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "vehiculo_detectado" is stuck at VCC
+Info (17049): 33 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+    Warning (15610): No output dependent on input pin "sensor_in"
+Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4665 megabytes
+    Info: Processing ended: Fri Mar 15 15:11:05 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

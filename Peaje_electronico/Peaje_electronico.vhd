@@ -11,7 +11,9 @@ entity Peaje_electronico is
         ABRIR_TALANQUERA : in std_logic;                         -- Señal que indica el estado de la barrera manual (1 cerrado, 0 abierto)
         IDVALIDA : in std_logic;                                 -- Señal de identificación válida
         SALIDA_SEMAFORO_VERDE : buffer std_logic;                -- Señal que indica el estado verde del semáforo de salida
-        --salidas
+        
+		  --salidas
+		  sieteSegmentos  : out std_logic_vector(6 downto 0); 
         CONTADOR_VEHICULAR  : out unsigned(7 downto 0);          -- Contador de vehículos
         TIEMPODEPASOVEHICULAR  : out unsigned(15 downto 0);      -- Tiempo de paso del vehículo
         TALANQUERA_CERRADA_TIEMPO  : out unsigned(15 downto 0);  -- Tiempo en que se cerró la barrera
@@ -30,20 +32,27 @@ architecture Peaje_electronico_arch of Peaje_electronico is
     signal manualBarrier : std_logic;   -- Señal para indicar el estado de la barrera manual
     signal semaphoreGreen : std_logic;  -- Señal para indicar el estado verde del semáforo
     signal PasoVehicular : std_logic;   -- Señal para indicar el paso de un vehículo
+	 
     -- Señales intermedias para SemaforoRojo
     signal SemaforoRojo_int_Talanquera : std_logic;
     signal SemaforoRojo_int_Salida : std_logic;
+	 
     -- Cambio de nombre de la señal local
     signal ABRIR_TALANQUERA_INTERNAL : std_logic;
+	 
     -- Contador de vehículos interno
     signal contador_vehiculos_int : unsigned(7 downto 0);
+	 
     -- Señal para los segmentos del display
     signal seg_display : std_logic_vector(6 downto 0);
-    -- Señal para el tiempo de paso del vehículo
+    
+	 -- Señal para el tiempo de paso del vehículo
     signal tiempo_paso_int : unsigned(15 downto 0);
-    -- Señal para la tarifa calculada
+    
+	 -- Señal para la tarifa calculada
     signal tarifa_calculada : unsigned(7 downto 0);
-    -- Señal de salida del divisor de frecuencia
+    
+	 -- Señal de salida del divisor de frecuencia
     signal clk_out_divisor : std_logic;
 
     -- Componentes
@@ -184,7 +193,7 @@ begin
 
     Display_sevensegmentos_inst : Display_sevensegmentos port map (
         num => contador_vehiculos_int(3 downto 0),
-        seg => seg_display
+        seg => sieteSegmentos
     );
 
     Calcular_Tarifa_inst : Calcular_Tarifa port map (
