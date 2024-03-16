@@ -11,7 +11,9 @@ entity Peaje_electronico is
         ABRIR_TALANQUERA : in std_logic;                         -- Señal que indica el estado de la barrera manual (1 cerrado, 0 abierto)
         IDVALIDA : in std_logic;                                 -- Señal de identificación válida
 		  
-		SALIDA_SEMAFORO_VERDE_PEAJE : buffer std_logic;               -- Señal que indica el estado verde del semáforo de salida en el peaje
+		  SALIDA_SEMAFORO_VERDE_CONTROL : in std_logic;            -- Señal de control del semáforo verde
+		  
+		  SALIDA_SEMAFORO_VERDE_PEAJE : buffer std_logic;               -- Señal que indica el estado verde del semáforo de salida en el peaje
 		
 		--salidas
 		salidaSemaforoVerde : out std_logic;                -- Señal que indica el estado verde del semáforo de salida
@@ -156,6 +158,13 @@ architecture Peaje_electronico_arch of Peaje_electronico is
     end component;
 
 begin
+
+	-- Conectar SALIDA_SEMAFORO_VERDE de ControlVehicular a SALIDA_SEMAFORO_VERDE_PEAJE
+    SALIDA_SEMAFORO_VERDE_PEAJE <= SALIDA_SEMAFORO_VERDE_CONTROL;
+	 
+	 -- Asignar la salida del contador interno al puerto CONTADOR_VEHICULAR
+    CONTADOR_VEHICULAR <= contador_vehiculos_int;
+	 
     -- Instanciación de los componentes
     Front_sensor_inst : Front_sensor port map (
         CLK => CLK,

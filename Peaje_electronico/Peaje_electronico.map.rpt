@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Peaje_electronico
-Sat Mar 16 10:30:23 2024
+Sat Mar 16 10:45:14 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -16,15 +16,13 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   8. State Machine - |Peaje_electronico|ControlVehicular:ControlVehicular_inst|ESTADO
   9. User-Specified and Inferred Latches
  10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: Divisor_Frecuencia:Divisor_Frecuencia_inst
- 15. Port Connectivity Checks: "Calcular_Tarifa:Calcular_Tarifa_inst"
- 16. Port Connectivity Checks: "ControlVehicular:ControlVehicular_inst"
- 17. Port Connectivity Checks: "Id_vehiculo:Id_vehiculo_inst"
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Divisor_Frecuencia:Divisor_Frecuencia_inst
+ 14. Port Connectivity Checks: "Calcular_Tarifa:Calcular_Tarifa_inst"
+ 15. Port Connectivity Checks: "Id_vehiculo:Id_vehiculo_inst"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -50,16 +48,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 16 10:30:23 2024      ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 16 10:45:14 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Peaje_electronico                          ;
 ; Top-level Entity Name              ; Peaje_electronico                          ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 7                                          ;
-;     Total combinational functions  ; 7                                          ;
-;     Dedicated logic registers      ; 6                                          ;
-; Total registers                    ; 6                                          ;
-; Total pins                         ; 47                                         ;
+; Total logic elements               ; 82                                         ;
+;     Total combinational functions  ; 66                                         ;
+;     Dedicated logic registers      ; 65                                         ;
+; Total registers                    ; 65                                         ;
+; Total pins                         ; 48                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -193,41 +191,43 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 7         ;
+; Estimated Total logic elements              ; 82        ;
 ;                                             ;           ;
-; Total combinational functions               ; 7         ;
+; Total combinational functions               ; 66        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 5         ;
-;     -- <=2 input functions                  ; 2         ;
+;     -- 4 input functions                    ; 13        ;
+;     -- 3 input functions                    ; 10        ;
+;     -- <=2 input functions                  ; 43        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 7         ;
-;     -- arithmetic mode                      ; 0         ;
+;     -- normal mode                          ; 30        ;
+;     -- arithmetic mode                      ; 36        ;
 ;                                             ;           ;
-; Total registers                             ; 6         ;
-;     -- Dedicated logic registers            ; 6         ;
+; Total registers                             ; 65        ;
+;     -- Dedicated logic registers            ; 65        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 47        ;
+; I/O pins                                    ; 48        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 7         ;
-; Total fan-out                               ; 83        ;
-; Average fan-out                             ; 0.78      ;
+; Maximum fan-out                             ; 66        ;
+; Total fan-out                               ; 510       ;
+; Average fan-out                             ; 2.25      ;
 +---------------------------------------------+-----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                            ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
-; |Peaje_electronico                        ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |Peaje_electronico                                      ; work         ;
-;    |Front_sensor:Front_sensor_inst|       ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Front_sensor:Front_sensor_inst       ; work         ;
-;    |Id_vehiculo:Id_vehiculo_inst|         ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Id_vehiculo:Id_vehiculo_inst         ; work         ;
-;    |Semaforo_salida:Semaforo_salida_inst| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Semaforo_salida:Semaforo_salida_inst ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                        ;
++---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                   ; Library Name ;
++---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+--------------+
+; |Peaje_electronico                                      ; 66 (0)            ; 65 (0)       ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |Peaje_electronico                                                    ; work         ;
+;    |ControlVehicular:ControlVehicular_inst|             ; 52 (52)           ; 59 (59)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|ControlVehicular:ControlVehicular_inst             ; work         ;
+;    |Display_sevensegmentos:Display_sevensegmentos_inst| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Display_sevensegmentos:Display_sevensegmentos_inst ; work         ;
+;    |Front_sensor:Front_sensor_inst|                     ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Front_sensor:Front_sensor_inst                     ; work         ;
+;    |Id_vehiculo:Id_vehiculo_inst|                       ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Id_vehiculo:Id_vehiculo_inst                       ; work         ;
+;    |Semaforo_salida:Semaforo_salida_inst|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Semaforo_salida:Semaforo_salida_inst               ; work         ;
++---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -254,83 +254,15 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                    ;
-+-------------------------------------------------------------------------+---------------------------------------------+
-; Register name                                                           ; Reason for Removal                          ;
-+-------------------------------------------------------------------------+---------------------------------------------+
-; Id_vehiculo:Id_vehiculo_inst|ABRIR_TALANQUERA                           ; Stuck at GND due to stuck port data_in      ;
-; ControlVehicular:ControlVehicular_inst|ESTADO.VEHICLE_PASSING           ; Stuck at GND due to stuck port data_in      ;
-; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[0..7]   ; Stuck at GND due to stuck port clock_enable ;
-; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[0..15]       ; Stuck at GND due to stuck port clock_enable ;
-; ControlVehicular:ControlVehicular_inst|ESTADO.BARRIER_CLOSING           ; Stuck at GND due to stuck port data_in      ;
-; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[0..15] ; Stuck at GND due to stuck port clock_enable ;
-; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[0..15]  ; Stuck at GND due to stuck port clock_enable ;
-; ControlVehicular:ControlVehicular_inst|ESTADO.IDLE                      ; Stuck at GND due to stuck port data_in      ;
-; Front_sensor:Front_sensor_inst|CONTADOR_TIEMPO[3]                       ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 61                                  ;                                             ;
-+-------------------------------------------------------------------------+---------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                       ;
-+---------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------+
-; Register name                                                 ; Reason for Removal        ; Registers Removed due to This Register                                ;
-+---------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------+
-; ControlVehicular:ControlVehicular_inst|ESTADO.VEHICLE_PASSING ; Stuck at GND              ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[3],   ;
-;                                                               ; due to stuck port data_in ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[2],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[1],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[0],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[4],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[5],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[6],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[7],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[11],       ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[10],       ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[9],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[8],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[7],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[6],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[5],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[4],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[3],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[2],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[1],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[0],        ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[0],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[1],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[2],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[3],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[4],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[5],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[6],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[7],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[8],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[9],   ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[10],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[11],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[12],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[13],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[14],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[15]   ;
-; ControlVehicular:ControlVehicular_inst|ESTADO.BARRIER_CLOSING ; Stuck at GND              ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[0],  ;
-;                                                               ; due to stuck port data_in ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[1],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[2],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[3],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[4],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[5],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[6],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[7],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[8],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[9],  ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[10], ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[11], ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[12], ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[13], ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[14], ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[15], ;
-;                                                               ;                           ; ControlVehicular:ControlVehicular_inst|ESTADO.IDLE                    ;
-+---------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                         ;
++---------------------------------------------------+----------------------------------------+
+; Register name                                     ; Reason for Removal                     ;
++---------------------------------------------------+----------------------------------------+
+; Id_vehiculo:Id_vehiculo_inst|ABRIR_TALANQUERA     ; Stuck at GND due to stuck port data_in ;
+; Front_sensor:Front_sensor_inst|CONTADOR_TIEMPO[3] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2             ;                                        ;
++---------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -338,12 +270,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 6     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 65    ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Clear ; 45    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 55    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -353,9 +285,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |Peaje_electronico|ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[1]      ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |Peaje_electronico|ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[1]      ;
 ; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |Peaje_electronico|ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[0] ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |Peaje_electronico|ControlVehicular:ControlVehicular_inst|Selector1                   ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Peaje_electronico|ControlVehicular:ControlVehicular_inst|Selector1                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
 
 
@@ -376,16 +308,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+--------+----------+-------------------------------------------------------------------------------------+
 ; tarifa ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ControlVehicular:ControlVehicular_inst"                                                                 ;
-+--------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port                     ; Type   ; Severity ; Details                                                                             ;
-+--------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; salida_semaforo_verde    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; contador_vehicular[7..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------+
@@ -412,7 +334,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Mar 16 10:30:21 2024
+    Info: Processing started: Sat Mar 16 10:45:12 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Peaje_electronico -c Peaje_electronico
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file /users/dell/documents/vhdl/1erparcial-grupal/track_sensor/track_sensor.vhd
@@ -446,9 +368,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
     Info (12022): Found design unit 1: Calcular_Tarifa-Calcular_Tarifa_arch
     Info (12023): Found entity 1: Calcular_Tarifa
 Info (12127): Elaborating entity "Peaje_electronico" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at Peaje_electronico.vhd(21): used implicit default value for signal "CONTADOR_VEHICULAR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at Peaje_electronico.vhd(59): object "tarifa_calculada" assigned a value but never read
-Warning (10030): Net "SALIDA_SEMAFORO_VERDE_PEAJE" at Peaje_electronico.vhd(14) has no driver or initial value, using a default initial value '0'
+Warning (10036): Verilog HDL or VHDL warning at Peaje_electronico.vhd(61): object "tarifa_calculada" assigned a value but never read
 Info (12128): Elaborating entity "Front_sensor" for hierarchy "Front_sensor:Front_sensor_inst"
 Info (12128): Elaborating entity "Id_vehiculo" for hierarchy "Id_vehiculo:Id_vehiculo_inst"
 Warning (10631): VHDL Process Statement warning at Id_vehiculo.vhd(32): inferring latch(es) for signal or variable "LED_DENEGADO_ROJO", which holds its previous value in one or more paths through the process
@@ -492,38 +412,6 @@ Info (10041): Inferred latch for "counter[11]" at Divisor_Frecuencia.vhd(18)
 Info (10041): Inferred latch for "counter[12]" at Divisor_Frecuencia.vhd(18)
 Info (10041): Inferred latch for "counter[13]" at Divisor_Frecuencia.vhd(18)
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "SALIDA_SEMAFORO_VERDE_PEAJE" is stuck at GND
-    Warning (13410): Pin "sieteSegmentos[0]" is stuck at GND
-    Warning (13410): Pin "sieteSegmentos[1]" is stuck at VCC
-    Warning (13410): Pin "sieteSegmentos[2]" is stuck at VCC
-    Warning (13410): Pin "sieteSegmentos[3]" is stuck at VCC
-    Warning (13410): Pin "sieteSegmentos[4]" is stuck at VCC
-    Warning (13410): Pin "sieteSegmentos[5]" is stuck at VCC
-    Warning (13410): Pin "sieteSegmentos[6]" is stuck at VCC
-    Warning (13410): Pin "CONTADOR_VEHICULAR[0]" is stuck at GND
-    Warning (13410): Pin "CONTADOR_VEHICULAR[1]" is stuck at GND
-    Warning (13410): Pin "CONTADOR_VEHICULAR[2]" is stuck at GND
-    Warning (13410): Pin "CONTADOR_VEHICULAR[3]" is stuck at GND
-    Warning (13410): Pin "CONTADOR_VEHICULAR[4]" is stuck at GND
-    Warning (13410): Pin "CONTADOR_VEHICULAR[5]" is stuck at GND
-    Warning (13410): Pin "CONTADOR_VEHICULAR[6]" is stuck at GND
-    Warning (13410): Pin "CONTADOR_VEHICULAR[7]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[0]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[1]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[2]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[3]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[4]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[5]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[6]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[7]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[8]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[9]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[10]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[11]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[12]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[13]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[14]" is stuck at GND
-    Warning (13410): Pin "TALANQUERA_CERRADA_TIEMPO[15]" is stuck at GND
     Warning (13410): Pin "SemaforoRojoPeaje" is stuck at GND
     Warning (13410): Pin "SemaforoVerdePeaje" is stuck at VCC
     Warning (13410): Pin "manualBarrier" is stuck at GND
@@ -532,19 +420,17 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "DETECTOR_VEHICULO"
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CATEGORIA_VEHICULO[0]"
     Warning (15610): No output dependent on input pin "CATEGORIA_VEHICULO[1]"
-    Warning (15610): No output dependent on input pin "ABRIR_TALANQUERA"
-Info (21057): Implemented 54 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
+Info (21057): Implemented 130 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
     Info (21059): Implemented 40 output pins
-    Info (21061): Implemented 7 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info (21061): Implemented 82 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
     Info: Peak virtual memory: 4667 megabytes
-    Info: Processing ended: Sat Mar 16 10:30:23 2024
+    Info: Processing ended: Sat Mar 16 10:45:14 2024
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 
