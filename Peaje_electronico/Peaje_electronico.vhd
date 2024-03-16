@@ -10,26 +10,32 @@ entity Peaje_electronico is
         DETECTOR_VEHICULO : in std_logic;                        -- Señal que indica la detección de un vehículo
         ABRIR_TALANQUERA : in std_logic;                         -- Señal que indica el estado de la barrera manual (1 cerrado, 0 abierto)
         IDVALIDA : in std_logic;                                 -- Señal de identificación válida
-        SALIDA_SEMAFORO_VERDE : buffer std_logic;                -- Señal que indica el estado verde del semáforo de salida
-        
-		  --salidas
-		  sieteSegmentos  : out std_logic_vector(6 downto 0); 
+		  
+		SALIDA_SEMAFORO_VERDE_PEAJE : buffer std_logic;               -- Señal que indica el estado verde del semáforo de salida en el peaje
+		
+		--salidas
+		salidaSemaforoVerde : out std_logic;                -- Señal que indica el estado verde del semáforo de salida
+        salidaSemaforoRojo : out std_logic;   
+		  
+		sieteSegmentos  : out std_logic_vector(6 downto 0); 
         CONTADOR_VEHICULAR  : out unsigned(7 downto 0);          -- Contador de vehículos
-        TIEMPODEPASOVEHICULAR  : out unsigned(15 downto 0);      -- Tiempo de paso del vehículo
         TALANQUERA_CERRADA_TIEMPO  : out unsigned(15 downto 0);  -- Tiempo en que se cerró la barrera
-        SemaforoRojo : out std_logic;                            -- Semáforo de entrada rojo
-        Semaforoverde : out std_logic;                           -- Semáforo de entrada verde
-        talanquera  : out std_logic;                             -- Barrera de entrada
+        SemaforoRojoPeaje : out std_logic;                            -- Semáforo de entrada rojo
+        SemaforoVerdePeaje : out std_logic;                           -- Semáforo de entrada verde
+        manualBarrier  : out std_logic;                             -- Barrera de entrada
         LED_AUTORIZADO_VERDE : out std_logic;                    -- LED verde para indicar identificación válida
         LED_DENEGADO_ROJO : out std_logic;                       -- LED rojo para indicar identificación inválida
-        CATEGORIA_VEHICULO : in unsigned(1 downto 0)             -- Categoría del vehículo (2 bits)
+        CATEGORIA_VEHICULO : in unsigned(1 downto 0);             -- Categoría del vehículo (2 bits)
+		  
+		clk_out_divisor : out std_logic
     );
 end entity Peaje_electronico;
 
 architecture Peaje_electronico_arch of Peaje_electronico is
     -- Declaración de señales internas
     signal vehiclePassed : std_logic;
-    signal manualBarrier : std_logic;   -- Señal para indicar el estado de la barrera manual
+	 
+    --signal manualBarrier : std_logic;   -- Señal para indicar el estado de la barrera manual
     signal semaphoreGreen : std_logic;  -- Señal para indicar el estado verde del semáforo
     signal PasoVehicular : std_logic;   -- Señal para indicar el paso de un vehículo
 	 
@@ -53,7 +59,7 @@ architecture Peaje_electronico_arch of Peaje_electronico is
     signal tarifa_calculada : unsigned(7 downto 0);
     
 	 -- Señal de salida del divisor de frecuencia
-    signal clk_out_divisor : std_logic;
+    --signal clk_out_divisor : std_logic;
 
     -- Componentes
     component Front_sensor
@@ -85,8 +91,8 @@ architecture Peaje_electronico_arch of Peaje_electronico is
             Sistema_habilitador : in std_logic;           -- Habilitador del sistema
             EstadoTalanquera : in std_logic;    -- Estado de la barrera manual (1 cerrado, 0 abierto)
             -- salidas
-            SemaforoRojo : out std_logic;     
-            Semaforoverde : out std_logic;   
+            SemaforoRojoTalanquera : out std_logic;     
+            SemaforoVerdeTalanquera : out std_logic;   
             talanquera : out std_logic       
         );
     end component;
@@ -97,24 +103,25 @@ architecture Peaje_electronico_arch of Peaje_electronico is
             Sistema_habilitador  : in std_logic;            -- Habilitador del sistema
             PasoVehicular : in std_logic;     -- Señal que indica que un vehículo ha pasado
             --salidas
-            Semaforoverde : out std_logic;  -- Semáforo de salida verde
+            SemaforoVerde : out std_logic;  -- Semáforo de salida verde
             SemaforoRojo : out std_logic      -- Semáforo de salida rojo
         );
     end component;
 
     component ControlVehicular
         port (
-            --entradas
-            CLK: in std_logic;                   -- Señal de reloj
-            REINICIO: in std_logic;                 -- Señal de reinicio
-            DETECTOR_VEHICULO: in std_logic;       -- Señal que indica la detección de un vehículo
-            ABRIR_TALANQUERA : in std_logic;           -- Señal que indica si la barrera está abierta
-            SALIDA_SEMAFORO_VERDE : in std_logic;    -- Señal que indica el estado verde del semáforo de salida
-            --salidas
-            CONTADOR_VEHICULAR : out unsigned(7 downto 0);  -- Contador de vehículos
-            TIEMPODEPASOVEHICULAR : out unsigned(15 downto 0); -- Tiempo de paso del vehículo
-            TALANQUERA_CERRADA_TIEMPO : out unsigned(15 downto 0) -- Tiempo en que se cerró la barrera
-        );
+		  --entradas
+        CLK: in std_logic;                   -- Señal de reloj
+        REINICIO: in std_logic;                 -- Señal de reinicio
+        DETECTOR_VEHICULO: in std_logic;       -- Señal que indica la detección de un vehículo
+        ABRIR_TALANQUERA : in std_logic;           -- Señal que indica si la barrera está abierta
+        SALIDA_SEMAFORO_VERDE : in std_logic;    -- Señal que indica el estado verde del semáforo de salida
+        
+		  --salidas
+		  CONTADOR_VEHICULAR : out unsigned(7 downto 0);  -- Contador de vehículos
+        TIEMPODEPASOVEHICULAR : out unsigned(15 downto 0); -- Tiempo de paso del vehículo
+        TALANQUERA_CERRADA_TIEMPO : out unsigned(15 downto 0) -- Tiempo en que se cerró la barrera
+    );
     end component;
 
     component Display_sevensegmentos
@@ -168,16 +175,16 @@ begin
     SemaforoTalanquera_inst : SemaforoTalanquera port map (
         Sistema_habilitador => CLK,
         EstadoTalanquera => ABRIR_TALANQUERA_INTERNAL,
-        SemaforoRojo => SemaforoRojo_int_Talanquera,
-        Semaforoverde => semaphoreGreen,
+        SemaforoRojoTalanquera => SemaforoRojoPeaje,
+        SemaforoVerdeTalanquera => SemaforoVerdePeaje,
         talanquera => manualBarrier
     );
 
     Semaforo_salida_inst : Semaforo_salida port map (
         Sistema_habilitador => CLK,
         PasoVehicular => PasoVehicular,
-        Semaforoverde => Semaforoverde,  -- Corregido
-        SemaforoRojo => SemaforoRojo_int_Salida
+        SemaforoVerde => salidaSemaforoVerde,  -- Corregido
+        SemaforoRojo => salidaSemaforoRojo
     );
 
     ControlVehicular_inst : ControlVehicular port map (
@@ -185,7 +192,7 @@ begin
         REINICIO => REINICIO,
         DETECTOR_VEHICULO => DETECTOR_VEHICULO,
         ABRIR_TALANQUERA => ABRIR_TALANQUERA,  -- Conectado el pin ABRIR_TALANQUERA
-        SALIDA_SEMAFORO_VERDE => SALIDA_SEMAFORO_VERDE,
+        SALIDA_SEMAFORO_VERDE => SALIDA_SEMAFORO_VERDE_PEAJE,
         CONTADOR_VEHICULAR => contador_vehiculos_int,
         TIEMPODEPASOVEHICULAR => tiempo_paso_int,
         TALANQUERA_CERRADA_TIEMPO => TALANQUERA_CERRADA_TIEMPO

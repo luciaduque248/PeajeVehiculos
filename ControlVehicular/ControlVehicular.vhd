@@ -4,17 +4,17 @@ use ieee.numeric_std.all;
 
 entity ControlVehicular is
     port (
-		  --entradas
+        -- entradas
         CLK: in std_logic;                   -- Señal de reloj
-        REINICIO: in std_logic;                 -- Señal de reinicio
-        DETECTOR_VEHICULO: in std_logic;       -- Señal que indica la detección de un vehículo
-        ABRIR_TALANQUERA : in std_logic;           -- Señal que indica si la barrera está abierta
-        SALIDA_SEMAFORO_VERDE : in std_logic;    -- Señal que indica el estado verde del semáforo de salida
+        REINICIO: in std_logic;              -- Señal de reinicio
+        DETECTOR_VEHICULO: in std_logic;     -- Señal que indica la detección de un vehículo
+        ABRIR_TALANQUERA : in std_logic;     -- Señal que indica si la barrera está abierta
+        SALIDA_SEMAFORO_VERDE : in std_logic;-- Señal que indica el estado verde del semáforo de salida
         
-		  --salidas
-		  CONTADOR_VEHICULAR : out unsigned(7 downto 0);  -- Contador de vehículos
-        TIEMPODEPASOVEHICULAR : out unsigned(15 downto 0); -- Tiempo de paso del vehículo
-        TALANQUERA_CERRADA_TIEMPO : out unsigned(15 downto 0) -- Tiempo en que se cerró la barrera
+        -- salidas
+        CONTADOR_VEHICULAR : out unsigned(7 downto 0);           -- Contador de vehículos
+        TIEMPODEPASOVEHICULAR : out unsigned(15 downto 0);      -- Tiempo de paso del vehículo
+        TALANQUERA_CERRADA_TIEMPO : out unsigned(15 downto 0)   -- Tiempo en que se cerró la barrera
     );
 end entity ControlVehicular;
 
@@ -52,14 +52,14 @@ begin
                 when IDLE =>
                     if DETECTOR_VEHICULO = '1' and SALIDA_SEMAFORO_VERDE = '1' then
                         ESTADO <= VEHICLE_PASSING;  -- Cambiar al estado de paso del vehículo
-                        TIEMPO_PASOVEHICULO <= to_unsigned(0, TIEMPO_PASOVEHICULO'length);  -- Iniciar el temporizador de paso del vehículo
+                        TIEMPO_PASOVEHICULO <= (others => '0');  -- Iniciar el temporizador de paso del vehículo
                     end if;
                 when VEHICLE_PASSING =>
                     if TIEMPO_PASOVEHICULO < to_unsigned(TIEMPO_DEPASOVEHICULAR/ PERIODO_RELOJ, TIEMPO_PASOVEHICULO'length) then
                         TIEMPO_PASOVEHICULO <= TIEMPO_PASOVEHICULO + 1;  -- Incrementar el temporizador de paso del vehículo
                     else
                         ESTADO <= BARRIER_CLOSING;  -- Cambiar al estado de cierre de la barrera
-                        TIEMPOTALANQUERA_CERRADA  <= to_unsigned(0, TIEMPOTALANQUERA_CERRADA 'length);  -- Iniciar el temporizador de cierre de la barrera
+                        TIEMPOTALANQUERA_CERRADA  <= (others => '0');  -- Iniciar el temporizador de cierre de la barrera
                         REGISTRO_CONTEOVEHICULAR <= REGISTRO_CONTEOVEHICULAR + 1;  -- Incrementar el registro de conteo de vehículos
                         REGISTRO_TIEMPOVEHICULAR <= TIEMPO_PASOVEHICULO;  -- Registrar el tiempo de paso del vehículo
                     end if;

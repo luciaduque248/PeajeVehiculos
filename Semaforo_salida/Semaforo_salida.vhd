@@ -8,7 +8,7 @@ entity Semaforo_salida is
         PasoVehicular : in std_logic;     -- Señal que indica que un vehículo ha pasado
         
 		  --salidas
-		  Semaforoverde : out std_logic;  -- Semáforo de salida verde
+		  SemaforoVerde : out std_logic;  -- Semáforo de salida verde
         SemaforoRojo : out std_logic      -- Semáforo de salida rojo
     );
 end entity Semaforo_salida;

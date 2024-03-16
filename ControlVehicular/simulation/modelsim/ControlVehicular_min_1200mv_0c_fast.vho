@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "03/13/2024 00:37:07"
+-- DATE "03/15/2024 18:03:42"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -43,56 +43,58 @@ ENTITY 	ControlVehicular IS
 	SALIDA_SEMAFORO_VERDE : IN std_logic;
 	CONTADOR_VEHICULAR : OUT IEEE.NUMERIC_STD.unsigned(7 DOWNTO 0);
 	TIEMPODEPASOVEHICULAR : OUT IEEE.NUMERIC_STD.unsigned(15 DOWNTO 0);
-	TALANQUERA_CERRADA_TIEMPO : OUT IEEE.NUMERIC_STD.unsigned(15 DOWNTO 0)
+	TALANQUERA_CERRADA_TIEMPO : OUT IEEE.NUMERIC_STD.unsigned(15 DOWNTO 0);
+	SALIDA_SEMAFORO_VERDE_OUT : OUT std_logic
 	);
 END ControlVehicular;
 
 -- Design Ports Information
--- CONTADOR_VEHICULAR[0]	=>  Location: PIN_N15,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CONTADOR_VEHICULAR[1]	=>  Location: PIN_P17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CONTADOR_VEHICULAR[2]	=>  Location: PIN_T18,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CONTADOR_VEHICULAR[3]	=>  Location: PIN_U19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CONTADOR_VEHICULAR[4]	=>  Location: PIN_N22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CONTADOR_VEHICULAR[5]	=>  Location: PIN_W20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CONTADOR_VEHICULAR[6]	=>  Location: PIN_T17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CONTADOR_VEHICULAR[7]	=>  Location: PIN_R20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[0]	=>  Location: PIN_M16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[1]	=>  Location: PIN_N21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[2]	=>  Location: PIN_Y21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[3]	=>  Location: PIN_M21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[4]	=>  Location: PIN_U20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[5]	=>  Location: PIN_W21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[6]	=>  Location: PIN_M19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[7]	=>  Location: PIN_AA22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[8]	=>  Location: PIN_N14,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[9]	=>  Location: PIN_M22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[10]	=>  Location: PIN_W19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[11]	=>  Location: PIN_P15,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[12]	=>  Location: PIN_M20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[13]	=>  Location: PIN_Y22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[14]	=>  Location: PIN_P16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TIEMPODEPASOVEHICULAR[15]	=>  Location: PIN_AA21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[0]	=>  Location: PIN_U22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[1]	=>  Location: PIN_V22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[2]	=>  Location: PIN_P22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[3]	=>  Location: PIN_R18,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[4]	=>  Location: PIN_P20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[5]	=>  Location: PIN_N16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[6]	=>  Location: PIN_R17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[7]	=>  Location: PIN_N20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[8]	=>  Location: PIN_W22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[9]	=>  Location: PIN_N18,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[10]	=>  Location: PIN_M15,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[11]	=>  Location: PIN_P21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[12]	=>  Location: PIN_U21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[13]	=>  Location: PIN_R21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[14]	=>  Location: PIN_V21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- TALANQUERA_CERRADA_TIEMPO[15]	=>  Location: PIN_R22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CONTADOR_VEHICULAR[0]	=>  Location: PIN_B15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CONTADOR_VEHICULAR[1]	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CONTADOR_VEHICULAR[2]	=>  Location: PIN_AB10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CONTADOR_VEHICULAR[3]	=>  Location: PIN_G12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CONTADOR_VEHICULAR[4]	=>  Location: PIN_AB14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CONTADOR_VEHICULAR[5]	=>  Location: PIN_K15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CONTADOR_VEHICULAR[6]	=>  Location: PIN_L15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CONTADOR_VEHICULAR[7]	=>  Location: PIN_AA13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[0]	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[1]	=>  Location: PIN_B13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[2]	=>  Location: PIN_G11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[3]	=>  Location: PIN_D13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[4]	=>  Location: PIN_E13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[5]	=>  Location: PIN_F12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[6]	=>  Location: PIN_A13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[7]	=>  Location: PIN_V12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[8]	=>  Location: PIN_E15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[9]	=>  Location: PIN_A14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[10]	=>  Location: PIN_L22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[11]	=>  Location: PIN_H12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[12]	=>  Location: PIN_L21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[13]	=>  Location: PIN_AA14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[14]	=>  Location: PIN_B14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TIEMPODEPASOVEHICULAR[15]	=>  Location: PIN_B9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[0]	=>  Location: PIN_F11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[1]	=>  Location: PIN_E12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[2]	=>  Location: PIN_E11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[3]	=>  Location: PIN_A9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[4]	=>  Location: PIN_E14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[5]	=>  Location: PIN_D10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[6]	=>  Location: PIN_B8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[7]	=>  Location: PIN_H11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[8]	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[9]	=>  Location: PIN_E10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[10]	=>  Location: PIN_C15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[11]	=>  Location: PIN_B16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[12]	=>  Location: PIN_C10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[13]	=>  Location: PIN_A10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[14]	=>  Location: PIN_A8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- TALANQUERA_CERRADA_TIEMPO[15]	=>  Location: PIN_H13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SALIDA_SEMAFORO_VERDE_OUT	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- CLK	=>  Location: PIN_G2,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- REINICIO	=>  Location: PIN_G1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ABRIR_TALANQUERA	=>  Location: PIN_R19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- DETECTOR_VEHICULO	=>  Location: PIN_N19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SALIDA_SEMAFORO_VERDE	=>  Location: PIN_N17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- ABRIR_TALANQUERA	=>  Location: PIN_F13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- DETECTOR_VEHICULO	=>  Location: PIN_K19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SALIDA_SEMAFORO_VERDE	=>  Location: PIN_K21,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF ControlVehicular IS
@@ -113,6 +115,7 @@ SIGNAL ww_SALIDA_SEMAFORO_VERDE : std_logic;
 SIGNAL ww_CONTADOR_VEHICULAR : std_logic_vector(7 DOWNTO 0);
 SIGNAL ww_TIEMPODEPASOVEHICULAR : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_TALANQUERA_CERRADA_TIEMPO : std_logic_vector(15 DOWNTO 0);
+SIGNAL ww_SALIDA_SEMAFORO_VERDE_OUT : std_logic;
 SIGNAL \CLK~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \REINICIO~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \CONTADOR_VEHICULAR[0]~output_o\ : std_logic;
@@ -155,6 +158,7 @@ SIGNAL \TALANQUERA_CERRADA_TIEMPO[12]~output_o\ : std_logic;
 SIGNAL \TALANQUERA_CERRADA_TIEMPO[13]~output_o\ : std_logic;
 SIGNAL \TALANQUERA_CERRADA_TIEMPO[14]~output_o\ : std_logic;
 SIGNAL \TALANQUERA_CERRADA_TIEMPO[15]~output_o\ : std_logic;
+SIGNAL \SALIDA_SEMAFORO_VERDE_OUT~output_o\ : std_logic;
 SIGNAL \CLK~input_o\ : std_logic;
 SIGNAL \CLK~inputclkctrl_outclk\ : std_logic;
 SIGNAL \REGISTRO_CONTEOVEHICULAR[0]~23_combout\ : std_logic;
@@ -201,8 +205,8 @@ SIGNAL \TIEMPO_PASOVEHICULO[13]~44\ : std_logic;
 SIGNAL \TIEMPO_PASOVEHICULO[14]~46_combout\ : std_logic;
 SIGNAL \TIEMPO_PASOVEHICULO[14]~47\ : std_logic;
 SIGNAL \TIEMPO_PASOVEHICULO[15]~48_combout\ : std_logic;
-SIGNAL \LessThan0~1_combout\ : std_logic;
 SIGNAL \LessThan0~0_combout\ : std_logic;
+SIGNAL \LessThan0~1_combout\ : std_logic;
 SIGNAL \REGISTRO_CONTEOVEHICULAR[0]~7_combout\ : std_logic;
 SIGNAL \Selector1~0_combout\ : std_logic;
 SIGNAL \ESTADO.VEHICLE_PASSING~q\ : std_logic;
@@ -220,9 +224,10 @@ SIGNAL \REGISTRO_CONTEOVEHICULAR[5]~18\ : std_logic;
 SIGNAL \REGISTRO_CONTEOVEHICULAR[6]~19_combout\ : std_logic;
 SIGNAL \REGISTRO_CONTEOVEHICULAR[6]~20\ : std_logic;
 SIGNAL \REGISTRO_CONTEOVEHICULAR[7]~21_combout\ : std_logic;
-SIGNAL \REGISTRO_TIEMPOVEHICULAR[0]~feeder_combout\ : std_logic;
 SIGNAL \REGISTRO_TIEMPOVEHICULAR[1]~feeder_combout\ : std_logic;
-SIGNAL \REGISTRO_TIEMPOVEHICULAR[5]~feeder_combout\ : std_logic;
+SIGNAL \REGISTRO_TIEMPOVEHICULAR[2]~feeder_combout\ : std_logic;
+SIGNAL \REGISTRO_TIEMPOVEHICULAR[3]~feeder_combout\ : std_logic;
+SIGNAL \REGISTRO_TIEMPOVEHICULAR[4]~feeder_combout\ : std_logic;
 SIGNAL \REGISTRO_TIEMPOVEHICULAR[6]~feeder_combout\ : std_logic;
 SIGNAL \REGISTRO_TIEMPOVEHICULAR[7]~feeder_combout\ : std_logic;
 SIGNAL \REGISTRO_TIEMPOVEHICULAR[8]~feeder_combout\ : std_logic;
@@ -296,6 +301,7 @@ SIGNAL \TIEMPOTALANQUERA_CERRADA[14]~46\ : std_logic;
 SIGNAL \TIEMPOTALANQUERA_CERRADA[15]~47_combout\ : std_logic;
 SIGNAL \TALANQUERA_CERRADA_TIEMPO[15]~reg0feeder_combout\ : std_logic;
 SIGNAL \TALANQUERA_CERRADA_TIEMPO[15]~reg0_q\ : std_logic;
+SIGNAL \SALIDA_SEMAFORO_VERDE_OUT~reg0_q\ : std_logic;
 SIGNAL TIEMPO_PASOVEHICULO : std_logic_vector(15 DOWNTO 0);
 SIGNAL TIEMPOTALANQUERA_CERRADA : std_logic_vector(15 DOWNTO 0);
 SIGNAL REGISTRO_TIEMPOVEHICULAR : std_logic_vector(15 DOWNTO 0);
@@ -314,6 +320,7 @@ ww_SALIDA_SEMAFORO_VERDE <= SALIDA_SEMAFORO_VERDE;
 CONTADOR_VEHICULAR <= IEEE.NUMERIC_STD.UNSIGNED(ww_CONTADOR_VEHICULAR);
 TIEMPODEPASOVEHICULAR <= IEEE.NUMERIC_STD.UNSIGNED(ww_TIEMPODEPASOVEHICULAR);
 TALANQUERA_CERRADA_TIEMPO <= IEEE.NUMERIC_STD.UNSIGNED(ww_TALANQUERA_CERRADA_TIEMPO);
+SALIDA_SEMAFORO_VERDE_OUT <= ww_SALIDA_SEMAFORO_VERDE_OUT;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -325,7 +332,7 @@ ww_devpor <= devpor;
 \ALT_INV_ESTADO.BARRIER_CLOSING~q\ <= NOT \ESTADO.BARRIER_CLOSING~q\;
 \ALT_INV_ESTADO.VEHICLE_PASSING~q\ <= NOT \ESTADO.VEHICLE_PASSING~q\;
 
--- Location: IOOBUF_X41_Y7_N16
+-- Location: IOOBUF_X26_Y29_N30
 \CONTADOR_VEHICULAR[0]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -337,7 +344,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \CONTADOR_VEHICULAR[0]~output_o\);
 
--- Location: IOOBUF_X41_Y7_N9
+-- Location: IOOBUF_X26_Y29_N23
 \CONTADOR_VEHICULAR[1]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -349,7 +356,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \CONTADOR_VEHICULAR[1]~output_o\);
 
--- Location: IOOBUF_X41_Y3_N23
+-- Location: IOOBUF_X21_Y0_N30
 \CONTADOR_VEHICULAR[2]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -361,7 +368,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \CONTADOR_VEHICULAR[2]~output_o\);
 
--- Location: IOOBUF_X41_Y5_N23
+-- Location: IOOBUF_X26_Y29_N9
 \CONTADOR_VEHICULAR[3]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -373,7 +380,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \CONTADOR_VEHICULAR[3]~output_o\);
 
--- Location: IOOBUF_X41_Y13_N16
+-- Location: IOOBUF_X23_Y0_N9
 \CONTADOR_VEHICULAR[4]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -385,7 +392,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \CONTADOR_VEHICULAR[4]~output_o\);
 
--- Location: IOOBUF_X41_Y3_N16
+-- Location: IOOBUF_X41_Y18_N9
 \CONTADOR_VEHICULAR[5]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -397,7 +404,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \CONTADOR_VEHICULAR[5]~output_o\);
 
--- Location: IOOBUF_X41_Y2_N2
+-- Location: IOOBUF_X41_Y17_N2
 \CONTADOR_VEHICULAR[6]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -409,7 +416,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \CONTADOR_VEHICULAR[6]~output_o\);
 
--- Location: IOOBUF_X41_Y8_N16
+-- Location: IOOBUF_X23_Y0_N30
 \CONTADOR_VEHICULAR[7]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -421,7 +428,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \CONTADOR_VEHICULAR[7]~output_o\);
 
--- Location: IOOBUF_X41_Y14_N2
+-- Location: IOOBUF_X23_Y29_N2
 \TIEMPODEPASOVEHICULAR[0]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -433,7 +440,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[0]~output_o\);
 
--- Location: IOOBUF_X41_Y13_N9
+-- Location: IOOBUF_X21_Y29_N9
 \TIEMPODEPASOVEHICULAR[1]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -445,7 +452,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[1]~output_o\);
 
--- Location: IOOBUF_X41_Y4_N9
+-- Location: IOOBUF_X14_Y29_N16
 \TIEMPODEPASOVEHICULAR[2]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -457,7 +464,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[2]~output_o\);
 
--- Location: IOOBUF_X41_Y14_N23
+-- Location: IOOBUF_X23_Y29_N9
 \TIEMPODEPASOVEHICULAR[3]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -469,7 +476,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[3]~output_o\);
 
--- Location: IOOBUF_X41_Y4_N2
+-- Location: IOOBUF_X23_Y29_N16
 \TIEMPODEPASOVEHICULAR[4]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -481,7 +488,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[4]~output_o\);
 
--- Location: IOOBUF_X41_Y5_N2
+-- Location: IOOBUF_X28_Y29_N23
 \TIEMPODEPASOVEHICULAR[5]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -493,7 +500,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[5]~output_o\);
 
--- Location: IOOBUF_X41_Y14_N9
+-- Location: IOOBUF_X21_Y29_N2
 \TIEMPODEPASOVEHICULAR[6]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -505,7 +512,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[6]~output_o\);
 
--- Location: IOOBUF_X41_Y2_N23
+-- Location: IOOBUF_X23_Y0_N2
 \TIEMPODEPASOVEHICULAR[7]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -517,7 +524,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[7]~output_o\);
 
--- Location: IOOBUF_X41_Y5_N16
+-- Location: IOOBUF_X30_Y29_N2
 \TIEMPODEPASOVEHICULAR[8]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -529,7 +536,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[8]~output_o\);
 
--- Location: IOOBUF_X41_Y13_N2
+-- Location: IOOBUF_X23_Y29_N23
 \TIEMPODEPASOVEHICULAR[9]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -541,7 +548,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[9]~output_o\);
 
--- Location: IOOBUF_X41_Y3_N9
+-- Location: IOOBUF_X41_Y18_N23
 \TIEMPODEPASOVEHICULAR[10]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -553,7 +560,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[10]~output_o\);
 
--- Location: IOOBUF_X41_Y6_N23
+-- Location: IOOBUF_X26_Y29_N2
 \TIEMPODEPASOVEHICULAR[11]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -565,7 +572,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[11]~output_o\);
 
--- Location: IOOBUF_X41_Y14_N16
+-- Location: IOOBUF_X41_Y18_N16
 \TIEMPODEPASOVEHICULAR[12]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -577,7 +584,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[12]~output_o\);
 
--- Location: IOOBUF_X41_Y3_N2
+-- Location: IOOBUF_X23_Y0_N16
 \TIEMPODEPASOVEHICULAR[13]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -589,7 +596,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[13]~output_o\);
 
--- Location: IOOBUF_X41_Y6_N16
+-- Location: IOOBUF_X23_Y29_N30
 \TIEMPODEPASOVEHICULAR[14]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -601,7 +608,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[14]~output_o\);
 
--- Location: IOOBUF_X41_Y2_N16
+-- Location: IOOBUF_X14_Y29_N2
 \TIEMPODEPASOVEHICULAR[15]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -613,7 +620,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TIEMPODEPASOVEHICULAR[15]~output_o\);
 
--- Location: IOOBUF_X41_Y8_N9
+-- Location: IOOBUF_X21_Y29_N30
 \TALANQUERA_CERRADA_TIEMPO[0]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -625,7 +632,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[0]~output_o\);
 
--- Location: IOOBUF_X41_Y7_N2
+-- Location: IOOBUF_X21_Y29_N16
 \TALANQUERA_CERRADA_TIEMPO[1]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -637,7 +644,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[1]~output_o\);
 
--- Location: IOOBUF_X41_Y11_N2
+-- Location: IOOBUF_X21_Y29_N23
 \TALANQUERA_CERRADA_TIEMPO[2]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -649,7 +656,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[2]~output_o\);
 
--- Location: IOOBUF_X41_Y9_N23
+-- Location: IOOBUF_X16_Y29_N30
 \TALANQUERA_CERRADA_TIEMPO[3]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -661,7 +668,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[3]~output_o\);
 
--- Location: IOOBUF_X41_Y10_N2
+-- Location: IOOBUF_X28_Y29_N16
 \TALANQUERA_CERRADA_TIEMPO[4]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -673,7 +680,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[4]~output_o\);
 
--- Location: IOOBUF_X41_Y10_N23
+-- Location: IOOBUF_X16_Y29_N2
 \TALANQUERA_CERRADA_TIEMPO[5]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -685,7 +692,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[5]~output_o\);
 
--- Location: IOOBUF_X41_Y6_N2
+-- Location: IOOBUF_X14_Y29_N30
 \TALANQUERA_CERRADA_TIEMPO[6]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -697,7 +704,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[6]~output_o\);
 
--- Location: IOOBUF_X41_Y12_N16
+-- Location: IOOBUF_X19_Y29_N30
 \TALANQUERA_CERRADA_TIEMPO[7]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -709,7 +716,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[7]~output_o\);
 
--- Location: IOOBUF_X41_Y5_N9
+-- Location: IOOBUF_X16_Y29_N23
 \TALANQUERA_CERRADA_TIEMPO[8]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -721,7 +728,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[8]~output_o\);
 
--- Location: IOOBUF_X41_Y13_N23
+-- Location: IOOBUF_X16_Y29_N9
 \TALANQUERA_CERRADA_TIEMPO[9]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -733,7 +740,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[9]~output_o\);
 
--- Location: IOOBUF_X41_Y7_N23
+-- Location: IOOBUF_X28_Y29_N9
 \TALANQUERA_CERRADA_TIEMPO[10]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -745,7 +752,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[10]~output_o\);
 
--- Location: IOOBUF_X41_Y12_N23
+-- Location: IOOBUF_X28_Y29_N2
 \TALANQUERA_CERRADA_TIEMPO[11]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -757,7 +764,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[11]~output_o\);
 
--- Location: IOOBUF_X41_Y8_N2
+-- Location: IOOBUF_X14_Y29_N9
 \TALANQUERA_CERRADA_TIEMPO[12]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -769,7 +776,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[12]~output_o\);
 
--- Location: IOOBUF_X41_Y10_N9
+-- Location: IOOBUF_X16_Y29_N16
 \TALANQUERA_CERRADA_TIEMPO[13]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -781,7 +788,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[13]~output_o\);
 
--- Location: IOOBUF_X41_Y8_N23
+-- Location: IOOBUF_X14_Y29_N23
 \TALANQUERA_CERRADA_TIEMPO[14]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -793,7 +800,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[14]~output_o\);
 
--- Location: IOOBUF_X41_Y10_N16
+-- Location: IOOBUF_X28_Y29_N30
 \TALANQUERA_CERRADA_TIEMPO[15]~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -804,6 +811,18 @@ PORT MAP (
 	i => \TALANQUERA_CERRADA_TIEMPO[15]~reg0_q\,
 	devoe => ww_devoe,
 	o => \TALANQUERA_CERRADA_TIEMPO[15]~output_o\);
+
+-- Location: IOOBUF_X0_Y20_N9
+\SALIDA_SEMAFORO_VERDE_OUT~output\ : cycloneiii_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \SALIDA_SEMAFORO_VERDE_OUT~reg0_q\,
+	devoe => ww_devoe,
+	o => \SALIDA_SEMAFORO_VERDE_OUT~output_o\);
 
 -- Location: IOIBUF_X0_Y14_N1
 \CLK~input\ : cycloneiii_io_ibuf
@@ -829,7 +848,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \CLK~inputclkctrl_outclk\);
 
--- Location: LCCOMB_X39_Y9_N4
+-- Location: LCCOMB_X22_Y18_N4
 \REGISTRO_CONTEOVEHICULAR[0]~23\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[0]~23_combout\ = !REGISTRO_CONTEOVEHICULAR(0)
@@ -867,7 +886,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \REINICIO~inputclkctrl_outclk\);
 
--- Location: IOIBUF_X41_Y12_N8
+-- Location: IOIBUF_X41_Y18_N1
 \DETECTOR_VEHICULO~input\ : cycloneiii_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -878,7 +897,7 @@ PORT MAP (
 	i => ww_DETECTOR_VEHICULO,
 	o => \DETECTOR_VEHICULO~input_o\);
 
--- Location: IOIBUF_X41_Y12_N1
+-- Location: IOIBUF_X41_Y19_N8
 \SALIDA_SEMAFORO_VERDE~input\ : cycloneiii_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -889,7 +908,7 @@ PORT MAP (
 	i => ww_SALIDA_SEMAFORO_VERDE,
 	o => \SALIDA_SEMAFORO_VERDE~input_o\);
 
--- Location: IOIBUF_X41_Y9_N15
+-- Location: IOIBUF_X26_Y29_N15
 \ABRIR_TALANQUERA~input\ : cycloneiii_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -900,7 +919,7 @@ PORT MAP (
 	i => ww_ABRIR_TALANQUERA,
 	o => \ABRIR_TALANQUERA~input_o\);
 
--- Location: LCCOMB_X40_Y9_N14
+-- Location: LCCOMB_X22_Y18_N30
 \Selector2~2\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \Selector2~2_combout\ = (\TIEMPO_PASOVEHICULO[1]~16_combout\ & ((\REGISTRO_CONTEOVEHICULAR[0]~8_combout\) # ((!\ABRIR_TALANQUERA~input_o\ & \ESTADO.BARRIER_CLOSING~q\)))) # (!\TIEMPO_PASOVEHICULO[1]~16_combout\ & (\ESTADO.BARRIER_CLOSING~q\ & 
@@ -908,17 +927,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101110001100000",
+	lut_mask => "1011101001100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ABRIR_TALANQUERA~input_o\,
-	datab => \TIEMPO_PASOVEHICULO[1]~16_combout\,
+	dataa => \TIEMPO_PASOVEHICULO[1]~16_combout\,
+	datab => \ABRIR_TALANQUERA~input_o\,
 	datac => \ESTADO.BARRIER_CLOSING~q\,
 	datad => \REGISTRO_CONTEOVEHICULAR[0]~8_combout\,
 	combout => \Selector2~2_combout\);
 
--- Location: FF_X40_Y9_N15
+-- Location: FF_X22_Y18_N31
 \ESTADO.BARRIER_CLOSING\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -933,40 +952,40 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \ESTADO.BARRIER_CLOSING~q\);
 
--- Location: LCCOMB_X38_Y9_N28
+-- Location: LCCOMB_X22_Y18_N28
 \TALANQUERA_CERRADA_TIEMPO[0]~1\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[0]~1_combout\ = (\ESTADO.BARRIER_CLOSING~q\ & \ABRIR_TALANQUERA~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110000000000",
+	lut_mask => "1010000010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \ESTADO.BARRIER_CLOSING~q\,
-	datad => \ABRIR_TALANQUERA~input_o\,
+	dataa => \ESTADO.BARRIER_CLOSING~q\,
+	datac => \ABRIR_TALANQUERA~input_o\,
 	combout => \TALANQUERA_CERRADA_TIEMPO[0]~1_combout\);
 
--- Location: LCCOMB_X39_Y9_N10
+-- Location: LCCOMB_X22_Y18_N10
 \ESTADO.IDLE~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \ESTADO.IDLE~0_combout\ = (\ESTADO.IDLE~q\ & ((\TIEMPO_PASOVEHICULO[1]~16_combout\ $ (!\REGISTRO_CONTEOVEHICULAR[0]~8_combout\)) # (!\TALANQUERA_CERRADA_TIEMPO[0]~1_combout\))) # (!\ESTADO.IDLE~q\ & (!\TALANQUERA_CERRADA_TIEMPO[0]~1_combout\ & 
+-- \ESTADO.IDLE~0_combout\ = (\TALANQUERA_CERRADA_TIEMPO[0]~1_combout\ & (\ESTADO.IDLE~q\ & (\TIEMPO_PASOVEHICULO[1]~16_combout\ $ (!\REGISTRO_CONTEOVEHICULAR[0]~8_combout\)))) # (!\TALANQUERA_CERRADA_TIEMPO[0]~1_combout\ & ((\ESTADO.IDLE~q\) # 
 -- (\TIEMPO_PASOVEHICULO[1]~16_combout\ $ (!\REGISTRO_CONTEOVEHICULAR[0]~8_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001000011111001",
+	lut_mask => "1011001001110001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \TIEMPO_PASOVEHICULO[1]~16_combout\,
-	datab => \REGISTRO_CONTEOVEHICULAR[0]~8_combout\,
+	datab => \TALANQUERA_CERRADA_TIEMPO[0]~1_combout\,
 	datac => \ESTADO.IDLE~q\,
-	datad => \TALANQUERA_CERRADA_TIEMPO[0]~1_combout\,
+	datad => \REGISTRO_CONTEOVEHICULAR[0]~8_combout\,
 	combout => \ESTADO.IDLE~0_combout\);
 
--- Location: FF_X39_Y9_N11
+-- Location: FF_X22_Y18_N11
 \ESTADO.IDLE\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -981,23 +1000,23 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \ESTADO.IDLE~q\);
 
--- Location: LCCOMB_X39_Y9_N2
+-- Location: LCCOMB_X22_Y18_N26
 \TIEMPO_PASOVEHICULO[1]~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[1]~16_combout\ = ((\ESTADO.IDLE~q\) # (!\SALIDA_SEMAFORO_VERDE~input_o\)) # (!\DETECTOR_VEHICULO~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100111111",
+	lut_mask => "1111111101110111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \DETECTOR_VEHICULO~input_o\,
-	datac => \SALIDA_SEMAFORO_VERDE~input_o\,
+	dataa => \DETECTOR_VEHICULO~input_o\,
+	datab => \SALIDA_SEMAFORO_VERDE~input_o\,
 	datad => \ESTADO.IDLE~q\,
 	combout => \TIEMPO_PASOVEHICULO[1]~16_combout\);
 
--- Location: LCCOMB_X37_Y9_N0
+-- Location: LCCOMB_X24_Y18_N0
 \TIEMPO_PASOVEHICULO[0]~17\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[0]~17_combout\ = TIEMPO_PASOVEHICULO(0) $ (VCC)
@@ -1014,7 +1033,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[0]~17_combout\,
 	cout => \TIEMPO_PASOVEHICULO[0]~18\);
 
--- Location: LCCOMB_X38_Y9_N24
+-- Location: LCCOMB_X23_Y18_N6
 \TIEMPO_PASOVEHICULO[1]~45\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[1]~45_combout\ = ((\ESTADO.VEHICLE_PASSING~q\ & \REGISTRO_CONTEOVEHICULAR[0]~7_combout\)) # (!\TIEMPO_PASOVEHICULO[1]~16_combout\)
@@ -1030,7 +1049,7 @@ PORT MAP (
 	datad => \REGISTRO_CONTEOVEHICULAR[0]~7_combout\,
 	combout => \TIEMPO_PASOVEHICULO[1]~45_combout\);
 
--- Location: FF_X37_Y9_N1
+-- Location: FF_X24_Y18_N1
 \TIEMPO_PASOVEHICULO[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1047,7 +1066,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(0));
 
--- Location: LCCOMB_X37_Y9_N2
+-- Location: LCCOMB_X24_Y18_N2
 \TIEMPO_PASOVEHICULO[1]~19\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[1]~19_combout\ = (TIEMPO_PASOVEHICULO(1) & (!\TIEMPO_PASOVEHICULO[0]~18\)) # (!TIEMPO_PASOVEHICULO(1) & ((\TIEMPO_PASOVEHICULO[0]~18\) # (GND)))
@@ -1065,7 +1084,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[1]~19_combout\,
 	cout => \TIEMPO_PASOVEHICULO[1]~20\);
 
--- Location: FF_X37_Y9_N3
+-- Location: FF_X24_Y18_N3
 \TIEMPO_PASOVEHICULO[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1082,7 +1101,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(1));
 
--- Location: LCCOMB_X37_Y9_N4
+-- Location: LCCOMB_X24_Y18_N4
 \TIEMPO_PASOVEHICULO[2]~21\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[2]~21_combout\ = (TIEMPO_PASOVEHICULO(2) & (\TIEMPO_PASOVEHICULO[1]~20\ $ (GND))) # (!TIEMPO_PASOVEHICULO(2) & (!\TIEMPO_PASOVEHICULO[1]~20\ & VCC))
@@ -1100,7 +1119,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[2]~21_combout\,
 	cout => \TIEMPO_PASOVEHICULO[2]~22\);
 
--- Location: FF_X37_Y9_N5
+-- Location: FF_X24_Y18_N5
 \TIEMPO_PASOVEHICULO[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1117,7 +1136,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(2));
 
--- Location: LCCOMB_X37_Y9_N6
+-- Location: LCCOMB_X24_Y18_N6
 \TIEMPO_PASOVEHICULO[3]~23\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[3]~23_combout\ = (TIEMPO_PASOVEHICULO(3) & (!\TIEMPO_PASOVEHICULO[2]~22\)) # (!TIEMPO_PASOVEHICULO(3) & ((\TIEMPO_PASOVEHICULO[2]~22\) # (GND)))
@@ -1135,7 +1154,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[3]~23_combout\,
 	cout => \TIEMPO_PASOVEHICULO[3]~24\);
 
--- Location: FF_X37_Y9_N7
+-- Location: FF_X24_Y18_N7
 \TIEMPO_PASOVEHICULO[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1152,7 +1171,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(3));
 
--- Location: LCCOMB_X37_Y9_N8
+-- Location: LCCOMB_X24_Y18_N8
 \TIEMPO_PASOVEHICULO[4]~25\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[4]~25_combout\ = (TIEMPO_PASOVEHICULO(4) & (\TIEMPO_PASOVEHICULO[3]~24\ $ (GND))) # (!TIEMPO_PASOVEHICULO(4) & (!\TIEMPO_PASOVEHICULO[3]~24\ & VCC))
@@ -1170,7 +1189,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[4]~25_combout\,
 	cout => \TIEMPO_PASOVEHICULO[4]~26\);
 
--- Location: FF_X37_Y9_N9
+-- Location: FF_X24_Y18_N9
 \TIEMPO_PASOVEHICULO[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1187,7 +1206,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(4));
 
--- Location: LCCOMB_X37_Y9_N10
+-- Location: LCCOMB_X24_Y18_N10
 \TIEMPO_PASOVEHICULO[5]~27\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[5]~27_combout\ = (TIEMPO_PASOVEHICULO(5) & (!\TIEMPO_PASOVEHICULO[4]~26\)) # (!TIEMPO_PASOVEHICULO(5) & ((\TIEMPO_PASOVEHICULO[4]~26\) # (GND)))
@@ -1205,7 +1224,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[5]~27_combout\,
 	cout => \TIEMPO_PASOVEHICULO[5]~28\);
 
--- Location: FF_X37_Y9_N11
+-- Location: FF_X24_Y18_N11
 \TIEMPO_PASOVEHICULO[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1222,7 +1241,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(5));
 
--- Location: LCCOMB_X37_Y9_N12
+-- Location: LCCOMB_X24_Y18_N12
 \TIEMPO_PASOVEHICULO[6]~29\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[6]~29_combout\ = (TIEMPO_PASOVEHICULO(6) & (\TIEMPO_PASOVEHICULO[5]~28\ $ (GND))) # (!TIEMPO_PASOVEHICULO(6) & (!\TIEMPO_PASOVEHICULO[5]~28\ & VCC))
@@ -1240,7 +1259,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[6]~29_combout\,
 	cout => \TIEMPO_PASOVEHICULO[6]~30\);
 
--- Location: FF_X37_Y9_N13
+-- Location: FF_X24_Y18_N13
 \TIEMPO_PASOVEHICULO[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1257,7 +1276,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(6));
 
--- Location: LCCOMB_X37_Y9_N14
+-- Location: LCCOMB_X24_Y18_N14
 \TIEMPO_PASOVEHICULO[7]~31\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[7]~31_combout\ = (TIEMPO_PASOVEHICULO(7) & (!\TIEMPO_PASOVEHICULO[6]~30\)) # (!TIEMPO_PASOVEHICULO(7) & ((\TIEMPO_PASOVEHICULO[6]~30\) # (GND)))
@@ -1275,7 +1294,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[7]~31_combout\,
 	cout => \TIEMPO_PASOVEHICULO[7]~32\);
 
--- Location: FF_X37_Y9_N15
+-- Location: FF_X24_Y18_N15
 \TIEMPO_PASOVEHICULO[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1292,7 +1311,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(7));
 
--- Location: LCCOMB_X37_Y9_N16
+-- Location: LCCOMB_X24_Y18_N16
 \TIEMPO_PASOVEHICULO[8]~33\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[8]~33_combout\ = (TIEMPO_PASOVEHICULO(8) & (\TIEMPO_PASOVEHICULO[7]~32\ $ (GND))) # (!TIEMPO_PASOVEHICULO(8) & (!\TIEMPO_PASOVEHICULO[7]~32\ & VCC))
@@ -1310,7 +1329,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[8]~33_combout\,
 	cout => \TIEMPO_PASOVEHICULO[8]~34\);
 
--- Location: FF_X37_Y9_N17
+-- Location: FF_X24_Y18_N17
 \TIEMPO_PASOVEHICULO[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1327,7 +1346,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(8));
 
--- Location: LCCOMB_X37_Y9_N18
+-- Location: LCCOMB_X24_Y18_N18
 \TIEMPO_PASOVEHICULO[9]~35\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[9]~35_combout\ = (TIEMPO_PASOVEHICULO(9) & (!\TIEMPO_PASOVEHICULO[8]~34\)) # (!TIEMPO_PASOVEHICULO(9) & ((\TIEMPO_PASOVEHICULO[8]~34\) # (GND)))
@@ -1345,7 +1364,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[9]~35_combout\,
 	cout => \TIEMPO_PASOVEHICULO[9]~36\);
 
--- Location: FF_X37_Y9_N19
+-- Location: FF_X24_Y18_N19
 \TIEMPO_PASOVEHICULO[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1362,7 +1381,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(9));
 
--- Location: LCCOMB_X37_Y9_N20
+-- Location: LCCOMB_X24_Y18_N20
 \TIEMPO_PASOVEHICULO[10]~37\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[10]~37_combout\ = (TIEMPO_PASOVEHICULO(10) & (\TIEMPO_PASOVEHICULO[9]~36\ $ (GND))) # (!TIEMPO_PASOVEHICULO(10) & (!\TIEMPO_PASOVEHICULO[9]~36\ & VCC))
@@ -1380,7 +1399,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[10]~37_combout\,
 	cout => \TIEMPO_PASOVEHICULO[10]~38\);
 
--- Location: FF_X37_Y9_N21
+-- Location: FF_X24_Y18_N21
 \TIEMPO_PASOVEHICULO[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1397,7 +1416,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(10));
 
--- Location: LCCOMB_X37_Y9_N22
+-- Location: LCCOMB_X24_Y18_N22
 \TIEMPO_PASOVEHICULO[11]~39\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[11]~39_combout\ = (TIEMPO_PASOVEHICULO(11) & (!\TIEMPO_PASOVEHICULO[10]~38\)) # (!TIEMPO_PASOVEHICULO(11) & ((\TIEMPO_PASOVEHICULO[10]~38\) # (GND)))
@@ -1415,7 +1434,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[11]~39_combout\,
 	cout => \TIEMPO_PASOVEHICULO[11]~40\);
 
--- Location: FF_X37_Y9_N23
+-- Location: FF_X24_Y18_N23
 \TIEMPO_PASOVEHICULO[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1432,7 +1451,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(11));
 
--- Location: LCCOMB_X37_Y9_N24
+-- Location: LCCOMB_X24_Y18_N24
 \TIEMPO_PASOVEHICULO[12]~41\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[12]~41_combout\ = (TIEMPO_PASOVEHICULO(12) & (\TIEMPO_PASOVEHICULO[11]~40\ $ (GND))) # (!TIEMPO_PASOVEHICULO(12) & (!\TIEMPO_PASOVEHICULO[11]~40\ & VCC))
@@ -1450,7 +1469,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[12]~41_combout\,
 	cout => \TIEMPO_PASOVEHICULO[12]~42\);
 
--- Location: FF_X37_Y9_N25
+-- Location: FF_X24_Y18_N25
 \TIEMPO_PASOVEHICULO[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1467,7 +1486,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(12));
 
--- Location: LCCOMB_X37_Y9_N26
+-- Location: LCCOMB_X24_Y18_N26
 \TIEMPO_PASOVEHICULO[13]~43\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[13]~43_combout\ = (TIEMPO_PASOVEHICULO(13) & (!\TIEMPO_PASOVEHICULO[12]~42\)) # (!TIEMPO_PASOVEHICULO(13) & ((\TIEMPO_PASOVEHICULO[12]~42\) # (GND)))
@@ -1485,7 +1504,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[13]~43_combout\,
 	cout => \TIEMPO_PASOVEHICULO[13]~44\);
 
--- Location: FF_X37_Y9_N27
+-- Location: FF_X24_Y18_N27
 \TIEMPO_PASOVEHICULO[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1502,7 +1521,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(13));
 
--- Location: LCCOMB_X37_Y9_N28
+-- Location: LCCOMB_X24_Y18_N28
 \TIEMPO_PASOVEHICULO[14]~46\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[14]~46_combout\ = (TIEMPO_PASOVEHICULO(14) & (\TIEMPO_PASOVEHICULO[13]~44\ $ (GND))) # (!TIEMPO_PASOVEHICULO(14) & (!\TIEMPO_PASOVEHICULO[13]~44\ & VCC))
@@ -1520,7 +1539,7 @@ PORT MAP (
 	combout => \TIEMPO_PASOVEHICULO[14]~46_combout\,
 	cout => \TIEMPO_PASOVEHICULO[14]~47\);
 
--- Location: FF_X37_Y9_N29
+-- Location: FF_X24_Y18_N29
 \TIEMPO_PASOVEHICULO[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1537,7 +1556,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(14));
 
--- Location: LCCOMB_X37_Y9_N30
+-- Location: LCCOMB_X24_Y18_N30
 \TIEMPO_PASOVEHICULO[15]~48\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPO_PASOVEHICULO[15]~48_combout\ = \TIEMPO_PASOVEHICULO[14]~47\ $ (TIEMPO_PASOVEHICULO(15))
@@ -1552,7 +1571,7 @@ PORT MAP (
 	cin => \TIEMPO_PASOVEHICULO[14]~47\,
 	combout => \TIEMPO_PASOVEHICULO[15]~48_combout\);
 
--- Location: FF_X37_Y9_N31
+-- Location: FF_X24_Y18_N31
 \TIEMPO_PASOVEHICULO[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1569,27 +1588,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPO_PASOVEHICULO(15));
 
--- Location: LCCOMB_X38_Y9_N22
-\LessThan0~1\ : cycloneiii_lcell_comb
--- Equation(s):
--- \LessThan0~1_combout\ = (!TIEMPO_PASOVEHICULO(11) & (((!TIEMPO_PASOVEHICULO(8) & !TIEMPO_PASOVEHICULO(9))) # (!TIEMPO_PASOVEHICULO(10))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000110111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => TIEMPO_PASOVEHICULO(8),
-	datab => TIEMPO_PASOVEHICULO(10),
-	datac => TIEMPO_PASOVEHICULO(9),
-	datad => TIEMPO_PASOVEHICULO(11),
-	combout => \LessThan0~1_combout\);
-
--- Location: LCCOMB_X38_Y9_N2
+-- Location: LCCOMB_X23_Y18_N8
 \LessThan0~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \LessThan0~0_combout\ = (!TIEMPO_PASOVEHICULO(13)) # (!TIEMPO_PASOVEHICULO(14))
+-- \LessThan0~0_combout\ = (!TIEMPO_PASOVEHICULO(14)) # (!TIEMPO_PASOVEHICULO(13))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1597,46 +1599,63 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => TIEMPO_PASOVEHICULO(14),
-	datad => TIEMPO_PASOVEHICULO(13),
+	datab => TIEMPO_PASOVEHICULO(13),
+	datad => TIEMPO_PASOVEHICULO(14),
 	combout => \LessThan0~0_combout\);
 
--- Location: LCCOMB_X38_Y9_N20
+-- Location: LCCOMB_X23_Y18_N10
+\LessThan0~1\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \LessThan0~1_combout\ = (!TIEMPO_PASOVEHICULO(11) & (((!TIEMPO_PASOVEHICULO(9) & !TIEMPO_PASOVEHICULO(8))) # (!TIEMPO_PASOVEHICULO(10))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000011111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => TIEMPO_PASOVEHICULO(9),
+	datab => TIEMPO_PASOVEHICULO(8),
+	datac => TIEMPO_PASOVEHICULO(10),
+	datad => TIEMPO_PASOVEHICULO(11),
+	combout => \LessThan0~1_combout\);
+
+-- Location: LCCOMB_X23_Y18_N16
 \REGISTRO_CONTEOVEHICULAR[0]~7\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[0]~7_combout\ = (!TIEMPO_PASOVEHICULO(15) & ((\LessThan0~0_combout\) # ((!TIEMPO_PASOVEHICULO(12) & \LessThan0~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011001100010000",
+	lut_mask => "0101000101010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => TIEMPO_PASOVEHICULO(12),
-	datab => TIEMPO_PASOVEHICULO(15),
-	datac => \LessThan0~1_combout\,
-	datad => \LessThan0~0_combout\,
+	dataa => TIEMPO_PASOVEHICULO(15),
+	datab => TIEMPO_PASOVEHICULO(12),
+	datac => \LessThan0~0_combout\,
+	datad => \LessThan0~1_combout\,
 	combout => \REGISTRO_CONTEOVEHICULAR[0]~7_combout\);
 
--- Location: LCCOMB_X38_Y9_N8
+-- Location: LCCOMB_X22_Y18_N6
 \Selector1~0\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \Selector1~0_combout\ = (\TIEMPO_PASOVEHICULO[1]~16_combout\ & (\ESTADO.VEHICLE_PASSING~q\ & (\TALANQUERA_CERRADA_TIEMPO[0]~1_combout\ $ (\REGISTRO_CONTEOVEHICULAR[0]~7_combout\)))) # (!\TIEMPO_PASOVEHICULO[1]~16_combout\ & (((\ESTADO.VEHICLE_PASSING~q\ & 
--- \REGISTRO_CONTEOVEHICULAR[0]~7_combout\)) # (!\TALANQUERA_CERRADA_TIEMPO[0]~1_combout\)))
+-- \Selector1~0_combout\ = (\TIEMPO_PASOVEHICULO[1]~16_combout\ & (\ESTADO.VEHICLE_PASSING~q\ & (\REGISTRO_CONTEOVEHICULAR[0]~7_combout\ $ (\TALANQUERA_CERRADA_TIEMPO[0]~1_combout\)))) # (!\TIEMPO_PASOVEHICULO[1]~16_combout\ & 
+-- (((\REGISTRO_CONTEOVEHICULAR[0]~7_combout\ & \ESTADO.VEHICLE_PASSING~q\)) # (!\TALANQUERA_CERRADA_TIEMPO[0]~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0111000110010001",
+	lut_mask => "0110000011010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \TIEMPO_PASOVEHICULO[1]~16_combout\,
-	datab => \TALANQUERA_CERRADA_TIEMPO[0]~1_combout\,
+	datab => \REGISTRO_CONTEOVEHICULAR[0]~7_combout\,
 	datac => \ESTADO.VEHICLE_PASSING~q\,
-	datad => \REGISTRO_CONTEOVEHICULAR[0]~7_combout\,
+	datad => \TALANQUERA_CERRADA_TIEMPO[0]~1_combout\,
 	combout => \Selector1~0_combout\);
 
--- Location: FF_X38_Y9_N9
+-- Location: FF_X22_Y18_N7
 \ESTADO.VEHICLE_PASSING\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1651,7 +1670,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \ESTADO.VEHICLE_PASSING~q\);
 
--- Location: LCCOMB_X38_Y9_N6
+-- Location: LCCOMB_X23_Y18_N20
 \REGISTRO_CONTEOVEHICULAR[0]~8\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[0]~8_combout\ = (\ESTADO.VEHICLE_PASSING~q\ & !\REGISTRO_CONTEOVEHICULAR[0]~7_combout\)
@@ -1666,7 +1685,7 @@ PORT MAP (
 	datad => \REGISTRO_CONTEOVEHICULAR[0]~7_combout\,
 	combout => \REGISTRO_CONTEOVEHICULAR[0]~8_combout\);
 
--- Location: FF_X39_Y9_N5
+-- Location: FF_X22_Y18_N5
 \REGISTRO_CONTEOVEHICULAR[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1682,7 +1701,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_CONTEOVEHICULAR(0));
 
--- Location: LCCOMB_X39_Y9_N12
+-- Location: LCCOMB_X22_Y18_N12
 \REGISTRO_CONTEOVEHICULAR[1]~9\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[1]~9_combout\ = (REGISTRO_CONTEOVEHICULAR(1) & (REGISTRO_CONTEOVEHICULAR(0) $ (VCC))) # (!REGISTRO_CONTEOVEHICULAR(1) & (REGISTRO_CONTEOVEHICULAR(0) & VCC))
@@ -1700,7 +1719,7 @@ PORT MAP (
 	combout => \REGISTRO_CONTEOVEHICULAR[1]~9_combout\,
 	cout => \REGISTRO_CONTEOVEHICULAR[1]~10\);
 
--- Location: FF_X39_Y9_N13
+-- Location: FF_X22_Y18_N13
 \REGISTRO_CONTEOVEHICULAR[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1716,7 +1735,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_CONTEOVEHICULAR(1));
 
--- Location: LCCOMB_X39_Y9_N14
+-- Location: LCCOMB_X22_Y18_N14
 \REGISTRO_CONTEOVEHICULAR[2]~11\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[2]~11_combout\ = (REGISTRO_CONTEOVEHICULAR(2) & (!\REGISTRO_CONTEOVEHICULAR[1]~10\)) # (!REGISTRO_CONTEOVEHICULAR(2) & ((\REGISTRO_CONTEOVEHICULAR[1]~10\) # (GND)))
@@ -1734,7 +1753,7 @@ PORT MAP (
 	combout => \REGISTRO_CONTEOVEHICULAR[2]~11_combout\,
 	cout => \REGISTRO_CONTEOVEHICULAR[2]~12\);
 
--- Location: FF_X39_Y9_N15
+-- Location: FF_X22_Y18_N15
 \REGISTRO_CONTEOVEHICULAR[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1750,7 +1769,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_CONTEOVEHICULAR(2));
 
--- Location: LCCOMB_X39_Y9_N16
+-- Location: LCCOMB_X22_Y18_N16
 \REGISTRO_CONTEOVEHICULAR[3]~13\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[3]~13_combout\ = (REGISTRO_CONTEOVEHICULAR(3) & (\REGISTRO_CONTEOVEHICULAR[2]~12\ $ (GND))) # (!REGISTRO_CONTEOVEHICULAR(3) & (!\REGISTRO_CONTEOVEHICULAR[2]~12\ & VCC))
@@ -1768,7 +1787,7 @@ PORT MAP (
 	combout => \REGISTRO_CONTEOVEHICULAR[3]~13_combout\,
 	cout => \REGISTRO_CONTEOVEHICULAR[3]~14\);
 
--- Location: FF_X39_Y9_N17
+-- Location: FF_X22_Y18_N17
 \REGISTRO_CONTEOVEHICULAR[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1784,7 +1803,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_CONTEOVEHICULAR(3));
 
--- Location: LCCOMB_X39_Y9_N18
+-- Location: LCCOMB_X22_Y18_N18
 \REGISTRO_CONTEOVEHICULAR[4]~15\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[4]~15_combout\ = (REGISTRO_CONTEOVEHICULAR(4) & (!\REGISTRO_CONTEOVEHICULAR[3]~14\)) # (!REGISTRO_CONTEOVEHICULAR(4) & ((\REGISTRO_CONTEOVEHICULAR[3]~14\) # (GND)))
@@ -1802,7 +1821,7 @@ PORT MAP (
 	combout => \REGISTRO_CONTEOVEHICULAR[4]~15_combout\,
 	cout => \REGISTRO_CONTEOVEHICULAR[4]~16\);
 
--- Location: FF_X39_Y9_N19
+-- Location: FF_X22_Y18_N19
 \REGISTRO_CONTEOVEHICULAR[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1818,7 +1837,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_CONTEOVEHICULAR(4));
 
--- Location: LCCOMB_X39_Y9_N20
+-- Location: LCCOMB_X22_Y18_N20
 \REGISTRO_CONTEOVEHICULAR[5]~17\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[5]~17_combout\ = (REGISTRO_CONTEOVEHICULAR(5) & (\REGISTRO_CONTEOVEHICULAR[4]~16\ $ (GND))) # (!REGISTRO_CONTEOVEHICULAR(5) & (!\REGISTRO_CONTEOVEHICULAR[4]~16\ & VCC))
@@ -1836,7 +1855,7 @@ PORT MAP (
 	combout => \REGISTRO_CONTEOVEHICULAR[5]~17_combout\,
 	cout => \REGISTRO_CONTEOVEHICULAR[5]~18\);
 
--- Location: FF_X39_Y9_N21
+-- Location: FF_X22_Y18_N21
 \REGISTRO_CONTEOVEHICULAR[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1852,7 +1871,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_CONTEOVEHICULAR(5));
 
--- Location: LCCOMB_X39_Y9_N22
+-- Location: LCCOMB_X22_Y18_N22
 \REGISTRO_CONTEOVEHICULAR[6]~19\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[6]~19_combout\ = (REGISTRO_CONTEOVEHICULAR(6) & (!\REGISTRO_CONTEOVEHICULAR[5]~18\)) # (!REGISTRO_CONTEOVEHICULAR(6) & ((\REGISTRO_CONTEOVEHICULAR[5]~18\) # (GND)))
@@ -1870,7 +1889,7 @@ PORT MAP (
 	combout => \REGISTRO_CONTEOVEHICULAR[6]~19_combout\,
 	cout => \REGISTRO_CONTEOVEHICULAR[6]~20\);
 
--- Location: FF_X39_Y9_N23
+-- Location: FF_X22_Y18_N23
 \REGISTRO_CONTEOVEHICULAR[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1886,7 +1905,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_CONTEOVEHICULAR(6));
 
--- Location: LCCOMB_X39_Y9_N24
+-- Location: LCCOMB_X22_Y18_N24
 \REGISTRO_CONTEOVEHICULAR[7]~21\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_CONTEOVEHICULAR[7]~21_combout\ = \REGISTRO_CONTEOVEHICULAR[6]~20\ $ (!REGISTRO_CONTEOVEHICULAR(7))
@@ -1901,7 +1920,7 @@ PORT MAP (
 	cin => \REGISTRO_CONTEOVEHICULAR[6]~20\,
 	combout => \REGISTRO_CONTEOVEHICULAR[7]~21_combout\);
 
--- Location: FF_X39_Y9_N25
+-- Location: FF_X22_Y18_N25
 \REGISTRO_CONTEOVEHICULAR[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1917,21 +1936,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_CONTEOVEHICULAR(7));
 
--- Location: LCCOMB_X39_Y9_N26
-\REGISTRO_TIEMPOVEHICULAR[0]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \REGISTRO_TIEMPOVEHICULAR[0]~feeder_combout\ = TIEMPO_PASOVEHICULO(0)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => TIEMPO_PASOVEHICULO(0),
-	combout => \REGISTRO_TIEMPOVEHICULAR[0]~feeder_combout\);
-
--- Location: FF_X39_Y9_N27
+-- Location: FF_X23_Y18_N9
 \REGISTRO_TIEMPOVEHICULAR[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1940,14 +1945,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
-	d => \REGISTRO_TIEMPOVEHICULAR[0]~feeder_combout\,
+	asdata => TIEMPO_PASOVEHICULO(0),
 	clrn => \ALT_INV_REINICIO~inputclkctrl_outclk\,
+	sload => VCC,
 	ena => \REGISTRO_CONTEOVEHICULAR[0]~8_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(0));
 
--- Location: LCCOMB_X39_Y9_N0
+-- Location: LCCOMB_X22_Y18_N0
 \REGISTRO_TIEMPOVEHICULAR[1]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[1]~feeder_combout\ = TIEMPO_PASOVEHICULO(1)
@@ -1961,7 +1967,7 @@ PORT MAP (
 	datad => TIEMPO_PASOVEHICULO(1),
 	combout => \REGISTRO_TIEMPOVEHICULAR[1]~feeder_combout\);
 
--- Location: FF_X39_Y9_N1
+-- Location: FF_X22_Y18_N1
 \REGISTRO_TIEMPOVEHICULAR[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1977,7 +1983,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(1));
 
--- Location: FF_X38_Y9_N25
+-- Location: LCCOMB_X22_Y18_N8
+\REGISTRO_TIEMPOVEHICULAR[2]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \REGISTRO_TIEMPOVEHICULAR[2]~feeder_combout\ = TIEMPO_PASOVEHICULO(2)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => TIEMPO_PASOVEHICULO(2),
+	combout => \REGISTRO_TIEMPOVEHICULAR[2]~feeder_combout\);
+
+-- Location: FF_X22_Y18_N9
 \REGISTRO_TIEMPOVEHICULAR[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -1986,15 +2006,28 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
-	asdata => TIEMPO_PASOVEHICULO(2),
+	d => \REGISTRO_TIEMPOVEHICULAR[2]~feeder_combout\,
 	clrn => \ALT_INV_REINICIO~inputclkctrl_outclk\,
-	sload => VCC,
 	ena => \REGISTRO_CONTEOVEHICULAR[0]~8_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(2));
 
--- Location: FF_X38_Y9_N7
+-- Location: LCCOMB_X23_Y18_N2
+\REGISTRO_TIEMPOVEHICULAR[3]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \REGISTRO_TIEMPOVEHICULAR[3]~feeder_combout\ = TIEMPO_PASOVEHICULO(3)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => TIEMPO_PASOVEHICULO(3),
+	combout => \REGISTRO_TIEMPOVEHICULAR[3]~feeder_combout\);
+
+-- Location: FF_X23_Y18_N3
 \REGISTRO_TIEMPOVEHICULAR[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2003,15 +2036,28 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
-	asdata => TIEMPO_PASOVEHICULO(3),
+	d => \REGISTRO_TIEMPOVEHICULAR[3]~feeder_combout\,
 	clrn => \ALT_INV_REINICIO~inputclkctrl_outclk\,
-	sload => VCC,
 	ena => \REGISTRO_CONTEOVEHICULAR[0]~8_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(3));
 
--- Location: FF_X38_Y9_N29
+-- Location: LCCOMB_X23_Y18_N0
+\REGISTRO_TIEMPOVEHICULAR[4]~feeder\ : cycloneiii_lcell_comb
+-- Equation(s):
+-- \REGISTRO_TIEMPOVEHICULAR[4]~feeder_combout\ = TIEMPO_PASOVEHICULO(4)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => TIEMPO_PASOVEHICULO(4),
+	combout => \REGISTRO_TIEMPOVEHICULAR[4]~feeder_combout\);
+
+-- Location: FF_X23_Y18_N1
 \REGISTRO_TIEMPOVEHICULAR[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2020,29 +2066,14 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
-	asdata => TIEMPO_PASOVEHICULO(4),
+	d => \REGISTRO_TIEMPOVEHICULAR[4]~feeder_combout\,
 	clrn => \ALT_INV_REINICIO~inputclkctrl_outclk\,
-	sload => VCC,
 	ena => \REGISTRO_CONTEOVEHICULAR[0]~8_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(4));
 
--- Location: LCCOMB_X39_Y9_N6
-\REGISTRO_TIEMPOVEHICULAR[5]~feeder\ : cycloneiii_lcell_comb
--- Equation(s):
--- \REGISTRO_TIEMPOVEHICULAR[5]~feeder_combout\ = TIEMPO_PASOVEHICULO(5)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => TIEMPO_PASOVEHICULO(5),
-	combout => \REGISTRO_TIEMPOVEHICULAR[5]~feeder_combout\);
-
--- Location: FF_X39_Y9_N7
+-- Location: FF_X23_Y18_N7
 \REGISTRO_TIEMPOVEHICULAR[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2051,14 +2082,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
-	d => \REGISTRO_TIEMPOVEHICULAR[5]~feeder_combout\,
+	asdata => TIEMPO_PASOVEHICULO(5),
 	clrn => \ALT_INV_REINICIO~inputclkctrl_outclk\,
+	sload => VCC,
 	ena => \REGISTRO_CONTEOVEHICULAR[0]~8_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(5));
 
--- Location: LCCOMB_X39_Y9_N28
+-- Location: LCCOMB_X22_Y18_N2
 \REGISTRO_TIEMPOVEHICULAR[6]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[6]~feeder_combout\ = TIEMPO_PASOVEHICULO(6)
@@ -2072,7 +2104,7 @@ PORT MAP (
 	datad => TIEMPO_PASOVEHICULO(6),
 	combout => \REGISTRO_TIEMPOVEHICULAR[6]~feeder_combout\);
 
--- Location: FF_X39_Y9_N29
+-- Location: FF_X22_Y18_N3
 \REGISTRO_TIEMPOVEHICULAR[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2088,21 +2120,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(6));
 
--- Location: LCCOMB_X38_Y9_N26
+-- Location: LCCOMB_X23_Y18_N28
 \REGISTRO_TIEMPOVEHICULAR[7]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[7]~feeder_combout\ = TIEMPO_PASOVEHICULO(7)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => TIEMPO_PASOVEHICULO(7),
+	datac => TIEMPO_PASOVEHICULO(7),
 	combout => \REGISTRO_TIEMPOVEHICULAR[7]~feeder_combout\);
 
--- Location: FF_X38_Y9_N27
+-- Location: FF_X23_Y18_N29
 \REGISTRO_TIEMPOVEHICULAR[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2118,21 +2150,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(7));
 
--- Location: LCCOMB_X38_Y9_N16
+-- Location: LCCOMB_X23_Y18_N30
 \REGISTRO_TIEMPOVEHICULAR[8]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[8]~feeder_combout\ = TIEMPO_PASOVEHICULO(8)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011110000",
+	lut_mask => "1111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => TIEMPO_PASOVEHICULO(8),
+	datad => TIEMPO_PASOVEHICULO(8),
 	combout => \REGISTRO_TIEMPOVEHICULAR[8]~feeder_combout\);
 
--- Location: FF_X38_Y9_N17
+-- Location: FF_X23_Y18_N31
 \REGISTRO_TIEMPOVEHICULAR[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2148,7 +2180,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(8));
 
--- Location: LCCOMB_X38_Y9_N18
+-- Location: LCCOMB_X23_Y18_N12
 \REGISTRO_TIEMPOVEHICULAR[9]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[9]~feeder_combout\ = TIEMPO_PASOVEHICULO(9)
@@ -2162,7 +2194,7 @@ PORT MAP (
 	datad => TIEMPO_PASOVEHICULO(9),
 	combout => \REGISTRO_TIEMPOVEHICULAR[9]~feeder_combout\);
 
--- Location: FF_X38_Y9_N19
+-- Location: FF_X23_Y18_N13
 \REGISTRO_TIEMPOVEHICULAR[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2178,21 +2210,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(9));
 
--- Location: LCCOMB_X38_Y9_N4
+-- Location: LCCOMB_X23_Y18_N22
 \REGISTRO_TIEMPOVEHICULAR[10]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[10]~feeder_combout\ = TIEMPO_PASOVEHICULO(10)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => TIEMPO_PASOVEHICULO(10),
+	datac => TIEMPO_PASOVEHICULO(10),
 	combout => \REGISTRO_TIEMPOVEHICULAR[10]~feeder_combout\);
 
--- Location: FF_X38_Y9_N5
+-- Location: FF_X23_Y18_N23
 \REGISTRO_TIEMPOVEHICULAR[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2208,7 +2240,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(10));
 
--- Location: LCCOMB_X38_Y9_N10
+-- Location: LCCOMB_X23_Y18_N24
 \REGISTRO_TIEMPOVEHICULAR[11]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[11]~feeder_combout\ = TIEMPO_PASOVEHICULO(11)
@@ -2222,7 +2254,7 @@ PORT MAP (
 	datad => TIEMPO_PASOVEHICULO(11),
 	combout => \REGISTRO_TIEMPOVEHICULAR[11]~feeder_combout\);
 
--- Location: FF_X38_Y9_N11
+-- Location: FF_X23_Y18_N25
 \REGISTRO_TIEMPOVEHICULAR[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2238,7 +2270,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(11));
 
--- Location: LCCOMB_X38_Y9_N0
+-- Location: LCCOMB_X23_Y18_N26
 \REGISTRO_TIEMPOVEHICULAR[12]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[12]~feeder_combout\ = TIEMPO_PASOVEHICULO(12)
@@ -2252,7 +2284,7 @@ PORT MAP (
 	datad => TIEMPO_PASOVEHICULO(12),
 	combout => \REGISTRO_TIEMPOVEHICULAR[12]~feeder_combout\);
 
--- Location: FF_X38_Y9_N1
+-- Location: FF_X23_Y18_N27
 \REGISTRO_TIEMPOVEHICULAR[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2268,7 +2300,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(12));
 
--- Location: LCCOMB_X38_Y9_N14
+-- Location: LCCOMB_X23_Y18_N4
 \REGISTRO_TIEMPOVEHICULAR[13]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[13]~feeder_combout\ = TIEMPO_PASOVEHICULO(13)
@@ -2282,7 +2314,7 @@ PORT MAP (
 	datac => TIEMPO_PASOVEHICULO(13),
 	combout => \REGISTRO_TIEMPOVEHICULAR[13]~feeder_combout\);
 
--- Location: FF_X38_Y9_N15
+-- Location: FF_X23_Y18_N5
 \REGISTRO_TIEMPOVEHICULAR[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2298,7 +2330,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(13));
 
--- Location: LCCOMB_X38_Y9_N12
+-- Location: LCCOMB_X23_Y18_N14
 \REGISTRO_TIEMPOVEHICULAR[14]~feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \REGISTRO_TIEMPOVEHICULAR[14]~feeder_combout\ = TIEMPO_PASOVEHICULO(14)
@@ -2312,7 +2344,7 @@ PORT MAP (
 	datad => TIEMPO_PASOVEHICULO(14),
 	combout => \REGISTRO_TIEMPOVEHICULAR[14]~feeder_combout\);
 
--- Location: FF_X38_Y9_N13
+-- Location: FF_X23_Y18_N15
 \REGISTRO_TIEMPOVEHICULAR[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2328,7 +2360,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(14));
 
--- Location: FF_X38_Y9_N3
+-- Location: FF_X23_Y18_N21
 \REGISTRO_TIEMPOVEHICULAR[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2345,7 +2377,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => REGISTRO_TIEMPOVEHICULAR(15));
 
--- Location: LCCOMB_X36_Y9_N0
+-- Location: LCCOMB_X21_Y18_N0
 \TIEMPOTALANQUERA_CERRADA[0]~16\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[0]~16_combout\ = TIEMPOTALANQUERA_CERRADA(0) $ (VCC)
@@ -2362,25 +2394,25 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[0]~16_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[0]~17\);
 
--- Location: LCCOMB_X38_Y9_N30
+-- Location: LCCOMB_X23_Y18_N18
 \TIEMPOTALANQUERA_CERRADA[14]~18\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \TIEMPOTALANQUERA_CERRADA[14]~18_combout\ = (\ABRIR_TALANQUERA~input_o\ & (\ESTADO.VEHICLE_PASSING~q\ & ((!\REGISTRO_CONTEOVEHICULAR[0]~7_combout\)))) # (!\ABRIR_TALANQUERA~input_o\ & ((\ESTADO.BARRIER_CLOSING~q\) # ((\ESTADO.VEHICLE_PASSING~q\ & 
+-- \TIEMPOTALANQUERA_CERRADA[14]~18_combout\ = (\ABRIR_TALANQUERA~input_o\ & (((\ESTADO.VEHICLE_PASSING~q\ & !\REGISTRO_CONTEOVEHICULAR[0]~7_combout\)))) # (!\ABRIR_TALANQUERA~input_o\ & ((\ESTADO.BARRIER_CLOSING~q\) # ((\ESTADO.VEHICLE_PASSING~q\ & 
 -- !\REGISTRO_CONTEOVEHICULAR[0]~7_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101000011011100",
+	lut_mask => "0100010011110100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ABRIR_TALANQUERA~input_o\,
-	datab => \ESTADO.VEHICLE_PASSING~q\,
-	datac => \ESTADO.BARRIER_CLOSING~q\,
+	datab => \ESTADO.BARRIER_CLOSING~q\,
+	datac => \ESTADO.VEHICLE_PASSING~q\,
 	datad => \REGISTRO_CONTEOVEHICULAR[0]~7_combout\,
 	combout => \TIEMPOTALANQUERA_CERRADA[14]~18_combout\);
 
--- Location: FF_X36_Y9_N1
+-- Location: FF_X21_Y18_N1
 \TIEMPOTALANQUERA_CERRADA[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2397,7 +2429,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(0));
 
--- Location: LCCOMB_X40_Y9_N8
+-- Location: LCCOMB_X21_Y21_N12
 \TALANQUERA_CERRADA_TIEMPO[0]~0\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[0]~0_combout\ = (\ABRIR_TALANQUERA~input_o\ & (!\REINICIO~input_o\ & \ESTADO.BARRIER_CLOSING~q\))
@@ -2413,7 +2445,7 @@ PORT MAP (
 	datad => \ESTADO.BARRIER_CLOSING~q\,
 	combout => \TALANQUERA_CERRADA_TIEMPO[0]~0_combout\);
 
--- Location: FF_X40_Y9_N9
+-- Location: FF_X21_Y21_N13
 \TALANQUERA_CERRADA_TIEMPO[0]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2429,7 +2461,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[0]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N2
+-- Location: LCCOMB_X21_Y18_N2
 \TIEMPOTALANQUERA_CERRADA[1]~19\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[1]~19_combout\ = (TIEMPOTALANQUERA_CERRADA(1) & (!\TIEMPOTALANQUERA_CERRADA[0]~17\)) # (!TIEMPOTALANQUERA_CERRADA(1) & ((\TIEMPOTALANQUERA_CERRADA[0]~17\) # (GND)))
@@ -2447,7 +2479,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[1]~19_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[1]~20\);
 
--- Location: FF_X36_Y9_N3
+-- Location: FF_X21_Y18_N3
 \TIEMPOTALANQUERA_CERRADA[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2464,21 +2496,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(1));
 
--- Location: LCCOMB_X40_Y9_N6
+-- Location: LCCOMB_X21_Y21_N18
 \TALANQUERA_CERRADA_TIEMPO[1]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[1]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(1)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011110000",
+	lut_mask => "1111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => TIEMPOTALANQUERA_CERRADA(1),
+	datad => TIEMPOTALANQUERA_CERRADA(1),
 	combout => \TALANQUERA_CERRADA_TIEMPO[1]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N7
+-- Location: FF_X21_Y21_N19
 \TALANQUERA_CERRADA_TIEMPO[1]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2493,7 +2525,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[1]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N4
+-- Location: LCCOMB_X21_Y18_N4
 \TIEMPOTALANQUERA_CERRADA[2]~21\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[2]~21_combout\ = (TIEMPOTALANQUERA_CERRADA(2) & (\TIEMPOTALANQUERA_CERRADA[1]~20\ $ (GND))) # (!TIEMPOTALANQUERA_CERRADA(2) & (!\TIEMPOTALANQUERA_CERRADA[1]~20\ & VCC))
@@ -2511,7 +2543,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[2]~21_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[2]~22\);
 
--- Location: FF_X36_Y9_N5
+-- Location: FF_X21_Y18_N5
 \TIEMPOTALANQUERA_CERRADA[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2528,7 +2560,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(2));
 
--- Location: LCCOMB_X40_Y9_N12
+-- Location: LCCOMB_X21_Y21_N24
 \TALANQUERA_CERRADA_TIEMPO[2]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[2]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(2)
@@ -2542,7 +2574,7 @@ PORT MAP (
 	datac => TIEMPOTALANQUERA_CERRADA(2),
 	combout => \TALANQUERA_CERRADA_TIEMPO[2]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N13
+-- Location: FF_X21_Y21_N25
 \TALANQUERA_CERRADA_TIEMPO[2]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2557,7 +2589,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[2]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N6
+-- Location: LCCOMB_X21_Y18_N6
 \TIEMPOTALANQUERA_CERRADA[3]~23\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[3]~23_combout\ = (TIEMPOTALANQUERA_CERRADA(3) & (!\TIEMPOTALANQUERA_CERRADA[2]~22\)) # (!TIEMPOTALANQUERA_CERRADA(3) & ((\TIEMPOTALANQUERA_CERRADA[2]~22\) # (GND)))
@@ -2575,7 +2607,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[3]~23_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[3]~24\);
 
--- Location: FF_X36_Y9_N7
+-- Location: FF_X21_Y18_N7
 \TIEMPOTALANQUERA_CERRADA[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2592,7 +2624,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(3));
 
--- Location: LCCOMB_X40_Y9_N2
+-- Location: LCCOMB_X21_Y21_N30
 \TALANQUERA_CERRADA_TIEMPO[3]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[3]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(3)
@@ -2606,7 +2638,7 @@ PORT MAP (
 	datad => TIEMPOTALANQUERA_CERRADA(3),
 	combout => \TALANQUERA_CERRADA_TIEMPO[3]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N3
+-- Location: FF_X21_Y21_N31
 \TALANQUERA_CERRADA_TIEMPO[3]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2621,7 +2653,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[3]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N8
+-- Location: LCCOMB_X21_Y18_N8
 \TIEMPOTALANQUERA_CERRADA[4]~25\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[4]~25_combout\ = (TIEMPOTALANQUERA_CERRADA(4) & (\TIEMPOTALANQUERA_CERRADA[3]~24\ $ (GND))) # (!TIEMPOTALANQUERA_CERRADA(4) & (!\TIEMPOTALANQUERA_CERRADA[3]~24\ & VCC))
@@ -2639,7 +2671,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[4]~25_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[4]~26\);
 
--- Location: FF_X36_Y9_N9
+-- Location: FF_X21_Y18_N9
 \TIEMPOTALANQUERA_CERRADA[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2656,7 +2688,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(4));
 
--- Location: LCCOMB_X40_Y9_N0
+-- Location: LCCOMB_X21_Y21_N16
 \TALANQUERA_CERRADA_TIEMPO[4]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[4]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(4)
@@ -2670,7 +2702,7 @@ PORT MAP (
 	datad => TIEMPOTALANQUERA_CERRADA(4),
 	combout => \TALANQUERA_CERRADA_TIEMPO[4]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N1
+-- Location: FF_X21_Y21_N17
 \TALANQUERA_CERRADA_TIEMPO[4]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2685,7 +2717,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[4]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N10
+-- Location: LCCOMB_X21_Y18_N10
 \TIEMPOTALANQUERA_CERRADA[5]~27\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[5]~27_combout\ = (TIEMPOTALANQUERA_CERRADA(5) & (!\TIEMPOTALANQUERA_CERRADA[4]~26\)) # (!TIEMPOTALANQUERA_CERRADA(5) & ((\TIEMPOTALANQUERA_CERRADA[4]~26\) # (GND)))
@@ -2703,7 +2735,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[5]~27_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[5]~28\);
 
--- Location: FF_X36_Y9_N11
+-- Location: FF_X21_Y18_N11
 \TIEMPOTALANQUERA_CERRADA[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2720,7 +2752,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(5));
 
--- Location: LCCOMB_X40_Y9_N26
+-- Location: LCCOMB_X21_Y21_N6
 \TALANQUERA_CERRADA_TIEMPO[5]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[5]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(5)
@@ -2734,7 +2766,7 @@ PORT MAP (
 	datad => TIEMPOTALANQUERA_CERRADA(5),
 	combout => \TALANQUERA_CERRADA_TIEMPO[5]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N27
+-- Location: FF_X21_Y21_N7
 \TALANQUERA_CERRADA_TIEMPO[5]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2749,7 +2781,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[5]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N12
+-- Location: LCCOMB_X21_Y18_N12
 \TIEMPOTALANQUERA_CERRADA[6]~29\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[6]~29_combout\ = (TIEMPOTALANQUERA_CERRADA(6) & (\TIEMPOTALANQUERA_CERRADA[5]~28\ $ (GND))) # (!TIEMPOTALANQUERA_CERRADA(6) & (!\TIEMPOTALANQUERA_CERRADA[5]~28\ & VCC))
@@ -2767,7 +2799,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[6]~29_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[6]~30\);
 
--- Location: FF_X36_Y9_N13
+-- Location: FF_X21_Y18_N13
 \TIEMPOTALANQUERA_CERRADA[6]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2784,7 +2816,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(6));
 
--- Location: LCCOMB_X40_Y9_N4
+-- Location: LCCOMB_X21_Y21_N4
 \TALANQUERA_CERRADA_TIEMPO[6]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[6]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(6)
@@ -2798,7 +2830,7 @@ PORT MAP (
 	datac => TIEMPOTALANQUERA_CERRADA(6),
 	combout => \TALANQUERA_CERRADA_TIEMPO[6]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N5
+-- Location: FF_X21_Y21_N5
 \TALANQUERA_CERRADA_TIEMPO[6]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2813,7 +2845,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[6]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N14
+-- Location: LCCOMB_X21_Y18_N14
 \TIEMPOTALANQUERA_CERRADA[7]~31\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[7]~31_combout\ = (TIEMPOTALANQUERA_CERRADA(7) & (!\TIEMPOTALANQUERA_CERRADA[6]~30\)) # (!TIEMPOTALANQUERA_CERRADA(7) & ((\TIEMPOTALANQUERA_CERRADA[6]~30\) # (GND)))
@@ -2831,7 +2863,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[7]~31_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[7]~32\);
 
--- Location: FF_X36_Y9_N15
+-- Location: FF_X21_Y18_N15
 \TIEMPOTALANQUERA_CERRADA[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2848,21 +2880,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(7));
 
--- Location: LCCOMB_X40_Y9_N10
+-- Location: LCCOMB_X21_Y21_N2
 \TALANQUERA_CERRADA_TIEMPO[7]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[7]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(7)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => TIEMPOTALANQUERA_CERRADA(7),
+	datac => TIEMPOTALANQUERA_CERRADA(7),
 	combout => \TALANQUERA_CERRADA_TIEMPO[7]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N11
+-- Location: FF_X21_Y21_N3
 \TALANQUERA_CERRADA_TIEMPO[7]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2877,7 +2909,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[7]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N16
+-- Location: LCCOMB_X21_Y18_N16
 \TIEMPOTALANQUERA_CERRADA[8]~33\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[8]~33_combout\ = (TIEMPOTALANQUERA_CERRADA(8) & (\TIEMPOTALANQUERA_CERRADA[7]~32\ $ (GND))) # (!TIEMPOTALANQUERA_CERRADA(8) & (!\TIEMPOTALANQUERA_CERRADA[7]~32\ & VCC))
@@ -2895,7 +2927,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[8]~33_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[8]~34\);
 
--- Location: FF_X36_Y9_N17
+-- Location: FF_X21_Y18_N17
 \TIEMPOTALANQUERA_CERRADA[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2912,21 +2944,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(8));
 
--- Location: LCCOMB_X40_Y9_N28
+-- Location: LCCOMB_X21_Y21_N20
 \TALANQUERA_CERRADA_TIEMPO[8]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[8]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(8)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => TIEMPOTALANQUERA_CERRADA(8),
+	datac => TIEMPOTALANQUERA_CERRADA(8),
 	combout => \TALANQUERA_CERRADA_TIEMPO[8]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N29
+-- Location: FF_X21_Y21_N21
 \TALANQUERA_CERRADA_TIEMPO[8]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2941,7 +2973,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[8]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N18
+-- Location: LCCOMB_X21_Y18_N18
 \TIEMPOTALANQUERA_CERRADA[9]~35\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[9]~35_combout\ = (TIEMPOTALANQUERA_CERRADA(9) & (!\TIEMPOTALANQUERA_CERRADA[8]~34\)) # (!TIEMPOTALANQUERA_CERRADA(9) & ((\TIEMPOTALANQUERA_CERRADA[8]~34\) # (GND)))
@@ -2959,7 +2991,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[9]~35_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[9]~36\);
 
--- Location: FF_X36_Y9_N19
+-- Location: FF_X21_Y18_N19
 \TIEMPOTALANQUERA_CERRADA[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -2976,7 +3008,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(9));
 
--- Location: LCCOMB_X40_Y9_N18
+-- Location: LCCOMB_X21_Y21_N26
 \TALANQUERA_CERRADA_TIEMPO[9]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[9]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(9)
@@ -2990,7 +3022,7 @@ PORT MAP (
 	datad => TIEMPOTALANQUERA_CERRADA(9),
 	combout => \TALANQUERA_CERRADA_TIEMPO[9]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N19
+-- Location: FF_X21_Y21_N27
 \TALANQUERA_CERRADA_TIEMPO[9]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3005,7 +3037,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[9]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N20
+-- Location: LCCOMB_X21_Y18_N20
 \TIEMPOTALANQUERA_CERRADA[10]~37\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[10]~37_combout\ = (TIEMPOTALANQUERA_CERRADA(10) & (\TIEMPOTALANQUERA_CERRADA[9]~36\ $ (GND))) # (!TIEMPOTALANQUERA_CERRADA(10) & (!\TIEMPOTALANQUERA_CERRADA[9]~36\ & VCC))
@@ -3023,7 +3055,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[10]~37_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[10]~38\);
 
--- Location: FF_X36_Y9_N21
+-- Location: FF_X21_Y18_N21
 \TIEMPOTALANQUERA_CERRADA[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3040,21 +3072,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(10));
 
--- Location: LCCOMB_X40_Y9_N20
+-- Location: LCCOMB_X21_Y21_N0
 \TALANQUERA_CERRADA_TIEMPO[10]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[10]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(10)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011110000",
+	lut_mask => "1111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => TIEMPOTALANQUERA_CERRADA(10),
+	datad => TIEMPOTALANQUERA_CERRADA(10),
 	combout => \TALANQUERA_CERRADA_TIEMPO[10]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N21
+-- Location: FF_X21_Y21_N1
 \TALANQUERA_CERRADA_TIEMPO[10]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3069,7 +3101,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[10]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N22
+-- Location: LCCOMB_X21_Y18_N22
 \TIEMPOTALANQUERA_CERRADA[11]~39\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[11]~39_combout\ = (TIEMPOTALANQUERA_CERRADA(11) & (!\TIEMPOTALANQUERA_CERRADA[10]~38\)) # (!TIEMPOTALANQUERA_CERRADA(11) & ((\TIEMPOTALANQUERA_CERRADA[10]~38\) # (GND)))
@@ -3087,7 +3119,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[11]~39_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[11]~40\);
 
--- Location: FF_X36_Y9_N23
+-- Location: FF_X21_Y18_N23
 \TIEMPOTALANQUERA_CERRADA[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3104,7 +3136,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(11));
 
--- Location: LCCOMB_X40_Y9_N22
+-- Location: LCCOMB_X21_Y21_N14
 \TALANQUERA_CERRADA_TIEMPO[11]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[11]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(11)
@@ -3118,7 +3150,7 @@ PORT MAP (
 	datad => TIEMPOTALANQUERA_CERRADA(11),
 	combout => \TALANQUERA_CERRADA_TIEMPO[11]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N23
+-- Location: FF_X21_Y21_N15
 \TALANQUERA_CERRADA_TIEMPO[11]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3133,7 +3165,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[11]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N24
+-- Location: LCCOMB_X21_Y18_N24
 \TIEMPOTALANQUERA_CERRADA[12]~41\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[12]~41_combout\ = (TIEMPOTALANQUERA_CERRADA(12) & (\TIEMPOTALANQUERA_CERRADA[11]~40\ $ (GND))) # (!TIEMPOTALANQUERA_CERRADA(12) & (!\TIEMPOTALANQUERA_CERRADA[11]~40\ & VCC))
@@ -3151,7 +3183,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[12]~41_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[12]~42\);
 
--- Location: FF_X36_Y9_N25
+-- Location: FF_X21_Y18_N25
 \TIEMPOTALANQUERA_CERRADA[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3168,21 +3200,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(12));
 
--- Location: LCCOMB_X40_Y8_N16
+-- Location: LCCOMB_X21_Y21_N28
 \TALANQUERA_CERRADA_TIEMPO[12]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[12]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(12)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011110000",
+	lut_mask => "1111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => TIEMPOTALANQUERA_CERRADA(12),
+	datad => TIEMPOTALANQUERA_CERRADA(12),
 	combout => \TALANQUERA_CERRADA_TIEMPO[12]~reg0feeder_combout\);
 
--- Location: FF_X40_Y8_N17
+-- Location: FF_X21_Y21_N29
 \TALANQUERA_CERRADA_TIEMPO[12]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3197,7 +3229,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[12]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N26
+-- Location: LCCOMB_X21_Y18_N26
 \TIEMPOTALANQUERA_CERRADA[13]~43\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[13]~43_combout\ = (TIEMPOTALANQUERA_CERRADA(13) & (!\TIEMPOTALANQUERA_CERRADA[12]~42\)) # (!TIEMPOTALANQUERA_CERRADA(13) & ((\TIEMPOTALANQUERA_CERRADA[12]~42\) # (GND)))
@@ -3215,7 +3247,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[13]~43_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[13]~44\);
 
--- Location: FF_X36_Y9_N27
+-- Location: FF_X21_Y18_N27
 \TIEMPOTALANQUERA_CERRADA[13]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3232,21 +3264,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(13));
 
--- Location: LCCOMB_X40_Y9_N24
+-- Location: LCCOMB_X21_Y21_N22
 \TALANQUERA_CERRADA_TIEMPO[13]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[13]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(13)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => TIEMPOTALANQUERA_CERRADA(13),
+	datac => TIEMPOTALANQUERA_CERRADA(13),
 	combout => \TALANQUERA_CERRADA_TIEMPO[13]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N25
+-- Location: FF_X21_Y21_N23
 \TALANQUERA_CERRADA_TIEMPO[13]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3261,7 +3293,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[13]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N28
+-- Location: LCCOMB_X21_Y18_N28
 \TIEMPOTALANQUERA_CERRADA[14]~45\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TIEMPOTALANQUERA_CERRADA[14]~45_combout\ = (TIEMPOTALANQUERA_CERRADA(14) & (\TIEMPOTALANQUERA_CERRADA[13]~44\ $ (GND))) # (!TIEMPOTALANQUERA_CERRADA(14) & (!\TIEMPOTALANQUERA_CERRADA[13]~44\ & VCC))
@@ -3279,7 +3311,7 @@ PORT MAP (
 	combout => \TIEMPOTALANQUERA_CERRADA[14]~45_combout\,
 	cout => \TIEMPOTALANQUERA_CERRADA[14]~46\);
 
--- Location: FF_X36_Y9_N29
+-- Location: FF_X21_Y18_N29
 \TIEMPOTALANQUERA_CERRADA[14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3296,7 +3328,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(14));
 
--- Location: LCCOMB_X40_Y9_N30
+-- Location: LCCOMB_X21_Y21_N8
 \TALANQUERA_CERRADA_TIEMPO[14]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[14]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(14)
@@ -3310,7 +3342,7 @@ PORT MAP (
 	datac => TIEMPOTALANQUERA_CERRADA(14),
 	combout => \TALANQUERA_CERRADA_TIEMPO[14]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N31
+-- Location: FF_X21_Y21_N9
 \TALANQUERA_CERRADA_TIEMPO[14]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3325,22 +3357,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[14]~reg0_q\);
 
--- Location: LCCOMB_X36_Y9_N30
+-- Location: LCCOMB_X21_Y18_N30
 \TIEMPOTALANQUERA_CERRADA[15]~47\ : cycloneiii_lcell_comb
 -- Equation(s):
--- \TIEMPOTALANQUERA_CERRADA[15]~47_combout\ = \TIEMPOTALANQUERA_CERRADA[14]~46\ $ (TIEMPOTALANQUERA_CERRADA(15))
+-- \TIEMPOTALANQUERA_CERRADA[15]~47_combout\ = TIEMPOTALANQUERA_CERRADA(15) $ (\TIEMPOTALANQUERA_CERRADA[14]~46\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111111110000",
+	lut_mask => "0101101001011010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datad => TIEMPOTALANQUERA_CERRADA(15),
+	dataa => TIEMPOTALANQUERA_CERRADA(15),
 	cin => \TIEMPOTALANQUERA_CERRADA[14]~46\,
 	combout => \TIEMPOTALANQUERA_CERRADA[15]~47_combout\);
 
--- Location: FF_X36_Y9_N31
+-- Location: FF_X21_Y18_N31
 \TIEMPOTALANQUERA_CERRADA[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3357,21 +3389,21 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => TIEMPOTALANQUERA_CERRADA(15));
 
--- Location: LCCOMB_X40_Y9_N16
+-- Location: LCCOMB_X21_Y21_N10
 \TALANQUERA_CERRADA_TIEMPO[15]~reg0feeder\ : cycloneiii_lcell_comb
 -- Equation(s):
 -- \TALANQUERA_CERRADA_TIEMPO[15]~reg0feeder_combout\ = TIEMPOTALANQUERA_CERRADA(15)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => TIEMPOTALANQUERA_CERRADA(15),
+	datac => TIEMPOTALANQUERA_CERRADA(15),
 	combout => \TALANQUERA_CERRADA_TIEMPO[15]~reg0feeder_combout\);
 
--- Location: FF_X40_Y9_N17
+-- Location: FF_X21_Y21_N11
 \TALANQUERA_CERRADA_TIEMPO[15]~reg0\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -3385,6 +3417,22 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \TALANQUERA_CERRADA_TIEMPO[15]~reg0_q\);
+
+-- Location: FF_X22_Y18_N27
+\SALIDA_SEMAFORO_VERDE_OUT~reg0\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	asdata => \ESTADO.VEHICLE_PASSING~q\,
+	clrn => \ALT_INV_REINICIO~inputclkctrl_outclk\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \SALIDA_SEMAFORO_VERDE_OUT~reg0_q\);
 
 ww_CONTADOR_VEHICULAR(0) <= \CONTADOR_VEHICULAR[0]~output_o\;
 
@@ -3465,6 +3513,8 @@ ww_TALANQUERA_CERRADA_TIEMPO(13) <= \TALANQUERA_CERRADA_TIEMPO[13]~output_o\;
 ww_TALANQUERA_CERRADA_TIEMPO(14) <= \TALANQUERA_CERRADA_TIEMPO[14]~output_o\;
 
 ww_TALANQUERA_CERRADA_TIEMPO(15) <= \TALANQUERA_CERRADA_TIEMPO[15]~output_o\;
+
+ww_SALIDA_SEMAFORO_VERDE_OUT <= \SALIDA_SEMAFORO_VERDE_OUT~output_o\;
 END structure;
 
 

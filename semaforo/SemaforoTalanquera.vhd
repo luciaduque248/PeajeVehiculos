@@ -8,8 +8,8 @@ entity SemaforoTalanquera is
         EstadoTalanquera : in std_logic;    -- Estado de la barrera manual (1 cerrado, 0 abierto)
         
 		  -- salidas
-		  SemaforoRojo : out std_logic;     
-        Semaforoverde : out std_logic;   
+		  SemaforoRojoTalanquera : out std_logic;     
+        SemaforoVerdeTalanquera : out std_logic;   
         talanquera : out std_logic       
     );
 end entity SemaforoTalanquera;
@@ -28,15 +28,15 @@ begin
         if Sistema_habilitador = '1' then
             case Estado is
                 when Rojo =>
-                    SemaforoRojo <= '1';
-                    Semaforoverde <= '0';
+                    SemaforoRojoTalanquera <= '1';
+                    SemaforoVerdeTalanquera <= '0';
                     Talanquera <= '1';
                     if EstadoTalanquera = '0' then -- Si la barrera manual está abierta
                         Estado <= Verde; -- Cambiar al estado verde
                     end if;
                 when Verde =>
-                    SemaforoRojo <= '0';
-                    Semaforoverde <= '1';
+                    SemaforoRojoTalanquera <= '0';
+                    SemaforoVerdeTalanquera <= '1';
                     Talanquera <= '0';
                     if EstadoTalanquera = '1' then -- Si la barrera manual está cerrada
                         Estado <= Rojo; -- Cambiar al estado rojo

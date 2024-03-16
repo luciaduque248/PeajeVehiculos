@@ -1,5 +1,5 @@
 Flow report for ControlVehicular
-Wed Mar 13 00:37:07 2024
+Fri Mar 15 18:03:42 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar 13 00:37:07 2024      ;
+; Flow Status                        ; Successful - Fri Mar 15 18:03:42 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; ControlVehicular                           ;
 ; Top-level Entity Name              ; ControlVehicular                           ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 79 / 15,408 ( < 1 % )                      ;
+; Total logic elements               ; 80 / 15,408 ( < 1 % )                      ;
 ;     Total combinational functions  ; 52 / 15,408 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 75 / 15,408 ( < 1 % )                      ;
-; Total registers                    ; 75                                         ;
-; Total pins                         ; 45 / 347 ( 13 % )                          ;
+;     Dedicated logic registers      ; 76 / 15,408 ( < 1 % )                      ;
+; Total registers                    ; 76                                         ;
+; Total pins                         ; 46 / 347 ( 13 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
@@ -64,28 +64,28 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/13/2024 00:36:51 ;
+; Start date & time ; 03/15/2024 18:03:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ControlVehicular    ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                  ;
-+-------------------------------------+------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                        ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 300146012410.171030821107240 ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                         ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)       ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                           ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                            ; --            ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                         ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                     ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING        ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                       ; --            ; --          ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                 ; --            ; --          ; --             ;
-+-------------------------------------+------------------------------+---------------+-------------+----------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                    ;
++-------------------------------------+--------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+--------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 36015910611145.171054381006192 ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                           ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --             ;
++-------------------------------------+--------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -93,12 +93,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4660 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:07     ; 1.2                     ; 5161 MB             ; 00:00:06                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4596 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4648 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4554 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:11                           ;
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4667 MB             ; 00:00:00                           ;
+; Fitter                    ; 00:00:04     ; 1.0                     ; 5368 MB             ; 00:00:02                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4596 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4688 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4546 MB             ; 00:00:00                           ;
+; Total                     ; 00:00:08     ; --                      ; --                  ; 00:00:03                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -107,11 +107,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-1OVQ131  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-1OVQ131  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-1OVQ131  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-1OVQ131  ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; DESKTOP-1OVQ131  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DELL             ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DELL             ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DELL             ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DELL             ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DELL             ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "03/12/2024 17:55:13"
+-- DATE "03/15/2024 17:28:16"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -35,13 +35,13 @@ ENTITY 	Semaforo_salida IS
     PORT (
 	Sistema_habilitador : IN std_logic;
 	PasoVehicular : IN std_logic;
-	Semaforoverde : OUT std_logic;
+	SemaforoVerde : OUT std_logic;
 	SemaforoRojo : OUT std_logic
 	);
 END Semaforo_salida;
 
 -- Design Ports Information
--- Semaforoverde	=>  Location: PIN_T15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SemaforoVerde	=>  Location: PIN_T15,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SemaforoRojo	=>  Location: PIN_T18,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- PasoVehicular	=>  Location: PIN_C2,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Sistema_habilitador	=>  Location: PIN_K19,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -59,9 +59,9 @@ SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_Sistema_habilitador : std_logic;
 SIGNAL ww_PasoVehicular : std_logic;
-SIGNAL ww_Semaforoverde : std_logic;
+SIGNAL ww_SemaforoVerde : std_logic;
 SIGNAL ww_SemaforoRojo : std_logic;
-SIGNAL \Semaforoverde~output_o\ : std_logic;
+SIGNAL \SemaforoVerde~output_o\ : std_logic;
 SIGNAL \SemaforoRojo~output_o\ : std_logic;
 SIGNAL \PasoVehicular~input_o\ : std_logic;
 SIGNAL \Sistema_habilitador~input_o\ : std_logic;
@@ -72,7 +72,7 @@ BEGIN
 
 ww_Sistema_habilitador <= Sistema_habilitador;
 ww_PasoVehicular <= PasoVehicular;
-Semaforoverde <= ww_Semaforoverde;
+SemaforoVerde <= ww_SemaforoVerde;
 SemaforoRojo <= ww_SemaforoRojo;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
@@ -80,7 +80,7 @@ ww_devpor <= devpor;
 \ALT_INV_Estado~combout\ <= NOT \Estado~combout\;
 
 -- Location: IOOBUF_X32_Y0_N9
-\Semaforoverde~output\ : cycloneiii_io_obuf
+\SemaforoVerde~output\ : cycloneiii_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -89,7 +89,7 @@ GENERIC MAP (
 PORT MAP (
 	i => \Estado~combout\,
 	devoe => ww_devoe,
-	o => \Semaforoverde~output_o\);
+	o => \SemaforoVerde~output_o\);
 
 -- Location: IOOBUF_X41_Y3_N23
 \SemaforoRojo~output\ : cycloneiii_io_obuf
@@ -141,7 +141,7 @@ PORT MAP (
 	datad => \Estado~combout\,
 	combout => \Estado~combout\);
 
-ww_Semaforoverde <= \Semaforoverde~output_o\;
+ww_SemaforoVerde <= \SemaforoVerde~output_o\;
 
 ww_SemaforoRojo <= \SemaforoRojo~output_o\;
 END structure;

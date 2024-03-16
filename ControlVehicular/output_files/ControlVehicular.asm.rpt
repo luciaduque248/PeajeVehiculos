@@ -1,5 +1,5 @@
 Assembler report for ControlVehicular
-Wed Mar 13 00:37:02 2024
+Fri Mar 15 18:03:38 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/altera/13.1/parcial peaje electronico/ControlVehicular/output_files/ControlVehicular.sof
+  5. Assembler Device Options: C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/ControlVehicular/output_files/ControlVehicular.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Mar 13 00:37:02 2024 ;
+; Assembler Status      ; Successful - Fri Mar 15 18:03:38 2024 ;
 ; Revision Name         ; ControlVehicular                      ;
 ; Top-level Entity Name ; ControlVehicular                      ;
 ; Family                ; Cyclone III                           ;
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                   ;
-+---------------------------------------------------------------------------------------------+
-; File Name                                                                                   ;
-+---------------------------------------------------------------------------------------------+
-; C:/altera/13.1/parcial peaje electronico/ControlVehicular/output_files/ControlVehicular.sof ;
-+---------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                         ;
++---------------------------------------------------------------------------------------------------+
+; File Name                                                                                         ;
++---------------------------------------------------------------------------------------------------+
+; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/ControlVehicular/output_files/ControlVehicular.sof ;
++---------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/altera/13.1/parcial peaje electronico/ControlVehicular/output_files/ControlVehicular.sof ;
-+----------------+------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                              ;
-+----------------+------------------------------------------------------------------------------------------------------+
-; Device         ; EP3C16F484C6                                                                                         ;
-; JTAG usercode  ; 0x000D4C52                                                                                           ;
-; Checksum       ; 0x000D4C52                                                                                           ;
-+----------------+------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/ControlVehicular/output_files/ControlVehicular.sof ;
++----------------+------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                    ;
++----------------+------------------------------------------------------------------------------------------------------------+
+; Device         ; EP3C16F484C6                                                                                               ;
+; JTAG usercode  ; 0x000D6E46                                                                                                 ;
+; Checksum       ; 0x000D6E46                                                                                                 ;
++----------------+------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Mar 13 00:37:01 2024
+    Info: Processing started: Fri Mar 15 18:03:37 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off ControlVehicular -c ControlVehicular
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4604 megabytes
-    Info: Processing ended: Wed Mar 13 00:37:02 2024
+    Info: Processing ended: Fri Mar 15 18:03:38 2024
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

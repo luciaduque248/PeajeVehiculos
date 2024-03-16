@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Semaforo_salida
-Tue Mar 12 17:55:13 2024
+Fri Mar 15 17:28:16 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Mar 12 17:55:13 2024 ;
+; EDA Netlist Writer Status ; Successful - Fri Mar 15 17:28:16 2024 ;
 ; Revision Name             ; Semaforo_salida                       ;
 ; Top-level Entity Name     ; Semaforo_salida                       ;
 ; Family                    ; Cyclone III                           ;
@@ -66,20 +66,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                             ;
-+------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                        ;
-+------------------------------------------------------------------------------------------------------------------------+
-; C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/Semaforo_salida_6_1200mv_85c_slow.vho      ;
-; C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/Semaforo_salida_6_1200mv_0c_slow.vho       ;
-; C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/Semaforo_salida_min_1200mv_0c_fast.vho     ;
-; C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/Semaforo_salida.vho                        ;
-; C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/Semaforo_salida_6_1200mv_85c_vhd_slow.sdo  ;
-; C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/Semaforo_salida_6_1200mv_0c_vhd_slow.sdo   ;
-; C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/Semaforo_salida_min_1200mv_0c_vhd_fast.sdo ;
-; C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/Semaforo_salida_vhd.sdo                    ;
-+------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                    ;
++-------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                               ;
++-------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/Semaforo_salida_6_1200mv_85c_slow.vho      ;
+; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/Semaforo_salida_6_1200mv_0c_slow.vho       ;
+; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/Semaforo_salida_min_1200mv_0c_fast.vho     ;
+; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/Semaforo_salida.vho                        ;
+; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/Semaforo_salida_6_1200mv_85c_vhd_slow.sdo  ;
+; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/Semaforo_salida_6_1200mv_0c_vhd_slow.sdo   ;
+; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/Semaforo_salida_min_1200mv_0c_vhd_fast.sdo ;
+; C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/Semaforo_salida_vhd.sdo                    ;
++-------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,20 +88,20 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Mar 12 17:55:13 2024
+    Info: Processing started: Fri Mar 15 17:28:15 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Semaforo_salida -c Semaforo_salida
-Info (204019): Generated file Semaforo_salida_6_1200mv_85c_slow.vho in folder "C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Semaforo_salida_6_1200mv_0c_slow.vho in folder "C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Semaforo_salida_min_1200mv_0c_fast.vho in folder "C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Semaforo_salida.vho in folder "C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Semaforo_salida_6_1200mv_85c_vhd_slow.sdo in folder "C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Semaforo_salida_6_1200mv_0c_vhd_slow.sdo in folder "C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Semaforo_salida_min_1200mv_0c_vhd_fast.sdo in folder "C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Semaforo_salida_vhd.sdo in folder "C:/altera/13.1/parcialpeaje electronico/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Semaforo_salida_6_1200mv_85c_slow.vho in folder "C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Semaforo_salida_6_1200mv_0c_slow.vho in folder "C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Semaforo_salida_min_1200mv_0c_fast.vho in folder "C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Semaforo_salida.vho in folder "C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Semaforo_salida_6_1200mv_85c_vhd_slow.sdo in folder "C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Semaforo_salida_6_1200mv_0c_vhd_slow.sdo in folder "C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Semaforo_salida_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Semaforo_salida_vhd.sdo in folder "C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Semaforo_salida/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4553 megabytes
-    Info: Processing ended: Tue Mar 12 17:55:13 2024
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4561 megabytes
+    Info: Processing ended: Fri Mar 15 17:28:16 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

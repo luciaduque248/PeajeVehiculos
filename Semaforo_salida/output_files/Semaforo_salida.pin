@@ -456,7 +456,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : T12       :        :                   :         : 4         :                
 VCCINT                       : T13       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T14       :        :                   :         : 4         :                
-Semaforoverde                : T15       : output : 2.5 V             :         : 4         : N              
+SemaforoVerde                : T15       : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : T16       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T17       :        :                   :         : 5         :                
 SemaforoRojo                 : T18       : output : 2.5 V             :         : 5         : N              
