@@ -1,5 +1,5 @@
 Fitter report for Peaje_electronico
-Tue Mar 19 12:29:24 2024
+Tue Mar 19 17:04:36 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -66,7 +66,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Tue Mar 19 12:29:24 2024      ;
+; Fitter Status                      ; Successful - Tue Mar 19 17:04:36 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Peaje_electronico                          ;
 ; Top-level Entity Name              ; Peaje_electronico                          ;
@@ -74,9 +74,9 @@ applicable agreement for further details.
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
 ; Total logic elements               ; 81 / 15,408 ( < 1 % )                      ;
-;     Total combinational functions  ; 66 / 15,408 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 65 / 15,408 ( < 1 % )                      ;
-; Total registers                    ; 65                                         ;
+;     Total combinational functions  ; 67 / 15,408 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 66 / 15,408 ( < 1 % )                      ;
+; Total registers                    ; 66                                         ;
 ; Total pins                         ; 48 / 347 ( 14 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
@@ -153,12 +153,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.75        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  25.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
 ;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -217,8 +217,8 @@ applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 239 ) ; 0.00 % ( 0 / 239 )         ; 0.00 % ( 0 / 239 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 239 ) ; 0.00 % ( 0 / 239 )         ; 0.00 % ( 0 / 239 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 241 ) ; 0.00 % ( 0 / 241 )         ; 0.00 % ( 0 / 241 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 241 ) ; 0.00 % ( 0 / 241 )         ; 0.00 % ( 0 / 241 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -241,7 +241,7 @@ applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 229 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 231 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -258,22 +258,22 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
 ; Total logic elements                        ; 81 / 15,408 ( < 1 % ) ;
-;     -- Combinational with no register       ; 16                    ;
-;     -- Register only                        ; 15                    ;
-;     -- Combinational with a register        ; 50                    ;
+;     -- Combinational with no register       ; 15                    ;
+;     -- Register only                        ; 14                    ;
+;     -- Combinational with a register        ; 52                    ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
 ;     -- 4 input functions                    ; 13                    ;
-;     -- 3 input functions                    ; 10                    ;
+;     -- 3 input functions                    ; 11                    ;
 ;     -- <=2 input functions                  ; 43                    ;
-;     -- Register only                        ; 15                    ;
+;     -- Register only                        ; 14                    ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 30                    ;
+;     -- normal mode                          ; 31                    ;
 ;     -- arithmetic mode                      ; 36                    ;
 ;                                             ;                       ;
-; Total registers*                            ; 65 / 17,068 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 65 / 15,408 ( < 1 % ) ;
+; Total registers*                            ; 66 / 17,068 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 66 / 15,408 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 1,660 ( 0 % )     ;
 ;                                             ;                       ;
 ; Total LABs:  partially or completely used   ; 6 / 963 ( < 1 % )     ;
@@ -294,11 +294,11 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)         ; 0% / 1% / 0%          ;
-; Maximum fan-out                             ; 66                    ;
-; Highest non-global fan-out                  ; 46                    ;
-; Total fan-out                               ; 531                   ;
-; Average fan-out                             ; 2.10                  ;
+; Peak interconnect usage (total/H/V)         ; 1% / 1% / 0%          ;
+; Maximum fan-out                             ; 67                    ;
+; Highest non-global fan-out                  ; 47                    ;
+; Total fan-out                               ; 536                   ;
+; Average fan-out                             ; 2.11                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -312,22 +312,22 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
 ; Total logic elements                        ; 81 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
-;     -- Combinational with no register       ; 16                   ; 0                              ;
-;     -- Register only                        ; 15                   ; 0                              ;
-;     -- Combinational with a register        ; 50                   ; 0                              ;
+;     -- Combinational with no register       ; 15                   ; 0                              ;
+;     -- Register only                        ; 14                   ; 0                              ;
+;     -- Combinational with a register        ; 52                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
 ;     -- 4 input functions                    ; 13                   ; 0                              ;
-;     -- 3 input functions                    ; 10                   ; 0                              ;
+;     -- 3 input functions                    ; 11                   ; 0                              ;
 ;     -- <=2 input functions                  ; 43                   ; 0                              ;
-;     -- Register only                        ; 15                   ; 0                              ;
+;     -- Register only                        ; 14                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 30                   ; 0                              ;
+;     -- normal mode                          ; 31                   ; 0                              ;
 ;     -- arithmetic mode                      ; 36                   ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total registers                             ; 65                   ; 0                              ;
-;     -- Dedicated logic registers            ; 65 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
+; Total registers                             ; 66                   ; 0                              ;
+;     -- Dedicated logic registers            ; 66 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total LABs:  partially or completely used   ; 6 / 963 ( < 1 % )    ; 0 / 963 ( 0 % )                ;
@@ -346,8 +346,8 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 526                  ; 5                              ;
-;     -- Registered Connections               ; 177                  ; 0                              ;
+;     -- Total Connections                    ; 531                  ; 5                              ;
+;     -- Registered Connections               ; 178                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -382,10 +382,10 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; ABRIR_TALANQUERA              ; D2    ; 1        ; 0            ; 25           ; 0            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; CATEGORIA_VEHICULO[0]         ; E3    ; 1        ; 0            ; 26           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; CATEGORIA_VEHICULO[1]         ; E4    ; 1        ; 0            ; 26           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; CLK                           ; G21   ; 6        ; 41           ; 15           ; 0            ; 66                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; CLK                           ; G21   ; 6        ; 41           ; 15           ; 0            ; 67                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; DETECTOR_VEHICULO             ; H7    ; 1        ; 0            ; 25           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; IDVALIDA                      ; G5    ; 1        ; 0            ; 27           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; REINICIO                      ; J7    ; 1        ; 0            ; 22           ; 14           ; 46                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; IDVALIDA                      ; G5    ; 1        ; 0            ; 27           ; 21           ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; REINICIO                      ; J7    ; 1        ; 0            ; 22           ; 14           ; 47                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; SALIDA_SEMAFORO_VERDE_CONTROL ; G4    ; 1        ; 0            ; 23           ; 7            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 +-------------------------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 
@@ -408,23 +408,23 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; SALIDA_SEMAFORO_VERDE_PEAJE   ; C2    ; 1        ; 0            ; 26           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; SemaforoRojoPeaje             ; F2    ; 1        ; 0            ; 24           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; SemaforoVerdePeaje            ; E1    ; 1        ; 0            ; 24           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[0]  ; A8    ; 8        ; 14           ; 29           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[10] ; B8    ; 8        ; 14           ; 29           ; 28           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[11] ; B16   ; 7        ; 28           ; 29           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[12] ; B10   ; 8        ; 16           ; 29           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[13] ; C10   ; 8        ; 14           ; 29           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[14] ; D13   ; 7        ; 23           ; 29           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[15] ; H11   ; 8        ; 19           ; 29           ; 28           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[1]  ; E13   ; 7        ; 23           ; 29           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[2]  ; E12   ; 7        ; 21           ; 29           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[3]  ; C15   ; 7        ; 28           ; 29           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[4]  ; W10   ; 3        ; 19           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[5]  ; B9    ; 8        ; 14           ; 29           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[6]  ; A10   ; 8        ; 16           ; 29           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[7]  ; D10   ; 8        ; 16           ; 29           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[8]  ; A9    ; 8        ; 16           ; 29           ; 28           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; TALANQUERA_CERRADA_TIEMPO[9]  ; E10   ; 8        ; 16           ; 29           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; clk_out_divisor               ; Y10   ; 3        ; 19           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[0]  ; B9    ; 8        ; 14           ; 29           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[10] ; B10   ; 8        ; 16           ; 29           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[11] ; E9    ; 8        ; 11           ; 29           ; 28           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[12] ; A6    ; 8        ; 11           ; 29           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[13] ; C7    ; 8        ; 9            ; 29           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[14] ; B7    ; 8        ; 11           ; 29           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[15] ; D10   ; 8        ; 16           ; 29           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[1]  ; A9    ; 8        ; 16           ; 29           ; 28           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[2]  ; A8    ; 8        ; 14           ; 29           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[3]  ; A10   ; 8        ; 16           ; 29           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[4]  ; A7    ; 8        ; 11           ; 29           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[5]  ; C10   ; 8        ; 14           ; 29           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[6]  ; B8    ; 8        ; 14           ; 29           ; 28           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[7]  ; E10   ; 8        ; 16           ; 29           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[8]  ; G11   ; 8        ; 14           ; 29           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; TALANQUERA_CERRADA_TIEMPO[9]  ; B6    ; 8        ; 11           ; 29           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; clk_out_divisor               ; C4    ; 8        ; 1            ; 29           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; manualBarrier                 ; C1    ; 1        ; 0            ; 26           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; salidaSemaforoRojo            ; J3    ; 1        ; 0            ; 21           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; salidaSemaforoVerde           ; H1    ; 1        ; 0            ; 21           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -462,18 +462,23 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; A15      ; DIFFIO_T20n, PADD5                       ; Use as regular IO        ; CONTADOR_VEHICULAR[6]         ; Dual Purpose Pin          ;
 ; B15      ; DIFFIO_T20p, PADD6                       ; Use as regular IO        ; CONTADOR_VEHICULAR[7]         ; Dual Purpose Pin          ;
 ; C13      ; DIFFIO_T19n, PADD7                       ; Use as regular IO        ; CONTADOR_VEHICULAR[2]         ; Dual Purpose Pin          ;
-; D13      ; DIFFIO_T19p, PADD8                       ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[14] ; Dual Purpose Pin          ;
 ; A14      ; DIFFIO_T18n, PADD9                       ; Use as regular IO        ; CONTADOR_VEHICULAR[3]         ; Dual Purpose Pin          ;
 ; B14      ; DIFFIO_T18p, PADD10                      ; Use as regular IO        ; CONTADOR_VEHICULAR[4]         ; Dual Purpose Pin          ;
 ; A13      ; DIFFIO_T17n, PADD11                      ; Use as regular IO        ; CONTADOR_VEHICULAR[0]         ; Dual Purpose Pin          ;
 ; B13      ; DIFFIO_T17p, PADD12, DQS4T/CQ5T,DPCLK9   ; Use as regular IO        ; CONTADOR_VEHICULAR[1]         ; Dual Purpose Pin          ;
 ; E11      ; DIFFIO_T16n, PADD13                      ; Use as regular IO        ; sieteSegmentos[0]             ; Dual Purpose Pin          ;
 ; F11      ; DIFFIO_T16p, PADD14                      ; Use as regular IO        ; sieteSegmentos[1]             ; Dual Purpose Pin          ;
-; B10      ; DIFFIO_T14p, PADD15                      ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[12] ; Dual Purpose Pin          ;
-; A9       ; DIFFIO_T13n, PADD16                      ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[8]  ; Dual Purpose Pin          ;
-; B9       ; DIFFIO_T13p, PADD17, DQS5T/CQ5T#,DPCLK10 ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[5]  ; Dual Purpose Pin          ;
-; A8       ; DIFFIO_T12n, DATA2                       ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[0]  ; Dual Purpose Pin          ;
-; B8       ; DIFFIO_T12p, DATA3                       ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[10] ; Dual Purpose Pin          ;
+; B10      ; DIFFIO_T14p, PADD15                      ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[10] ; Dual Purpose Pin          ;
+; A9       ; DIFFIO_T13n, PADD16                      ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[1]  ; Dual Purpose Pin          ;
+; B9       ; DIFFIO_T13p, PADD17, DQS5T/CQ5T#,DPCLK10 ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[0]  ; Dual Purpose Pin          ;
+; A8       ; DIFFIO_T12n, DATA2                       ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[2]  ; Dual Purpose Pin          ;
+; B8       ; DIFFIO_T12p, DATA3                       ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[6]  ; Dual Purpose Pin          ;
+; A7       ; DIFFIO_T11n, PADD18                      ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[4]  ; Dual Purpose Pin          ;
+; B7       ; DIFFIO_T11p, DATA4                       ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[14] ; Dual Purpose Pin          ;
+; A6       ; DIFFIO_T10n, PADD19                      ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[12] ; Dual Purpose Pin          ;
+; B6       ; DIFFIO_T10p, DATA15                      ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[9]  ; Dual Purpose Pin          ;
+; C7       ; DIFFIO_T9p, DATA13                       ; Use as regular IO        ; TALANQUERA_CERRADA_TIEMPO[13] ; Dual Purpose Pin          ;
+; C4       ; DIFFIO_T2p, DATA12, DQS1T/CQ1T#,CDPCLK7  ; Use as regular IO        ; clk_out_divisor               ; Dual Purpose Pin          ;
 +----------+------------------------------------------+--------------------------+-------------------------------+---------------------------+
 
 
@@ -484,12 +489,12 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 +----------+------------------+---------------+--------------+
 ; 1        ; 19 / 33 ( 58 % ) ; 2.5V          ; --           ;
 ; 2        ; 0 / 48 ( 0 % )   ; 2.5V          ; --           ;
-; 3        ; 2 / 46 ( 4 % )   ; 2.5V          ; --           ;
+; 3        ; 0 / 46 ( 0 % )   ; 2.5V          ; --           ;
 ; 4        ; 0 / 41 ( 0 % )   ; 2.5V          ; --           ;
 ; 5        ; 0 / 46 ( 0 % )   ; 2.5V          ; --           ;
 ; 6        ; 2 / 43 ( 5 % )   ; 2.5V          ; --           ;
-; 7        ; 20 / 47 ( 43 % ) ; 2.5V          ; --           ;
-; 8        ; 10 / 43 ( 23 % ) ; 2.5V          ; --           ;
+; 7        ; 15 / 47 ( 32 % ) ; 2.5V          ; --           ;
+; 8        ; 17 / 43 ( 40 % ) ; 2.5V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -503,11 +508,11 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; A3       ; 354        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A4       ; 350        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A5       ; 345        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A6       ; 336        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A7       ; 334        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A8       ; 332        ; 8        ; TALANQUERA_CERRADA_TIEMPO[0]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; A9       ; 328        ; 8        ; TALANQUERA_CERRADA_TIEMPO[8]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; A10      ; 326        ; 8        ; TALANQUERA_CERRADA_TIEMPO[6]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A6       ; 336        ; 8        ; TALANQUERA_CERRADA_TIEMPO[12]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A7       ; 334        ; 8        ; TALANQUERA_CERRADA_TIEMPO[4]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A8       ; 332        ; 8        ; TALANQUERA_CERRADA_TIEMPO[2]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A9       ; 328        ; 8        ; TALANQUERA_CERRADA_TIEMPO[1]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A10      ; 326        ; 8        ; TALANQUERA_CERRADA_TIEMPO[3]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A11      ; 321        ; 8        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; A12      ; 319        ; 7        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; A13      ; 314        ; 7        ; CONTADOR_VEHICULAR[0]                                     ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
@@ -569,17 +574,17 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; B3       ; 355        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B4       ; 351        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B5       ; 346        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B6       ; 337        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B7       ; 335        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B8       ; 333        ; 8        ; TALANQUERA_CERRADA_TIEMPO[10]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; B9       ; 329        ; 8        ; TALANQUERA_CERRADA_TIEMPO[5]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; B10      ; 327        ; 8        ; TALANQUERA_CERRADA_TIEMPO[12]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B6       ; 337        ; 8        ; TALANQUERA_CERRADA_TIEMPO[9]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B7       ; 335        ; 8        ; TALANQUERA_CERRADA_TIEMPO[14]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B8       ; 333        ; 8        ; TALANQUERA_CERRADA_TIEMPO[6]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B9       ; 329        ; 8        ; TALANQUERA_CERRADA_TIEMPO[0]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B10      ; 327        ; 8        ; TALANQUERA_CERRADA_TIEMPO[10]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B11      ; 322        ; 8        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; B12      ; 320        ; 7        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; B13      ; 315        ; 7        ; CONTADOR_VEHICULAR[1]                                     ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; B14      ; 313        ; 7        ; CONTADOR_VEHICULAR[4]                                     ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; B15      ; 308        ; 7        ; CONTADOR_VEHICULAR[7]                                     ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
-; B16      ; 299        ; 7        ; TALANQUERA_CERRADA_TIEMPO[11]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B16      ; 299        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B17      ; 297        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B18      ; 292        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B19      ; 289        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -589,18 +594,18 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; C1       ; 7          ; 1        ; manualBarrier                                             ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; C2       ; 6          ; 1        ; SALIDA_SEMAFORO_VERDE_PEAJE                               ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; C3       ; 358        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C4       ; 359        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; C4       ; 359        ; 8        ; clk_out_divisor                                           ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C5       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C6       ; 349        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C7       ; 340        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; C7       ; 340        ; 8        ; TALANQUERA_CERRADA_TIEMPO[13]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C8       ; 339        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C9       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; C10      ; 330        ; 8        ; TALANQUERA_CERRADA_TIEMPO[13]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; C10      ; 330        ; 8        ; TALANQUERA_CERRADA_TIEMPO[5]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C11      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C12      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C13      ; 309        ; 7        ; CONTADOR_VEHICULAR[2]                                     ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; C14      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; C15      ; 300        ; 7        ; TALANQUERA_CERRADA_TIEMPO[3]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; C15      ; 300        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; C16      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C17      ; 286        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C18      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -617,10 +622,10 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; D7       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D8       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D9       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; D10      ; 324        ; 8        ; TALANQUERA_CERRADA_TIEMPO[7]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; D10      ; 324        ; 8        ; TALANQUERA_CERRADA_TIEMPO[15]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D11      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; D12      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; D13      ; 310        ; 7        ; TALANQUERA_CERRADA_TIEMPO[14]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; D13      ; 310        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D14      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; D15      ; 293        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D16      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -638,11 +643,11 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; E6       ; 362        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E7       ; 357        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E8       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; E9       ; 338        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; E10      ; 325        ; 8        ; TALANQUERA_CERRADA_TIEMPO[9]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; E9       ; 338        ; 8        ; TALANQUERA_CERRADA_TIEMPO[11]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; E10      ; 325        ; 8        ; TALANQUERA_CERRADA_TIEMPO[7]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E11      ; 317        ; 7        ; sieteSegmentos[0]                                         ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
-; E12      ; 316        ; 7        ; TALANQUERA_CERRADA_TIEMPO[2]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; E13      ; 311        ; 7        ; TALANQUERA_CERRADA_TIEMPO[1]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; E12      ; 316        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; E13      ; 311        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E14      ; 301        ; 7        ; CONTADOR_VEHICULAR[5]                                     ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; E15      ; 294        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E16      ; 275        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -684,7 +689,7 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; G8       ; 353        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G9       ; 342        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G10      ; 341        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; G11      ; 331        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; G11      ; 331        ; 8        ; TALANQUERA_CERRADA_TIEMPO[8]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; G12      ; 305        ; 7        ; sieteSegmentos[4]                                         ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; G13      ; 295        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G14      ; 280        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -706,7 +711,7 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; H8       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H9       ; 344        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H10      ; 343        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; H11      ; 323        ; 8        ; TALANQUERA_CERRADA_TIEMPO[15]                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; H11      ; 323        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H12      ; 304        ; 7        ; sieteSegmentos[2]                                         ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; H13      ; 303        ; 7        ; sieteSegmentos[3]                                         ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; H14      ; 288        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -947,7 +952,7 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; W7       ; 110        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; W8       ; 114        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; W9       ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; W10      ; 130        ; 3        ; TALANQUERA_CERRADA_TIEMPO[4]                              ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; W10      ; 130        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; W11      ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; W12      ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; W13      ; 143        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -969,7 +974,7 @@ The pin-out file can be found in C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/
 ; Y7       ; 111        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; Y8       ; 117        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; Y9       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; Y10      ; 131        ; 3        ; clk_out_divisor                                           ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; Y10      ; 131        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; Y11      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y12      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y13      ; 144        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -991,11 +996,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                   ; Library Name ;
 +---------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------+--------------+
-; |Peaje_electronico                                      ; 81 (0)      ; 65 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 48   ; 0            ; 16 (0)       ; 15 (0)            ; 50 (0)           ; |Peaje_electronico                                                    ; work         ;
-;    |ControlVehicular:ControlVehicular_inst|             ; 67 (67)     ; 59 (59)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 15 (15)           ; 44 (44)          ; |Peaje_electronico|ControlVehicular:ControlVehicular_inst             ; work         ;
+; |Peaje_electronico                                      ; 81 (0)      ; 66 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 48   ; 0            ; 15 (0)       ; 14 (0)            ; 52 (0)           ; |Peaje_electronico                                                    ; work         ;
+;    |ControlVehicular:ControlVehicular_inst|             ; 66 (66)     ; 59 (59)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 14 (14)           ; 45 (45)          ; |Peaje_electronico|ControlVehicular:ControlVehicular_inst             ; work         ;
 ;    |Display_sevensegmentos:Display_sevensegmentos_inst| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |Peaje_electronico|Display_sevensegmentos:Display_sevensegmentos_inst ; work         ;
 ;    |Front_sensor:Front_sensor_inst|                     ; 5 (5)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; |Peaje_electronico|Front_sensor:Front_sensor_inst                     ; work         ;
-;    |Id_vehiculo:Id_vehiculo_inst|                       ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |Peaje_electronico|Id_vehiculo:Id_vehiculo_inst                       ; work         ;
+;    |Id_vehiculo:Id_vehiculo_inst|                       ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |Peaje_electronico|Id_vehiculo:Id_vehiculo_inst                       ; work         ;
 ;    |Semaforo_salida:Semaforo_salida_inst|               ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Peaje_electronico|Semaforo_salida:Semaforo_salida_inst               ; work         ;
 +---------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1050,10 +1055,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; clk_out_divisor               ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; SALIDA_SEMAFORO_VERDE_CONTROL ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; CLK                           ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; REINICIO                      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; REINICIO                      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; ABRIR_TALANQUERA              ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; DETECTOR_VEHICULO             ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; IDVALIDA                      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; DETECTOR_VEHICULO             ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 +-------------------------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1069,61 +1074,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - SALIDA_SEMAFORO_VERDE_PEAJE~output                                    ; 0                 ; 6       ;
 ; CLK                                                                          ;                   ;         ;
 ; REINICIO                                                                     ;                   ;         ;
-;      - Id_vehiculo:Id_vehiculo_inst|LED_AUTORIZADO_VERDE                     ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[0]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|ESTADO.VEHICLE_PASSING         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[1]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[2]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[3]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[4]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[5]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[6]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[7]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[8]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[9]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[10]        ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[11]        ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[12]        ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[13]        ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[14]        ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[15]        ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[0]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[1]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[2]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[3]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[4]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[5]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[6]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[7]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[8]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[9]    ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[10]   ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[11]   ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[12]   ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[13]   ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[14]   ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[15]   ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[7]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[6]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[5]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[4]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[3]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[2]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[1]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[0]         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|ESTADO.BARRIER_CLOSING         ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[0]~0 ; 1                 ; 6       ;
-;      - Id_vehiculo:Id_vehiculo_inst|ESTADO                                   ; 1                 ; 6       ;
-;      - ControlVehicular:ControlVehicular_inst|ESTADO.IDLE                    ; 1                 ; 6       ;
+;      - Id_vehiculo:Id_vehiculo_inst|LED_DENEGADO_ROJO                        ; 0                 ; 6       ;
+;      - Id_vehiculo:Id_vehiculo_inst|LED_AUTORIZADO_VERDE                     ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[0]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|ESTADO.VEHICLE_PASSING         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[1]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[2]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[3]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[4]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[5]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[6]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[7]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[8]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[9]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[10]        ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[11]        ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[12]        ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[13]        ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[14]        ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[15]        ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[0]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[1]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[2]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[3]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[4]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[5]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[6]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[7]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[8]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[9]    ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[10]   ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[11]   ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[12]   ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[13]   ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[14]   ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[15]   ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[7]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[6]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[5]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[4]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[3]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[2]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[1]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[0]         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|ESTADO.BARRIER_CLOSING         ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[0]~0 ; 0                 ; 6       ;
+;      - Id_vehiculo:Id_vehiculo_inst|ESTADO                                   ; 0                 ; 6       ;
+;      - ControlVehicular:ControlVehicular_inst|ESTADO.IDLE                    ; 0                 ; 6       ;
 ; ABRIR_TALANQUERA                                                             ;                   ;         ;
 ;      - ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[0]~0 ; 0                 ; 6       ;
 ;      - ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[0]~1 ; 0                 ; 6       ;
 ;      - ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[0]~18 ; 0                 ; 6       ;
 ;      - ControlVehicular:ControlVehicular_inst|Selector2~2                    ; 0                 ; 6       ;
-; DETECTOR_VEHICULO                                                            ;                   ;         ;
-;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[1]~44      ; 0                 ; 6       ;
 ; IDVALIDA                                                                     ;                   ;         ;
+;      - Id_vehiculo:Id_vehiculo_inst|LED_AUTORIZADO_VERDE~0                   ; 1                 ; 6       ;
 ;      - Id_vehiculo:Id_vehiculo_inst|ESTADO~0                                 ; 1                 ; 6       ;
+;      - Id_vehiculo:Id_vehiculo_inst|LED_DENEGADO_ROJO~0                      ; 1                 ; 6       ;
+; DETECTOR_VEHICULO                                                            ;                   ;         ;
+;      - ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[1]~44      ; 1                 ; 6       ;
 +------------------------------------------------------------------------------+-------------------+---------+
 
 
@@ -1132,14 +1140,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------+--------------------+---------+---------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                  ; Location           ; Fan-Out ; Usage               ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------------------+--------------------+---------+---------------------+--------+----------------------+------------------+---------------------------+
-; CLK                                                                   ; PIN_G21            ; 66      ; Clock, Latch enable ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; ControlVehicular:ControlVehicular_inst|ESTADO.BARRIER_CLOSING         ; FF_X22_Y28_N27     ; 20      ; Sync. clear         ; no     ; --                   ; --               ; --                        ;
-; ControlVehicular:ControlVehicular_inst|ESTADO.VEHICLE_PASSING         ; FF_X24_Y28_N31     ; 21      ; Sync. clear         ; no     ; --                   ; --               ; --                        ;
-; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[3]~11 ; LCCOMB_X22_Y28_N20 ; 9       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[0]~0 ; LCCOMB_X20_Y28_N22 ; 16      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[0]~18 ; LCCOMB_X22_Y28_N2  ; 16      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[1]~45      ; LCCOMB_X22_Y28_N28 ; 16      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; REINICIO                                                              ; PIN_J7             ; 46      ; Async. clear        ; no     ; --                   ; --               ; --                        ;
+; CLK                                                                   ; PIN_G21            ; 67      ; Clock, Latch enable ; yes    ; Global Clock         ; GCLK9            ; --                        ;
+; ControlVehicular:ControlVehicular_inst|ESTADO.BARRIER_CLOSING         ; FF_X16_Y25_N27     ; 20      ; Sync. clear         ; no     ; --                   ; --               ; --                        ;
+; ControlVehicular:ControlVehicular_inst|ESTADO.VEHICLE_PASSING         ; FF_X16_Y25_N31     ; 21      ; Sync. clear         ; no     ; --                   ; --               ; --                        ;
+; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[3]~11 ; LCCOMB_X16_Y25_N28 ; 9       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[0]~0 ; LCCOMB_X14_Y25_N18 ; 16      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[0]~18 ; LCCOMB_X16_Y25_N2  ; 16      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; ControlVehicular:ControlVehicular_inst|TIEMPO_PASOVEHICULO[1]~45      ; LCCOMB_X16_Y25_N0  ; 16      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; REINICIO                                                              ; PIN_J7             ; 47      ; Async. clear        ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------------------------------------------+--------------------+---------+---------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1148,7 +1156,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CLK  ; PIN_G21  ; 66      ; 24                                   ; Global Clock         ; GCLK9            ; --                        ;
+; CLK  ; PIN_G21  ; 67      ; 17                                   ; Global Clock         ; GCLK9            ; --                        ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1157,7 +1165,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------+---------+
 ; Name                                                                   ; Fan-Out ;
 +------------------------------------------------------------------------+---------+
-; REINICIO~input                                                         ; 46      ;
+; REINICIO~input                                                         ; 47      ;
 ; ControlVehicular:ControlVehicular_inst|ESTADO.VEHICLE_PASSING          ; 21      ;
 ; ControlVehicular:ControlVehicular_inst|ESTADO.BARRIER_CLOSING          ; 20      ;
 ; ControlVehicular:ControlVehicular_inst|TIEMPOTALANQUERA_CERRADA[0]~18  ; 16      ;
@@ -1174,6 +1182,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Front_sensor:Front_sensor_inst|CONTADOR_TIEMPO[1]                      ; 4       ;
 ; Front_sensor:Front_sensor_inst|CONTADOR_TIEMPO[0]                      ; 4       ;
 ; Front_sensor:Front_sensor_inst|CONTADOR_TIEMPO[2]                      ; 4       ;
+; IDVALIDA~input                                                         ; 3       ;
 ; Semaforo_salida:Semaforo_salida_inst|Estado                            ; 3       ;
 ; SALIDA_SEMAFORO_VERDE_CONTROL~input                                    ; 2       ;
 ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[0]~1  ; 2       ;
@@ -1208,8 +1217,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[6]     ; 2       ;
 ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[5]     ; 2       ;
 ; ControlVehicular:ControlVehicular_inst|REGISTRO_CONTEOVEHICULAR[4]     ; 2       ;
-; IDVALIDA~input                                                         ; 1       ;
 ; DETECTOR_VEHICULO~input                                                ; 1       ;
+; Id_vehiculo:Id_vehiculo_inst|LED_DENEGADO_ROJO~0                       ; 1       ;
 ; ControlVehicular:ControlVehicular_inst|Selector2~2                     ; 1       ;
 ; ControlVehicular:ControlVehicular_inst|ESTADO.IDLE~0                   ; 1       ;
 ; Front_sensor:Front_sensor_inst|CONTADOR_TIEMPO[1]~2                    ; 1       ;
@@ -1223,6 +1232,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ControlVehicular:ControlVehicular_inst|LessThan0~1                     ; 1       ;
 ; ControlVehicular:ControlVehicular_inst|LessThan0~0                     ; 1       ;
 ; Front_sensor:Front_sensor_inst|DETECTOR_VEHICULO                       ; 1       ;
+; Id_vehiculo:Id_vehiculo_inst|LED_DENEGADO_ROJO                         ; 1       ;
 ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[15]   ; 1       ;
 ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[14]   ; 1       ;
 ; ControlVehicular:ControlVehicular_inst|TALANQUERA_CERRADA_TIEMPO[13]   ; 1       ;
@@ -1337,14 +1347,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------+
 ; Routing Resource Type ; Usage                 ;
 +-----------------------+-----------------------+
-; Block interconnects   ; 92 / 47,787 ( < 1 % ) ;
-; C16 interconnects     ; 1 / 1,804 ( < 1 % )   ;
-; C4 interconnects      ; 48 / 31,272 ( < 1 % ) ;
-; Direct links          ; 27 / 47,787 ( < 1 % ) ;
+; Block interconnects   ; 89 / 47,787 ( < 1 % ) ;
+; C16 interconnects     ; 0 / 1,804 ( 0 % )     ;
+; C4 interconnects      ; 40 / 31,272 ( < 1 % ) ;
+; Direct links          ; 26 / 47,787 ( < 1 % ) ;
 ; Global clocks         ; 1 / 20 ( 5 % )        ;
-; Local interconnects   ; 52 / 15,408 ( < 1 % ) ;
-; R24 interconnects     ; 9 / 1,775 ( < 1 % )   ;
-; R4 interconnects      ; 47 / 41,310 ( < 1 % ) ;
+; Local interconnects   ; 53 / 15,408 ( < 1 % ) ;
+; R24 interconnects     ; 8 / 1,775 ( < 1 % )   ;
+; R4 interconnects      ; 60 / 41,310 ( < 1 % ) ;
 +-----------------------+-----------------------+
 
 
@@ -1387,7 +1397,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 24.33) ; Number of LABs  (Total = 6) ;
+; Number of Signals Sourced  (Average = 24.50) ; Number of LABs  (Total = 6) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
@@ -1414,8 +1424,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 22                                           ; 0                           ;
 ; 23                                           ; 0                           ;
 ; 24                                           ; 0                           ;
-; 25                                           ; 1                           ;
-; 26                                           ; 0                           ;
+; 25                                           ; 0                           ;
+; 26                                           ; 1                           ;
 ; 27                                           ; 0                           ;
 ; 28                                           ; 0                           ;
 ; 29                                           ; 0                           ;
@@ -1428,7 +1438,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +--------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 10.67) ; Number of LABs  (Total = 6) ;
+; Number of Signals Sourced Out  (Average = 10.83) ; Number of LABs  (Total = 6) ;
 +--------------------------------------------------+-----------------------------+
 ; 0                                                ; 0                           ;
 ; 1                                                ; 1                           ;
@@ -1440,20 +1450,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 7                                                ; 0                           ;
 ; 8                                                ; 1                           ;
 ; 9                                                ; 0                           ;
-; 10                                               ; 0                           ;
-; 11                                               ; 1                           ;
-; 12                                               ; 1                           ;
-; 13                                               ; 0                           ;
+; 10                                               ; 1                           ;
+; 11                                               ; 0                           ;
+; 12                                               ; 0                           ;
+; 13                                               ; 1                           ;
 ; 14                                               ; 0                           ;
 ; 15                                               ; 0                           ;
-; 16                                               ; 2                           ;
+; 16                                               ; 1                           ;
+; 17                                               ; 1                           ;
 +--------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 9.17) ; Number of LABs  (Total = 6) ;
+; Number of Distinct Inputs  (Average = 8.83) ; Number of LABs  (Total = 6) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 1                           ;
@@ -1465,13 +1476,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 7                                           ; 0                           ;
 ; 8                                           ; 0                           ;
 ; 9                                           ; 0                           ;
-; 10                                          ; 1                           ;
-; 11                                          ; 0                           ;
+; 10                                          ; 0                           ;
+; 11                                          ; 1                           ;
 ; 12                                          ; 0                           ;
-; 13                                          ; 0                           ;
+; 13                                          ; 1                           ;
 ; 14                                          ; 0                           ;
 ; 15                                          ; 0                           ;
-; 16                                          ; 1                           ;
+; 16                                          ; 0                           ;
 ; 17                                          ; 0                           ;
 ; 18                                          ; 0                           ;
 ; 19                                          ; 0                           ;
@@ -1586,8 +1597,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK                           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; REINICIO                      ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ABRIR_TALANQUERA              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; DETECTOR_VEHICULO             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; IDVALIDA                      ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; DETECTOR_VEHICULO             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +-------------------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -1698,22 +1709,22 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X21_Y20 to location X30_Y29
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X10_Y20 to location X20_Y29
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.06 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file C:/Users/DELL/Documents/VHDL/1erParcial-GRUPAL/Peaje_electronico/Peaje_electronico.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5349 megabytes
-    Info: Processing ended: Tue Mar 19 12:29:25 2024
+    Info: Peak virtual memory: 5352 megabytes
+    Info: Processing ended: Tue Mar 19 17:04:36 2024
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +----------------------------+

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Peaje_electronico
-Tue Mar 19 12:29:19 2024
+Tue Mar 19 17:04:31 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -48,15 +48,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 19 12:29:19 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 19 17:04:31 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Peaje_electronico                          ;
 ; Top-level Entity Name              ; Peaje_electronico                          ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 82                                         ;
-;     Total combinational functions  ; 66                                         ;
-;     Dedicated logic registers      ; 65                                         ;
-; Total registers                    ; 65                                         ;
+; Total logic elements               ; 83                                         ;
+;     Total combinational functions  ; 67                                         ;
+;     Dedicated logic registers      ; 66                                         ;
+; Total registers                    ; 66                                         ;
 ; Total pins                         ; 48                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -191,27 +191,27 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 82        ;
+; Estimated Total logic elements              ; 83        ;
 ;                                             ;           ;
-; Total combinational functions               ; 66        ;
+; Total combinational functions               ; 67        ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 13        ;
-;     -- 3 input functions                    ; 10        ;
+;     -- 3 input functions                    ; 11        ;
 ;     -- <=2 input functions                  ; 43        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 30        ;
+;     -- normal mode                          ; 31        ;
 ;     -- arithmetic mode                      ; 36        ;
 ;                                             ;           ;
-; Total registers                             ; 65        ;
-;     -- Dedicated logic registers            ; 65        ;
+; Total registers                             ; 66        ;
+;     -- Dedicated logic registers            ; 66        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 48        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 66        ;
-; Total fan-out                               ; 510       ;
+; Maximum fan-out                             ; 67        ;
+; Total fan-out                               ; 516       ;
 ; Average fan-out                             ; 2.25      ;
 +---------------------------------------------+-----------+
 
@@ -221,11 +221,11 @@ applicable agreement for further details.
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                   ; Library Name ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+--------------+
-; |Peaje_electronico                                      ; 66 (0)            ; 65 (0)       ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |Peaje_electronico                                                    ; work         ;
+; |Peaje_electronico                                      ; 67 (0)            ; 66 (0)       ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |Peaje_electronico                                                    ; work         ;
 ;    |ControlVehicular:ControlVehicular_inst|             ; 52 (52)           ; 59 (59)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|ControlVehicular:ControlVehicular_inst             ; work         ;
 ;    |Display_sevensegmentos:Display_sevensegmentos_inst| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Display_sevensegmentos:Display_sevensegmentos_inst ; work         ;
 ;    |Front_sensor:Front_sensor_inst|                     ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Front_sensor:Front_sensor_inst                     ; work         ;
-;    |Id_vehiculo:Id_vehiculo_inst|                       ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Id_vehiculo:Id_vehiculo_inst                       ; work         ;
+;    |Id_vehiculo:Id_vehiculo_inst|                       ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Id_vehiculo:Id_vehiculo_inst                       ; work         ;
 ;    |Semaforo_salida:Semaforo_salida_inst|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Peaje_electronico|Semaforo_salida:Semaforo_salida_inst               ; work         ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -270,10 +270,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 65    ;
+; Total registers                              ; 66    ;
 ; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 45    ;
+; Number of registers using Asynchronous Clear ; 46    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 55    ;
 ; Number of registers using Preset             ; 0     ;
@@ -334,7 +334,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Mar 19 12:29:17 2024
+    Info: Processing started: Tue Mar 19 17:04:29 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Peaje_electronico -c Peaje_electronico
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file /users/dell/documents/vhdl/1erparcial-grupal/track_sensor/track_sensor.vhd
@@ -371,8 +371,6 @@ Info (12127): Elaborating entity "Peaje_electronico" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at Peaje_electronico.vhd(61): object "tarifa_calculada" assigned a value but never read
 Info (12128): Elaborating entity "Front_sensor" for hierarchy "Front_sensor:Front_sensor_inst"
 Info (12128): Elaborating entity "Id_vehiculo" for hierarchy "Id_vehiculo:Id_vehiculo_inst"
-Warning (10631): VHDL Process Statement warning at Id_vehiculo.vhd(32): inferring latch(es) for signal or variable "LED_DENEGADO_ROJO", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "LED_DENEGADO_ROJO" at Id_vehiculo.vhd(32)
 Info (12128): Elaborating entity "SemaforoTalanquera" for hierarchy "SemaforoTalanquera:SemaforoTalanquera_inst"
 Warning (10492): VHDL Process Statement warning at SemaforoTalanquera.vhd(29): signal "Estado" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10631): VHDL Process Statement warning at SemaforoTalanquera.vhd(26): inferring latch(es) for signal or variable "SemaforoRojoTalanquera", which holds its previous value in one or more paths through the process
@@ -415,7 +413,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "SemaforoRojoPeaje" is stuck at GND
     Warning (13410): Pin "SemaforoVerdePeaje" is stuck at VCC
     Warning (13410): Pin "manualBarrier" is stuck at GND
-    Warning (13410): Pin "LED_DENEGADO_ROJO" is stuck at GND
     Warning (13410): Pin "clk_out_divisor" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -423,13 +420,13 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CATEGORIA_VEHICULO[0]"
     Warning (15610): No output dependent on input pin "CATEGORIA_VEHICULO[1]"
-Info (21057): Implemented 130 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 131 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 40 output pins
-    Info (21061): Implemented 82 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4666 megabytes
-    Info: Processing ended: Tue Mar 19 12:29:19 2024
+    Info (21061): Implemented 83 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4663 megabytes
+    Info: Processing ended: Tue Mar 19 17:04:31 2024
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
