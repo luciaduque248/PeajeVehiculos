@@ -27,13 +27,18 @@ entity Peaje_electronico is
         manualBarrier  : out std_logic;                             -- Barrera de entrada
         LED_AUTORIZADO_VERDE : out std_logic;                    -- LED verde para indicar identificación válida
         LED_DENEGADO_ROJO : out std_logic;                       -- LED rojo para indicar identificación inválida
-        CATEGORIA_VEHICULO : in unsigned(1 downto 0);             -- Categoría del vehículo (2 bits)
-		  
-		clk_out_divisor : out std_logic
+		
+        LED_CATEGORIA_0 : out std_logic;                        -- LED para la categoría de vehículo 0
+        LED_CATEGORIA_1 : out std_logic;                        -- LED para la categoría de vehículo 1
+        LED_CATEGORIA_2 : out std_logic;                        -- LED para la categoría de vehículo 2
+        CATEGORIA_VEHICULO : in unsigned(2 downto 0);             -- Categoría del vehículo (3 bits)
+        clk_out_divisor : out std_logic
     );
 end entity Peaje_electronico;
 
 architecture Peaje_electronico_arch of Peaje_electronico is
+
+
     -- Declaración de señales internas
     signal vehiclePassed : std_logic;
 	 
@@ -139,7 +144,7 @@ architecture Peaje_electronico_arch of Peaje_electronico is
         port (
             --entrada
             CLK : in std_logic;                           -- Señal de reloj
-            CATEGORIA_VEHICULO : in unsigned(1 downto 0); -- Categoría del vehículo (2 bits)
+            CATEGORIA_VEHICULO : in unsigned(2 downto 0);-- Categoría del vehículo (2 bits)
             TIEMPO_PASO : in unsigned(15 downto 0);       -- Tiempo de paso del vehículo (16 bits)
             --salida
             TARIFA : out unsigned(7 downto 0)             -- Tarifa calculada
@@ -158,6 +163,12 @@ architecture Peaje_electronico_arch of Peaje_electronico is
     end component;
 
 begin
+
+	 -- Asignaciones de LEDs para las categorías de vehículos
+    LED_CATEGORIA_0 <= CATEGORIA_VEHICULO(0);
+	 LED_CATEGORIA_1 <= CATEGORIA_VEHICULO(1);
+	 LED_CATEGORIA_2 <= CATEGORIA_VEHICULO(2);
+
 
 	-- Conectar SALIDA_SEMAFORO_VERDE de ControlVehicular a SALIDA_SEMAFORO_VERDE_PEAJE
     SALIDA_SEMAFORO_VERDE_PEAJE <= SALIDA_SEMAFORO_VERDE_CONTROL;
