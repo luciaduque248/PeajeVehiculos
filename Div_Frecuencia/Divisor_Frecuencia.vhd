@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity Divisor_Frecuencia is
     generic (
-        DIVIDER_VALUE : integer := 10000  -- Valor para dividir la frecuencia
+        DIVIDER_VALUE : integer := 25000000  -- Valor para dividir la frecuencia
     );
     port (
         CLK_IN : in std_logic;         -- Señal de entrada de reloj

@@ -149,7 +149,7 @@ architecture Peaje_electronico_arch of Peaje_electronico is
     -- Componente Divisor de Frecuencia
     component Divisor_Frecuencia
         generic (
-            DIVIDER_VALUE : integer := 10000  -- Valor para dividir la frecuencia
+            DIVIDER_VALUE : integer := 25000000  -- Valor para dividir la frecuencia
         );
         port (
             CLK_IN : in std_logic;         -- Señal de entrada de reloj
